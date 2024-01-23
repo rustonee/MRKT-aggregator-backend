@@ -1,1 +1,1923 @@
-[{"contract_address":"sei13zrt6ts27fd7rl3hfha7t63udghm0d904ds68h5wsvkkx5md9jqqkd7z5j","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"dob","symbol":"DOB","description":"break the wall","pfp":"https://static-assets.pallet.exchange/pfp/dob.png","banner":"https://static-assets.pallet.exchange/banner/dob.png","socials":[{"twitter":"https://twitter.com/dobnfts"},{"discord":"https://discord.gg/dobnfts"},{"website":"https://dobnfts.xyz"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":5555,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":5555,"auctions":356,"activities":20242},"owners":3049,"floor":[{"denom":"usei","amount":"359000000"}],"volume":{"denom":"usei","amount":"1238554223090"}},{"contract_address":"sei15w6sty6cjjraxanrxxx0y09adwjtywhkcmydh7np25zezg9m5mwsfduktd","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"SEI Subjects","symbol":"SEISUBJ","description":"The subjects of our experiments have come alive.","pfp":"","banner":"","socials":[{"twitter":"https://twitter.com/SeiSubjects"},{"discord":"https://discord.gg/mhBv7ZMvGE"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":3333,"version":"2024-01-17T21:25:45.083Z","_count":{"tokens":3333,"auctions":402,"activities":4928},"owners":987,"floor":[{"denom":"usei","amount":"7000000"}],"volume":{"denom":"usei","amount":"18660655889"}},{"contract_address":"sei16zt75829qyqx26smgcp4qktsqdkhhfqd6v0mwd43xl7ytyw5fsnqycf70u","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"Sei Marines Club","symbol":"SMC","description":"Ahoy! Sei Marines Club is an NFT collection of 5555 pixelated Marines on the SEI blockchain","pfp":"","banner":"","socials":[{"twitter":"https://twitter.com/SeiMarines_NFT"},{"discord":"https://discord.com/invite/sei-marines-club"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":5555,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":5555,"auctions":664,"activities":5571},"owners":2042,"floor":[{"denom":"usei","amount":"1350000"}],"volume":{"denom":"usei","amount":"5278216531"}},{"contract_address":"sei172r2cah7m898qj86epfe2wtvvkkgq5h408jz08h0ny26rj5zjs5qkch29k","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"Sei Rocks","symbol":"ROCK","description":"Rocks on Sei inspired by the iconic Ether Rock. https://www.seirocks.xyz/stake","pfp":"https://static-assets.pallet.exchange/pfp/seirocks.png","banner":"https://static-assets.pallet.exchange/banner/seirocks.jpg","socials":[{"twitter":"https://twitter.com/SeiRocksNFT"},{"discord":"https://discord.gg/seirocks"},{"website":"https://www.seirocks.xyz/stake"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":6969,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":6969,"auctions":620,"activities":24689},"owners":2129,"floor":[{"denom":"usei","amount":"18000000"}],"volume":{"denom":"usei","amount":"269645280800"}},{"contract_address":"sei1832l37vacma0nd3a88qummzmyq59w9a43ytsptyn40drjp05ts6qyraj97","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"Wen Pallet?","symbol":"WEN","description":"You ask, we answer. 1000 non-fungible pallets ready to be jeeted, by Sei Stoics.","pfp":"https://static-assets.pallet.exchange/pfp/wenpalletbyseistoics.jpg","banner":"https://static-assets.pallet.exchange/banner/wenpalletbyseistoics.jpg","socials":[{"twitter":"https://twitter.com/TheSeiStoics"},{"discord":"https://discord.com/invite/seistoics"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":1000,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":1000,"auctions":108,"activities":1839},"owners":719,"floor":[{"denom":"usei","amount":"43000000"}],"volume":{"denom":"usei","amount":"20508628900"}},{"contract_address":"sei188meek4al2mnk3y0jf07p9pwnrfcq4q4cnpz24wl8wcg7lhrtnrq6grecc","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"XPX","symbol":"XPX","description":"An official token of Experiment X","pfp":"https://static-assets.pallet.exchange/pfp/experimentx.png","banner":"https://static-assets.pallet.exchange/banner/experimentx.png","socials":[{"twitter":"https://twitter.com/X_periment_X"},{"discord":"https://discord.gg/xperimentx"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":4000,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":4000,"auctions":454,"activities":5734},"owners":720,"floor":[{"denom":"usei","amount":"3200000"}],"volume":{"denom":"usei","amount":"16290395890"}},{"contract_address":"sei18ddlx5jsqhugd8g3qd5h5l5xdzc00rhvk8khvrvlyrm4x4r2g4vsfs3ckf","chain_id":"pacific-1","creator":"sei1ffus553eet978k024lmssw0czsxwr97mggyv85lpcsdkft8v9ufspvp6t9","name":"Akira","symbol":"AKIRA","description":"Redefining Art Standards While Building The Most Humble Community","pfp":"https://static-assets.pallet.exchange/pfp/akira.png","banner":"https://static-assets.pallet.exchange/banner/akira.png","socials":[{"twitter":"https://twitter.com/TheAkiraNFT"},{"discord":"https://discord.com/invite/HwthTHbQ4C"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":4400,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":4400,"auctions":119,"activities":4083},"owners":531,"floor":[{"denom":"usei","amount":"23800000"}],"volume":{"denom":"usei","amount":"84370929000"}},{"contract_address":"sei18jvwmxdrymavyftqhexzypr7gv5vruf44mj9r06094nzc7x96l2skfkpww","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"Seinsei","symbol":"SSEI","description":"Seinsei ","pfp":"https://static-assets.pallet.exchange/pfp/seinseis.jpg","banner":"https://static-assets.pallet.exchange/banner/seinseis.jpg","socials":[{"twitter":"https://twitter.com/SeinseisNFT"},{"discord":"https://discord.gg/FUEq8TCEMh"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":5555,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":5555,"auctions":856,"activities":14620},"owners":2964,"floor":[{"denom":"usei","amount":"9000000"}],"volume":{"denom":"usei","amount":"79540557890"}},{"contract_address":"sei19kfsr9zft0k9awelwwv9k87mrgwf358tfqw9tv30rlvwn8rn5kzq00hnup","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"The Seinos","symbol":"LLTS","description":"Legendary League presents The Seinos Where gaming meets competition and camaraderie","pfp":"","banner":"","socials":[{"twitter":"https://twitter.com/LegendaryWeb3"},{"discord":"http://discord.gg/legendaryleague"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":814,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":814,"auctions":55,"activities":633},"owners":353,"floor":[{"denom":"usei","amount":"158000000"}],"volume":{"denom":"usei","amount":"19908420000"}},{"contract_address":"sei19lsam8qjj3jacfhsuqnn7zsc9326uje8qp96neukhaxyjtk3pkhs366058","chain_id":"pacific-1","creator":"sei1rmvvm579dwlnh9y3py4mgtjntxxtf9tl2rx6uxv576dtwr3e2sdq68pf0u","name":"Seilors","symbol":"Seilor","description":"Seilors is a community committed to creating and sharing high-quality art. Fostering a wave of excitement on Sei. Welcome aboard!","pfp":"https://static-assets.pallet.exchange/pfp/seilors.png","banner":"https://static-assets.pallet.exchange/banner/seilors.jpeg","socials":[{"twitter":"https://twitter.com/SeilorsNFT"},{"discord":"https://discord.gg/seilors"},{"website":"https://seilors.io/"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":10000,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":10000,"auctions":84,"activities":6542},"owners":4977,"floor":[{"denom":"usei","amount":"202000000"}],"volume":{"denom":"usei","amount":"573376441000"}},{"contract_address":"sei1a9xzhtynlcu84jcwm0qdl82aqteqplpvuyme9vssawptk33rvzrqrvwcll","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"SEI MFers","symbol":"Mfers","description":"sei what, sei mfers","pfp":"https://static-assets.pallet.exchange/pfp/seimfers.jpg","banner":"https://static-assets.pallet.exchange/banner/seimfers.jpg","socials":[{"twitter":"https://twitter.com/seimfers"},{"discord":"https://discord.gg/seimfers"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":4999,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":4999,"auctions":423,"activities":9029},"owners":1141,"floor":[{"denom":"usei","amount":"2950000"}],"volume":{"denom":"usei","amount":"12084453180"}},{"contract_address":"sei1ahxexdnrlxhjt53vcav7ktq6ygmwm8aqf5mskjdzdcauqtnn0jsqhtu95a","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"Daring Dragonz","symbol":"DEN","description":"1500 deflationary Daring Dragonz have alighted on $SEI, building \"The DEN\" and ready to conquer.","pfp":"https://static-assets.pallet.exchange/pfp/daringdragonz.png","banner":"https://static-assets.pallet.exchange/banner/daringdragonz.jpg","socials":[{"twitter":"https://twitter.com/DaringDragonz"},{"discord":"https://discord.gg/daringdragonz"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":1500,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":1500,"auctions":111,"activities":2107},"owners":609,"floor":[{"denom":"usei","amount":"19000000"}],"volume":{"denom":"usei","amount":"14413414000"}},{"contract_address":"sei1aj6t3eyus0vc5w7f4dnr84tk7g5xwrxfughvl0rfjljjs90rtklqlmz966","chain_id":"pacific-1","creator":"sei1ffus553eet978k024lmssw0czsxwr97mggyv85lpcsdkft8v9ufspvp6t9","name":"Sei Shiba","symbol":"SEISHIBA","description":"SEI SHIBA is a revolutionary community for forward-thinking creators and builders on SEI, fueled by the boundless potential of Web3 and NFT Space. 🦴","pfp":"https://static-assets.pallet.exchange/pfp/shibas.png","banner":"https://static-assets.pallet.exchange/banner/shibas.png","socials":[{"twitter":"https://twitter.com/_SeiShiba_"},{"discord":"https://discord.gg/2FGChZm3wA"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":3000,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":3000,"auctions":117,"activities":2744},"owners":431,"floor":[{"denom":"usei","amount":"23000000"}],"volume":{"denom":"usei","amount":"53194190000"}},{"contract_address":"sei1c56q465aeenfxykhaj8vt7vhhqtmhyn0ntvercdsge288xsdcjlq9xh8wx","chain_id":"pacific-1","creator":"sei1sqj8vkfe0wzyq3a04uqeu78nclum3r7nt23xya","name":"SPACE ID .sei Name Service","symbol":"SIDSEI","description":"Unlock your Web3 domain name on Sei Network. A SPACE ID name service","pfp":"https://static-assets.pallet.exchange/pfp/sidsei.svg","banner":"https://static-assets.pallet.exchange/banner/sidsei.jpg","socials":[{"twitter":"https://twitter.com/SID_sei_name"},{"discord":"https://discord.gg/spaceid"},{"website":"https://sei.space.id"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":16947,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":16947,"auctions":2462,"activities":7840},"owners":7377,"floor":[{"denom":"usei","amount":"5400000"}],"volume":{"denom":"usei","amount":"27427751900"}},{"contract_address":"sei1c9lg7md543g7w9hms4kpa7a0ddhm3g0zz3jr5gejcw3sql5f6jjsxuqwux","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"Sei Pepes","symbol":"PEPES","description":"Sei Pepes is here to create memable experience for you on sei blockchain","pfp":"","banner":"","socials":[{"twitter":"https://twitter.com/seipepesnft"},{"discord":"https://discord.gg/seipepes"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":936,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":936,"auctions":14,"activities":37},"owners":774,"floor":[{"denom":"usei","amount":"8500000"}],"volume":{"denom":"usei","amount":"37000000"}},{"contract_address":"sei1cc0qgdxgstsjfnsz0u2at4flr93f0ux43u8lj770ft4dxfqvc6yqkvv289","chain_id":"pacific-1","creator":"sei1ffus553eet978k024lmssw0czsxwr97mggyv85lpcsdkft8v9ufspvp6t9","name":"Duck Club","symbol":"SEIDUCK","description":"Building the Ultimate Community on Sei Network, Duck Club aims to provide unparalleled advantages to the Sei Community, backed by experiences and culture.","pfp":"https://static-assets.pallet.exchange/pfp/duck.png","banner":"https://static-assets.pallet.exchange/banner/duck.png","socials":[{"twitter":"https://twitter.com/SeiDuckClub"},{"discord":"https://discord.com/invite/9Ebd2qNjft"},{"website":"https://duckclub.xyz/"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":5555,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":5555,"auctions":289,"activities":8908},"owners":1385,"floor":[{"denom":"usei","amount":"22000000"}],"volume":{"denom":"usei","amount":"326620130000"}},{"contract_address":"sei1d8hvqelcqf5qec3p5tqckagduqdgel6krfl50mdp33wl452tfjwsqnj2dj","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"Rug Duck Association","symbol":"RDA","description":"A Low Quality JPEG Collection by Duck Club on the World's Fastest Layer 1, Sei Network","pfp":"https://static-assets.pallet.exchange/pfp/rugduckassociation.png","banner":"https://static-assets.pallet.exchange/banner/rugduckassociation.jpg","socials":[{"twitter":"https://twitter.com/SeiRugDuck"},{"discord":"https://discord.gg/rugduckclub"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":8888,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":8888,"auctions":742,"activities":14919},"owners":6044,"floor":[{"denom":"usei","amount":"5500000"}],"volume":{"denom":"usei","amount":"87045023689"}},{"contract_address":"sei1ddzwh4u8aqcrvs9tt95ecrzpdmpypjpmxzmw0fxjp864wj6vy65q6654tj","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"Seᶦ Gnᵒmₑs","symbol":"seignome","description":"ₛEᶦ gNᵒmEs aR ᴴeᵣe tO ᵀaₖE oᵥEʳ ₛeᴵ","pfp":"https://static-assets.pallet.exchange/pfp/seignomes.png","banner":"https://static-assets.pallet.exchange/banner/seignomes.png","socials":[{"twitter":"https://twitter.com/seignomes"},{"discord":"https://discord.gg/seignomes"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":3333,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":3333,"auctions":320,"activities":4411},"owners":806,"floor":[{"denom":"usei","amount":"3000000"}],"volume":{"denom":"usei","amount":"21351035869"}},{"contract_address":"sei1dk4tyuffcgsscuwtg6hna97rhlngwe2gwl92mhfjgtseymnqjm6qr5jqlf","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"Kweck","symbol":"KWECK","description":"Flippin Kweck on Sei.","pfp":"","banner":"","socials":[{"twitter":"https://twitter.com/SeiKweck"},{"discord":"https://discord.gg/kweck"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":5555,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":5555,"auctions":399,"activities":14674},"owners":1871,"floor":[{"denom":"usei","amount":"23000000"}],"volume":{"denom":"usei","amount":"85448453125"}},{"contract_address":"sei1faqw953tzda4qvr37wnjpr99t0hx6nqeknrf9c03gzrjvm764huqgvspst","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"Sei Bunnies","symbol":"SB","description":"4999 cute bunnies roaming on the Sei Network","pfp":"","banner":"","socials":[{"twitter":"https://x.com/seibunniesnft"},{"discord":"https://discord.com/invite/SfQFc9CeKj"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":4999,"version":"2024-01-18T00:46:36.606Z","_count":{"tokens":4999,"auctions":368,"activities":3142},"owners":1965,"floor":[{"denom":"usei","amount":"500000"}],"volume":{"denom":"usei","amount":"1135936690"}},{"contract_address":"sei1fu4ffs6hnycczjkwpn6fk8ew9wf4vrqfsh79m8fp6lattqscnymqzdth64","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"SeiMadDoges","symbol":"SMD","description":"Mad Doges Only","pfp":"","banner":"","socials":[{"twitter":"https://twitter.com/SeiMadDoges"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":8500,"version":"2024-01-17T23:29:27.542Z","_count":{"tokens":8500,"auctions":0,"activities":0},"owners":216,"floor":[],"volume":{"denom":"usei","amount":"0"}},{"contract_address":"sei1g2a0q3tddzs7vf7lk45c2tgufsaqerxmsdr2cprth3mjtuqxm60qdmravc","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"Seiyans","symbol":"SYAN","description":"Seiyans going super seiyan","pfp":"https://static-assets.pallet.exchange/pfp/seiyans.png","banner":"https://static-assets.pallet.exchange/banner/seiyans.png","socials":[{"twitter":"https://twitter.com/seiyansnft"},{"discord":"https://discord.gg/7sNZYGdDgX"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":9001,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":9001,"auctions":565,"activities":29357},"owners":4532,"floor":[{"denom":"usei","amount":"360000000"}],"volume":{"denom":"usei","amount":"3229743407570"}},{"contract_address":"sei1gccj8zy7xxntk9qgmw6wtsfv03dc0q6xz3ls4rncsysl3evtr8xs3ayzag","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"Sei Dragons","symbol":"DRGN","description":"SEI Dragons is an investment minded NFT community on the SEI Blockchain. Ranking and rewarding our community alpha callers and bringing weekly wins for our holders from our proprietary investment algo, FireBreather.","pfp":"https://static-assets.pallet.exchange/pfp/seidragons.png","banner":"https://static-assets.pallet.exchange/banner/seidragons.png","socials":[{"twitter":"https://twitter.com/sei_dragons"},{"discord":"https://discord.gg/seidragons"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":7777,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":7777,"auctions":266,"activities":3182},"owners":1399,"floor":[{"denom":"usei","amount":"10900000"}],"volume":{"denom":"usei","amount":"16842376989"}},{"contract_address":"sei1gukfj2re9fsuhh3may8hl5sjjr7mk36edjkprqty6l35f2f07d7qgfk5dt","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"Seingus","symbol":"SEINGU","description":"Just a couple Seingus waddling around the SEI blockchain.","pfp":"https://static-assets.pallet.exchange/pfp/seingus.jpg","banner":"https://static-assets.pallet.exchange/banner/seingus.png","socials":[{"twitter":"https://twitter.com/SeinguNFT"},{"discord":"https://discord.com/invite/D4RGDK3QpR"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":3333,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":3333,"auctions":364,"activities":8439},"owners":1190,"floor":[{"denom":"usei","amount":"14000000"}],"volume":{"denom":"usei","amount":"21812226508"}},{"contract_address":"sei1guxe769z6jyrcegempsfsz0m0y7hytf8jhpju7platkvrjzj98qshpfp2a","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"Elon","symbol":"ELON","description":"One for all and all for one","pfp":"","banner":"","socials":[{"twitter":"https://twitter.com/V_Elementalss"},{"discord":"https://discord.gg/Csk4Rwmswn"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":5555,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":5555,"auctions":466,"activities":3708},"owners":3736,"floor":[{"denom":"usei","amount":"2000000"}],"volume":{"denom":"usei","amount":"4301273990"}},{"contract_address":"sei1jrkssr4pyc0tsqt0y7340lwv0awnnus9rhjgnaj2vcd8a4rt2m3q3txd3x","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"Sei Stoics","symbol":"SSPX","description":"Incubated by StoicPX, Stoics on Sei is a collection of 3000 avatars powered by a community of $SEI enthusiasts, building utilities around the eco","pfp":"https://static-assets.pallet.exchange/pfp/seistoics.jpg","banner":"https://static-assets.pallet.exchange/banner/seistoics.jpg","socials":[{"twitter":"https://twitter.com/TheSeiStoics"},{"discord":"https://discord.com/invite/seistoics"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":3000,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":3000,"auctions":114,"activities":2727},"owners":1340,"floor":[{"denom":"usei","amount":"99000000"}],"volume":{"denom":"usei","amount":"49346759990"}},{"contract_address":"sei1l4jgfuzxa6yu4sj6yxkc4fkt4a944t35zse8szw9394p44njdzlqvde5g5","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"Seinosaurz","symbol":"SAURZ","description":"Seinosaurz with 3889 collection represents the original saurz from saurz studio","pfp":"","banner":"","socials":[{"twitter":"https://twitter.com/seinosaurz"},{"discord":"https://discord.gg/seinosaurz"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":3889,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":3889,"auctions":1007,"activities":7965},"owners":2491,"floor":[{"denom":"usei","amount":"2990000"}],"volume":{"denom":"usei","amount":"16340881867"}},{"contract_address":"sei1lar5nkq0yektynmnx3x32yeqnqav0ms2rlv3v0xlypac9ntr78wq5drd5j","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"SEI9:Terradragons (テラドラゴンズ)","symbol":"SEI9","description":"3333 Terradragons (テラドラゴンズ) PFP Collection by SEI9","pfp":"","banner":"","socials":[{"twitter":"https://twitter.com/Sei69Nove"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":3333,"version":"2024-01-17T20:35:48.913Z","_count":{"tokens":3333,"auctions":152,"activities":1363},"owners":559,"floor":[{"denom":"usei","amount":"5000000"}],"volume":{"denom":"usei","amount":"7908802221"}},{"contract_address":"sei1mfjy3lzavtpq040fspacanyh56skju09xg8k0fa5vjnz3pac6wfsh7nala","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"SeiPirates","symbol":"PRT","description":"Sail the blockchain seas","pfp":"https://static-assets.pallet.exchange/pfp/seipirates.jpg","banner":"https://static-assets.pallet.exchange/banner/seipirates.jpg","socials":[{"twitter":"https://twitter.com/SeiPiratesNFT"},{"discord":"https://discord.gg/seipiratesnft"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":3333,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":3333,"auctions":467,"activities":4205},"owners":1465,"floor":[{"denom":"usei","amount":"3500000"}],"volume":{"denom":"usei","amount":"8720129000"}},{"contract_address":"sei1msmdzdn92aele5878x905h780l2ura0scppt74mkupmeyxk2zdds7e6swx","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"SeiSpirits","symbol":"SPRT","description":"Just 3333 Spirits Roaming the SEI Ecosystem.","pfp":"https://static-assets.pallet.exchange/pfp/seispirits.png","banner":"https://static-assets.pallet.exchange/banner/seispirits.png","socials":[{"twitter":"https://twitter.com/SeiSpirits"},{"discord":"https://discord.gg/seispirits"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":3333,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":3333,"auctions":341,"activities":11613},"owners":1623,"floor":[{"denom":"usei","amount":"27000000"}],"volume":{"denom":"usei","amount":"241383240879"}},{"contract_address":"sei1np5ls7wmptvy2dd5tjldywlt0wwtfhptw76xlyjhqwsv7sj6rq0s90jhqf","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"Sei Portals","symbol":"PORTAL","description":"Enter the Portal","pfp":"https://static-assets.pallet.exchange/pfp/seiportals.png","banner":"https://static-assets.pallet.exchange/banner/seiportals.png","socials":[{"twitter":"https://twitter.com/seiportals"},{"discord":"https://discord.gg/seiportals"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":4444,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":4444,"auctions":619,"activities":10275},"owners":1744,"floor":[{"denom":"usei","amount":"4900000"}],"volume":{"denom":"usei","amount":"74587262330"}},{"contract_address":"sei1nqux82dgsyx0uv6qfhgmxvrfv2rrg3c34c3t3n4w5zqttfq7j6fq2a7zhc","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"Nuit","symbol":"NUIT","description":"Are u Ready? Nuit is Ready..","pfp":"","banner":"","socials":[{"twitter":"https://twitter.com/NuitNFT"},{"discord":"https://discord.gg/nuit"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":5555,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":5555,"auctions":556,"activities":7491},"owners":2397,"floor":[{"denom":"usei","amount":"3700000"}],"volume":{"denom":"usei","amount":"7184124679"}},{"contract_address":"sei1p5l7yc3ur779uqagp9wnfqpp0wpz3d4ju94hqx63sngqk3xfsstsr7scyr","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"SeiDoges","symbol":"SEIDOGES","description":"SeiDoges is the first gaming-NFT project on the Sei network, our goal is bring many people from outside of the SEI ecosystem.","pfp":"https://static-assets.pallet.exchange/pfp/seidoges.png","banner":"https://static-assets.pallet.exchange/banner/seidoges.png","socials":[{"twitter":"https://twitter.com/SeiDogesNFT"},{"discord":"https://discord.gg/seidoges"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":6666,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":6666,"auctions":686,"activities":14958},"owners":3403,"floor":[{"denom":"usei","amount":"7400000"}],"volume":{"denom":"usei","amount":"34317894089"}},{"contract_address":"sei1pcwel0zepeervrhtgecs3kln2me2k3qd64spm2vy5wg8z865e4uq6v5x75","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"Seipal","symbol":"SEIPAL","description":"Only 100 Sei Opals can ever be available.","pfp":"https://static-assets.pallet.exchange/pfp/seiopal.jpg","banner":"https://static-assets.pallet.exchange/banner/seiopal.jpg","socials":[{"twitter":"https://twitter.com/Seipalnft"},{"discord":"https://discord.gg/seiopal"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":100,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":100,"auctions":8,"activities":140},"owners":75,"floor":[{"denom":"usei","amount":"7077000000"}],"volume":{"denom":"usei","amount":"24573000000"}},{"contract_address":"sei1pe3x3dpvq7gl9xl332t0pws0yej9xvp5f280r3sg0mlfqcrhrkfsavf072","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"SEI Ducks","symbol":"SEI-DUs","description":"SEI Ducks (Ranks for this collection are currently being revised by the project – do not read into the current rankings)","pfp":"https://static-assets.pallet.exchange/pfp/seiducks.png","banner":"https://static-assets.pallet.exchange/banner/seiducks.png","socials":[{"twitter":"https://twitter.com/SEIDucks"},{"discord":"https://discord.gg/s2UxqVRb"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":6969,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":6969,"auctions":953,"activities":17122},"owners":2456,"floor":[{"denom":"usei","amount":"5000000"}],"volume":{"denom":"usei","amount":"130848769460"}},{"contract_address":"sei1pkteljh83a83gmazcvam474f7dwt9wzcyqcf5puxvqqs6jcx8nnq2y74lu","chain_id":"pacific-1","creator":"sei1n98feagm4rz5lfvehq25689ukt47ee3e534xlwh0x0z5agvarm6s6m3l42","name":"The Colony","symbol":"COLONY","description":"A collection of 5,555 Mafia Antz swarming into SeiNetwork, forming The Colony... 🐜","pfp":"https://static-assets.pallet.exchange/pfp/colony-test.jpeg","banner":"https://static-assets.pallet.exchange/banner/colony3.jpg","socials":[{"twitter":"https://twitter.com/thecolonynft__"},{"discord":"https://discord.gg/TyDDa2j5dp"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":5555,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":5555,"auctions":216,"activities":31551},"owners":2974,"floor":[{"denom":"usei","amount":"869000000"}],"volume":{"denom":"usei","amount":"4550550374573"}},{"contract_address":"sei1pxldvejk2q57yhxh2hck450gvddwhv5fcdchu7ys8xv33ywkcvpsftur73","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"Seiguins","symbol":"SGS","description":"","pfp":"https://static-assets.pallet.exchange/pfp/seiguins.jpg","banner":"https://static-assets.pallet.exchange/banner/seiguins.png","socials":[{"twitter":"https://twitter.com/theseiguins"},{"discord":"https://discord.gg/seiguins"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":999,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":999,"auctions":129,"activities":3051},"owners":537,"floor":[{"denom":"usei","amount":"25000000"}],"volume":{"denom":"usei","amount":"48135930000"}},{"contract_address":"sei1s99j23ctng8jwm7uhrdtyr8vhn9mglcm0mgnxf84hxt32mkzwmgsdctsc8","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"NodeSpei","symbol":"NS","description":"6969 NodeSpei have been permanently recorded on #SEI","pfp":"https://static-assets.pallet.exchange/pfp/nodespei.jpg","banner":"https://static-assets.pallet.exchange/banner/nodespei.jpg","socials":[{"twitter":"https://twitter.com/NodeSpei"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":6969,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":6969,"auctions":495,"activities":4105},"owners":822,"floor":[{"denom":"usei","amount":"2790000"}],"volume":{"denom":"usei","amount":"14892252000"}},{"contract_address":"sei1skh49xnyqc3gz2gq8jq2ycqjg9dc4klvzq9sxs4dkgdynndfsc4q46pavk","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"Cool Cows","symbol":"COW","description":"Cool Cows the first pixel cows collection on sei blockchain aim to build the greatest community on sei blockchain.","pfp":"https://static-assets.pallet.exchange/pfp/coolcows.jpg","banner":"https://static-assets.pallet.exchange/banner/coolcows.jpg","socials":[{"twitter":"https://twitter.com/coolcow_sei"},{"discord":"https://discord.gg/coolcows"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":6666,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":6666,"auctions":746,"activities":17491},"owners":2909,"floor":[{"denom":"usei","amount":"3500000"}],"volume":{"denom":"usei","amount":"50012520490"}},{"contract_address":"sei1sr6u2403g2vw5c8442wzhz00td80q5peedghay7nxcgcccckempq80pxz7","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"Sei Bears Club","symbol":"SBC","description":"","pfp":"","banner":"","socials":[{"twitter":"https://twitter.com/seiBearNFTs"},{"discord":"https://discord.gg/w7R6pcSd"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":7777,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":7777,"auctions":655,"activities":3127},"owners":3151,"floor":[{"denom":"usei","amount":"990000"}],"volume":{"denom":"usei","amount":"1492609900"}},{"contract_address":"sei1swh8dxdpntgdj3z0mv6z030fjy80t484pkf9ce8veascfljynkjs3na2xs","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"SuperTusks","symbol":"ORC","description":"A collection of 10,000 distinct orc PFPs on Sei blockchain, each embodying unique traits and character. A blend of art and digital identity, ready for the era of NFTs.","pfp":"https://static-assets.pallet.exchange/pfp/supertusks.jpg","banner":"https://static-assets.pallet.exchange/banner/supertusks.jpg","socials":[{"twitter":"https://twitter.com/supertusks"},{"discord":"https://discord.gg/ZaXKVpu8"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":10000,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":10000,"auctions":718,"activities":14820},"owners":4486,"floor":[{"denom":"usei","amount":"1500000"}],"volume":{"denom":"usei","amount":"40948872771"}},{"contract_address":"sei1t37a3zz329n58mw58jjh4qm3n8w38cu2s2wcre9dshy0h39hh3ysrv39ys","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"Seiguls","symbol":"Seigul","description":"A Horde of Seigulls flying over the $SEI blockchain","pfp":"https://static-assets.pallet.exchange/pfp/seigulls.png","banner":"https://static-assets.pallet.exchange/banner/seigulls.jpg","socials":[{"twitter":"https://twitter.com/seigullsnfts"},{"discord":"https://discord.gg/DwfVduct"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":4444,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":4444,"auctions":352,"activities":5513},"owners":813,"floor":[{"denom":"usei","amount":"4000000"}],"volume":{"denom":"usei","amount":"17195578799"}},{"contract_address":"sei1u64thag5ltz7sjte7ggdd0k8wzr59p32vlswh89wswmz46relcqq6my5h6","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"Bulls on SEI","symbol":"SEIBULLS","description":"Building on SEI. Bullish AF.","pfp":"","banner":"","socials":[{"twitter":"https://twitter.com/BullsonSEI"},{"discord":"https://discord.gg/RuyUgVMt9m"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":1500,"version":"2024-01-18T17:24:04.116Z","_count":{"tokens":1500,"auctions":163,"activities":1219},"owners":864,"floor":[{"denom":"usei","amount":"14500000"}],"volume":{"denom":"usei","amount":"4263110000"}},{"contract_address":"sei1uv4s3r7akmtgemt3306kuu440l7a008xdvenu8n4my4ywckt2mrsvtqan8","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"Sei Ape Society","symbol":"APES","description":"Sei Apes Society is a collection of 4444 unique Apes. Each Ape is Make with Love and Care.","pfp":"","banner":"","socials":[{"twitter":"https://twitter.com/SeiApesNFT"},{"discord":"https://discord.gg/seiapesnft"},{"website":"https://seiapes.xyz/"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":4444,"version":"2024-01-18T18:20:40.170Z","_count":{"tokens":4444,"auctions":369,"activities":3681},"owners":1526,"floor":[{"denom":"usei","amount":"4200000"}],"volume":{"denom":"usei","amount":"9236463700"}},{"contract_address":"sei1v90ly54qeu7497lzk2mnmp2h29sgtep8hs5ryvfqf8dwq5gc0t9srp6aey","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"WeBump","symbol":"BUMP","description":"Whats poppin? we bumpin","pfp":"https://static-assets.pallet.exchange/pfp/webump.jpg","banner":"https://static-assets.pallet.exchange/banner/webump.png","socials":[{"twitter":"https://twitter.com/webump_"},{"discord":"https://discord.gg/m2WEtFRY8q"},{"website":"https://webump.xyz"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":4444,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":4444,"auctions":102,"activities":15518},"owners":3023,"floor":[{"denom":"usei","amount":"1150000000"}],"volume":{"denom":"usei","amount":"2638478249899"}},{"contract_address":"sei1va06zjmjyjrhmqnepznt6z94hnd2dssj489rh4pggv5uaxphzc0qyhec5c","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"SeiPunks","symbol":"SP","description":"The first 10000 Punks on SEI","pfp":"https://static-assets.pallet.exchange/pfp/seipunks.png","banner":"https://static-assets.pallet.exchange/banner/seipunks.png","socials":[{"twitter":"https://twitter.com/punkssei"},{"discord":"https://discord.gg/seipunks"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":10000,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":10000,"auctions":1130,"activities":20749},"owners":3654,"floor":[{"denom":"usei","amount":"7700000"}],"volume":{"denom":"usei","amount":"96033045024"}},{"contract_address":"sei1vjgrptlrm0alx330lv6260kzewv7p8elpputvedd45sxrtel2v5qzkrcd7","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"Seiber Punks","symbol":"SPK","description":"The First Punks on SEI. Seiber Punks made to explore the Seiber space, created for those daring enough to Seize the day, burn the Seity down, and break free from the Seistem.","pfp":"https://static-assets.pallet.exchange/pfp/seiberpunks.jpg","banner":"https://static-assets.pallet.exchange/banner/seiberpunks.jpg","socials":[{"twitter":"https://twitter.com/seiber_punks"},{"discord":"https://discord.gg/dGuVxW6wSd"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":10000,"version":"2024-01-17T18:00:00.000Z","_count":{"tokens":10000,"auctions":496,"activities":3882},"owners":2363,"floor":[{"denom":"usei","amount":"1690000"}],"volume":{"denom":"usei","amount":"4223494900"}},{"contract_address":"sei1wfl480fuwa68yhdzapunsvqmmyuz8ckzz06jgy7h6t7las742qjstw7gs6","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"Seitopia","symbol":"SEITOPIA","description":"art. utility. exclusivity. gamblefi. 555.","pfp":"","banner":"","socials":[{"twitter":"https://twitter.com/seitopia_nft"},{"discord":"https://discord.gg/yX6FvEz98v"},{"website":"https://seitopia.com/"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":555,"version":"2024-01-18T14:31:15.074Z","_count":{"tokens":555,"auctions":51,"activities":1545},"owners":383,"floor":[{"denom":"usei","amount":"670000000"}],"volume":{"denom":"usei","amount":"111455440000"}},{"contract_address":"sei1xtacm5jrw3kg49x4mq5g0netlparkyqjwp28dzng3whhjqjnd3gqht8zn0","chain_id":"pacific-1","creator":"sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d","name":"Sei Chicks","symbol":"CHICK","description":"A collection of 4444 unique Pixel Chicks, hatched on $SEI","pfp":"","banner":"","socials":[{"twitter":"https://twitter.com/sei_chiks"},{"discord":"https://discord.gg/seichiks"}],"send_listing_notification":false,"calculate_rarities":false,"start_after":"","supply":4444,"version":"2024-01-17T20:23:26.541Z","_count":{"tokens":4444,"auctions":322,"activities":1808},"owners":2536,"floor":[{"denom":"usei","amount":"990000"}],"volume":{"denom":"usei","amount":"830288000"}}]
+[
+  {
+    "contract_address": "sei13zrt6ts27fd7rl3hfha7t63udghm0d904ds68h5wsvkkx5md9jqqkd7z5j",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "dob",
+    "symbol": "DOB",
+    "description": "break the wall",
+    "pfp": "https://static-assets.pallet.exchange/pfp/dob.png",
+    "banner": "https://static-assets.pallet.exchange/banner/dob.png",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/dobnfts"
+      },
+      {
+        "discord": "https://discord.gg/dobnfts"
+      },
+      {
+        "website": "https://dobnfts.xyz"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 5555,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 5555,
+      "auctions": 356,
+      "activities": 20242
+    },
+    "owners": 3049,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "359000000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "1238554223090"
+    }
+  },
+  {
+    "contract_address": "sei15w6sty6cjjraxanrxxx0y09adwjtywhkcmydh7np25zezg9m5mwsfduktd",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "SEI Subjects",
+    "symbol": "SEISUBJ",
+    "description": "The subjects of our experiments have come alive.",
+    "pfp": "",
+    "banner": "",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/SeiSubjects"
+      },
+      {
+        "discord": "https://discord.gg/mhBv7ZMvGE"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 3333,
+    "version": "2024-01-17T21:25:45.083Z",
+    "_count": {
+      "tokens": 3333,
+      "auctions": 402,
+      "activities": 4928
+    },
+    "owners": 987,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "7000000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "18660655889"
+    }
+  },
+  {
+    "contract_address": "sei16zt75829qyqx26smgcp4qktsqdkhhfqd6v0mwd43xl7ytyw5fsnqycf70u",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "Sei Marines Club",
+    "symbol": "SMC",
+    "description": "Ahoy! Sei Marines Club is an NFT collection of 5555 pixelated Marines on the SEI blockchain",
+    "pfp": "",
+    "banner": "",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/SeiMarines_NFT"
+      },
+      {
+        "discord": "https://discord.com/invite/sei-marines-club"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 5555,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 5555,
+      "auctions": 664,
+      "activities": 5571
+    },
+    "owners": 2042,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "1350000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "5278216531"
+    }
+  },
+  {
+    "contract_address": "sei172r2cah7m898qj86epfe2wtvvkkgq5h408jz08h0ny26rj5zjs5qkch29k",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "Sei Rocks",
+    "symbol": "ROCK",
+    "description": "Rocks on Sei inspired by the iconic Ether Rock. https://www.seirocks.xyz/stake",
+    "pfp": "https://static-assets.pallet.exchange/pfp/seirocks.png",
+    "banner": "https://static-assets.pallet.exchange/banner/seirocks.jpg",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/SeiRocksNFT"
+      },
+      {
+        "discord": "https://discord.gg/seirocks"
+      },
+      {
+        "website": "https://www.seirocks.xyz/stake"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 6969,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 6969,
+      "auctions": 620,
+      "activities": 24689
+    },
+    "owners": 2129,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "18000000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "269645280800"
+    }
+  },
+  {
+    "contract_address": "sei1832l37vacma0nd3a88qummzmyq59w9a43ytsptyn40drjp05ts6qyraj97",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "Wen Pallet?",
+    "symbol": "WEN",
+    "description": "You ask, we answer. 1000 non-fungible pallets ready to be jeeted, by Sei Stoics.",
+    "pfp": "https://static-assets.pallet.exchange/pfp/wenpalletbyseistoics.jpg",
+    "banner": "https://static-assets.pallet.exchange/banner/wenpalletbyseistoics.jpg",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/TheSeiStoics"
+      },
+      {
+        "discord": "https://discord.com/invite/seistoics"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 1000,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 1000,
+      "auctions": 108,
+      "activities": 1839
+    },
+    "owners": 719,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "43000000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "20508628900"
+    }
+  },
+  {
+    "contract_address": "sei188meek4al2mnk3y0jf07p9pwnrfcq4q4cnpz24wl8wcg7lhrtnrq6grecc",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "XPX",
+    "symbol": "XPX",
+    "description": "An official token of Experiment X",
+    "pfp": "https://static-assets.pallet.exchange/pfp/experimentx.png",
+    "banner": "https://static-assets.pallet.exchange/banner/experimentx.png",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/X_periment_X"
+      },
+      {
+        "discord": "https://discord.gg/xperimentx"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 4000,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 4000,
+      "auctions": 454,
+      "activities": 5734
+    },
+    "owners": 720,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "3200000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "16290395890"
+    }
+  },
+  {
+    "contract_address": "sei18ddlx5jsqhugd8g3qd5h5l5xdzc00rhvk8khvrvlyrm4x4r2g4vsfs3ckf",
+    "chain_id": "pacific-1",
+    "creator": "sei1ffus553eet978k024lmssw0czsxwr97mggyv85lpcsdkft8v9ufspvp6t9",
+    "name": "Akira",
+    "symbol": "AKIRA",
+    "description": "Redefining Art Standards While Building The Most Humble Community",
+    "pfp": "https://static-assets.pallet.exchange/pfp/akira.png",
+    "banner": "https://static-assets.pallet.exchange/banner/akira.png",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/TheAkiraNFT"
+      },
+      {
+        "discord": "https://discord.com/invite/HwthTHbQ4C"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 4400,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 4400,
+      "auctions": 119,
+      "activities": 4083
+    },
+    "owners": 531,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "23800000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "84370929000"
+    }
+  },
+  {
+    "contract_address": "sei18jvwmxdrymavyftqhexzypr7gv5vruf44mj9r06094nzc7x96l2skfkpww",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "Seinsei",
+    "symbol": "SSEI",
+    "description": "Seinsei ",
+    "pfp": "https://static-assets.pallet.exchange/pfp/seinseis.jpg",
+    "banner": "https://static-assets.pallet.exchange/banner/seinseis.jpg",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/SeinseisNFT"
+      },
+      {
+        "discord": "https://discord.gg/FUEq8TCEMh"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 5555,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 5555,
+      "auctions": 856,
+      "activities": 14620
+    },
+    "owners": 2964,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "9000000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "79540557890"
+    }
+  },
+  {
+    "contract_address": "sei19kfsr9zft0k9awelwwv9k87mrgwf358tfqw9tv30rlvwn8rn5kzq00hnup",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "The Seinos",
+    "symbol": "LLTS",
+    "description": "Legendary League presents The Seinos Where gaming meets competition and camaraderie",
+    "pfp": "",
+    "banner": "",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/LegendaryWeb3"
+      },
+      {
+        "discord": "http://discord.gg/legendaryleague"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 814,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 814,
+      "auctions": 55,
+      "activities": 633
+    },
+    "owners": 353,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "158000000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "19908420000"
+    }
+  },
+  {
+    "contract_address": "sei19lsam8qjj3jacfhsuqnn7zsc9326uje8qp96neukhaxyjtk3pkhs366058",
+    "chain_id": "pacific-1",
+    "creator": "sei1rmvvm579dwlnh9y3py4mgtjntxxtf9tl2rx6uxv576dtwr3e2sdq68pf0u",
+    "name": "Seilors",
+    "symbol": "Seilor",
+    "description": "Seilors is a community committed to creating and sharing high-quality art. Fostering a wave of excitement on Sei. Welcome aboard!",
+    "pfp": "https://static-assets.pallet.exchange/pfp/seilors.png",
+    "banner": "https://static-assets.pallet.exchange/banner/seilors.jpeg",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/SeilorsNFT"
+      },
+      {
+        "discord": "https://discord.gg/seilors"
+      },
+      {
+        "website": "https://seilors.io/"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 10000,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 10000,
+      "auctions": 84,
+      "activities": 6542
+    },
+    "owners": 4977,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "202000000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "573376441000"
+    }
+  },
+  {
+    "contract_address": "sei1a9xzhtynlcu84jcwm0qdl82aqteqplpvuyme9vssawptk33rvzrqrvwcll",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "SEI MFers",
+    "symbol": "Mfers",
+    "description": "sei what, sei mfers",
+    "pfp": "https://static-assets.pallet.exchange/pfp/seimfers.jpg",
+    "banner": "https://static-assets.pallet.exchange/banner/seimfers.jpg",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/seimfers"
+      },
+      {
+        "discord": "https://discord.gg/seimfers"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 4999,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 4999,
+      "auctions": 423,
+      "activities": 9029
+    },
+    "owners": 1141,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "2950000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "12084453180"
+    }
+  },
+  {
+    "contract_address": "sei1ahxexdnrlxhjt53vcav7ktq6ygmwm8aqf5mskjdzdcauqtnn0jsqhtu95a",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "Daring Dragonz",
+    "symbol": "DEN",
+    "description": "1500 deflationary Daring Dragonz have alighted on $SEI, building \"The DEN\" and ready to conquer.",
+    "pfp": "https://static-assets.pallet.exchange/pfp/daringdragonz.png",
+    "banner": "https://static-assets.pallet.exchange/banner/daringdragonz.jpg",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/DaringDragonz"
+      },
+      {
+        "discord": "https://discord.gg/daringdragonz"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 1500,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 1500,
+      "auctions": 111,
+      "activities": 2107
+    },
+    "owners": 609,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "19000000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "14413414000"
+    }
+  },
+  {
+    "contract_address": "sei1aj6t3eyus0vc5w7f4dnr84tk7g5xwrxfughvl0rfjljjs90rtklqlmz966",
+    "chain_id": "pacific-1",
+    "creator": "sei1ffus553eet978k024lmssw0czsxwr97mggyv85lpcsdkft8v9ufspvp6t9",
+    "name": "Sei Shiba",
+    "symbol": "SEISHIBA",
+    "description": "SEI SHIBA is a revolutionary community for forward-thinking creators and builders on SEI, fueled by the boundless potential of Web3 and NFT Space. 🦴",
+    "pfp": "https://static-assets.pallet.exchange/pfp/shibas.png",
+    "banner": "https://static-assets.pallet.exchange/banner/shibas.png",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/_SeiShiba_"
+      },
+      {
+        "discord": "https://discord.gg/2FGChZm3wA"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 3000,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 3000,
+      "auctions": 117,
+      "activities": 2744
+    },
+    "owners": 431,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "23000000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "53194190000"
+    }
+  },
+  {
+    "contract_address": "sei1c56q465aeenfxykhaj8vt7vhhqtmhyn0ntvercdsge288xsdcjlq9xh8wx",
+    "chain_id": "pacific-1",
+    "creator": "sei1sqj8vkfe0wzyq3a04uqeu78nclum3r7nt23xya",
+    "name": "SPACE ID .sei Name Service",
+    "symbol": "SIDSEI",
+    "description": "Unlock your Web3 domain name on Sei Network. A SPACE ID name service",
+    "pfp": "https://static-assets.pallet.exchange/pfp/sidsei.svg",
+    "banner": "https://static-assets.pallet.exchange/banner/sidsei.jpg",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/SID_sei_name"
+      },
+      {
+        "discord": "https://discord.gg/spaceid"
+      },
+      {
+        "website": "https://sei.space.id"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 16947,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 16947,
+      "auctions": 2462,
+      "activities": 7840
+    },
+    "owners": 7377,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "5400000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "27427751900"
+    }
+  },
+  {
+    "contract_address": "sei1c9lg7md543g7w9hms4kpa7a0ddhm3g0zz3jr5gejcw3sql5f6jjsxuqwux",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "Sei Pepes",
+    "symbol": "PEPES",
+    "description": "Sei Pepes is here to create memable experience for you on sei blockchain",
+    "pfp": "",
+    "banner": "",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/seipepesnft"
+      },
+      {
+        "discord": "https://discord.gg/seipepes"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 936,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 936,
+      "auctions": 14,
+      "activities": 37
+    },
+    "owners": 774,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "8500000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "37000000"
+    }
+  },
+  {
+    "contract_address": "sei1cc0qgdxgstsjfnsz0u2at4flr93f0ux43u8lj770ft4dxfqvc6yqkvv289",
+    "chain_id": "pacific-1",
+    "creator": "sei1ffus553eet978k024lmssw0czsxwr97mggyv85lpcsdkft8v9ufspvp6t9",
+    "name": "Duck Club",
+    "symbol": "SEIDUCK",
+    "description": "Building the Ultimate Community on Sei Network, Duck Club aims to provide unparalleled advantages to the Sei Community, backed by experiences and culture.",
+    "pfp": "https://static-assets.pallet.exchange/pfp/duck.png",
+    "banner": "https://static-assets.pallet.exchange/banner/duck.png",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/SeiDuckClub"
+      },
+      {
+        "discord": "https://discord.com/invite/9Ebd2qNjft"
+      },
+      {
+        "website": "https://duckclub.xyz/"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 5555,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 5555,
+      "auctions": 289,
+      "activities": 8908
+    },
+    "owners": 1385,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "22000000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "326620130000"
+    }
+  },
+  {
+    "contract_address": "sei1d8hvqelcqf5qec3p5tqckagduqdgel6krfl50mdp33wl452tfjwsqnj2dj",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "Rug Duck Association",
+    "symbol": "RDA",
+    "description": "A Low Quality JPEG Collection by Duck Club on the World's Fastest Layer 1, Sei Network",
+    "pfp": "https://static-assets.pallet.exchange/pfp/rugduckassociation.png",
+    "banner": "https://static-assets.pallet.exchange/banner/rugduckassociation.jpg",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/SeiRugDuck"
+      },
+      {
+        "discord": "https://discord.gg/rugduckclub"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 8888,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 8888,
+      "auctions": 742,
+      "activities": 14919
+    },
+    "owners": 6044,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "5500000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "87045023689"
+    }
+  },
+  {
+    "contract_address": "sei1ddzwh4u8aqcrvs9tt95ecrzpdmpypjpmxzmw0fxjp864wj6vy65q6654tj",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "Seᶦ Gnᵒmₑs",
+    "symbol": "seignome",
+    "description": "ₛEᶦ gNᵒmEs aR ᴴeᵣe tO ᵀaₖE oᵥEʳ ₛeᴵ",
+    "pfp": "https://static-assets.pallet.exchange/pfp/seignomes.png",
+    "banner": "https://static-assets.pallet.exchange/banner/seignomes.png",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/seignomes"
+      },
+      {
+        "discord": "https://discord.gg/seignomes"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 3333,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 3333,
+      "auctions": 320,
+      "activities": 4411
+    },
+    "owners": 806,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "3000000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "21351035869"
+    }
+  },
+  {
+    "contract_address": "sei1dk4tyuffcgsscuwtg6hna97rhlngwe2gwl92mhfjgtseymnqjm6qr5jqlf",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "Kweck",
+    "symbol": "KWECK",
+    "description": "Flippin Kweck on Sei.",
+    "pfp": "",
+    "banner": "",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/SeiKweck"
+      },
+      {
+        "discord": "https://discord.gg/kweck"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 5555,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 5555,
+      "auctions": 399,
+      "activities": 14674
+    },
+    "owners": 1871,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "23000000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "85448453125"
+    }
+  },
+  {
+    "contract_address": "sei1faqw953tzda4qvr37wnjpr99t0hx6nqeknrf9c03gzrjvm764huqgvspst",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "Sei Bunnies",
+    "symbol": "SB",
+    "description": "4999 cute bunnies roaming on the Sei Network",
+    "pfp": "",
+    "banner": "",
+    "socials": [
+      {
+        "twitter": "https://x.com/seibunniesnft"
+      },
+      {
+        "discord": "https://discord.com/invite/SfQFc9CeKj"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 4999,
+    "version": "2024-01-18T00:46:36.606Z",
+    "_count": {
+      "tokens": 4999,
+      "auctions": 368,
+      "activities": 3142
+    },
+    "owners": 1965,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "500000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "1135936690"
+    }
+  },
+  {
+    "contract_address": "sei1fu4ffs6hnycczjkwpn6fk8ew9wf4vrqfsh79m8fp6lattqscnymqzdth64",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "SeiMadDoges",
+    "symbol": "SMD",
+    "description": "Mad Doges Only",
+    "pfp": "",
+    "banner": "",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/SeiMadDoges"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 8500,
+    "version": "2024-01-17T23:29:27.542Z",
+    "_count": {
+      "tokens": 8500,
+      "auctions": 0,
+      "activities": 0
+    },
+    "owners": 216,
+    "floor": [],
+    "volume": {
+      "denom": "usei",
+      "amount": "0"
+    }
+  },
+  {
+    "contract_address": "sei1g2a0q3tddzs7vf7lk45c2tgufsaqerxmsdr2cprth3mjtuqxm60qdmravc",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "Seiyans",
+    "symbol": "SYAN",
+    "description": "Seiyans going super seiyan",
+    "pfp": "https://static-assets.pallet.exchange/pfp/seiyans.png",
+    "banner": "https://static-assets.pallet.exchange/banner/seiyans.png",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/seiyansnft"
+      },
+      {
+        "discord": "https://discord.gg/7sNZYGdDgX"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 9001,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 9001,
+      "auctions": 565,
+      "activities": 29357
+    },
+    "owners": 4532,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "360000000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "3229743407570"
+    }
+  },
+  {
+    "contract_address": "sei1gccj8zy7xxntk9qgmw6wtsfv03dc0q6xz3ls4rncsysl3evtr8xs3ayzag",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "Sei Dragons",
+    "symbol": "DRGN",
+    "description": "SEI Dragons is an investment minded NFT community on the SEI Blockchain. Ranking and rewarding our community alpha callers and bringing weekly wins for our holders from our proprietary investment algo, FireBreather.",
+    "pfp": "https://static-assets.pallet.exchange/pfp/seidragons.png",
+    "banner": "https://static-assets.pallet.exchange/banner/seidragons.png",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/sei_dragons"
+      },
+      {
+        "discord": "https://discord.gg/seidragons"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 7777,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 7777,
+      "auctions": 266,
+      "activities": 3182
+    },
+    "owners": 1399,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "10900000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "16842376989"
+    }
+  },
+  {
+    "contract_address": "sei1gukfj2re9fsuhh3may8hl5sjjr7mk36edjkprqty6l35f2f07d7qgfk5dt",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "Seingus",
+    "symbol": "SEINGU",
+    "description": "Just a couple Seingus waddling around the SEI blockchain.",
+    "pfp": "https://static-assets.pallet.exchange/pfp/seingus.jpg",
+    "banner": "https://static-assets.pallet.exchange/banner/seingus.png",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/SeinguNFT"
+      },
+      {
+        "discord": "https://discord.com/invite/D4RGDK3QpR"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 3333,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 3333,
+      "auctions": 364,
+      "activities": 8439
+    },
+    "owners": 1190,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "14000000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "21812226508"
+    }
+  },
+  {
+    "contract_address": "sei1guxe769z6jyrcegempsfsz0m0y7hytf8jhpju7platkvrjzj98qshpfp2a",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "Elon",
+    "symbol": "ELON",
+    "description": "One for all and all for one",
+    "pfp": "",
+    "banner": "",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/V_Elementalss"
+      },
+      {
+        "discord": "https://discord.gg/Csk4Rwmswn"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 5555,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 5555,
+      "auctions": 466,
+      "activities": 3708
+    },
+    "owners": 3736,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "2000000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "4301273990"
+    }
+  },
+  {
+    "contract_address": "sei1jrkssr4pyc0tsqt0y7340lwv0awnnus9rhjgnaj2vcd8a4rt2m3q3txd3x",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "Sei Stoics",
+    "symbol": "SSPX",
+    "description": "Incubated by StoicPX, Stoics on Sei is a collection of 3000 avatars powered by a community of $SEI enthusiasts, building utilities around the eco",
+    "pfp": "https://static-assets.pallet.exchange/pfp/seistoics.jpg",
+    "banner": "https://static-assets.pallet.exchange/banner/seistoics.jpg",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/TheSeiStoics"
+      },
+      {
+        "discord": "https://discord.com/invite/seistoics"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 3000,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 3000,
+      "auctions": 114,
+      "activities": 2727
+    },
+    "owners": 1340,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "99000000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "49346759990"
+    }
+  },
+  {
+    "contract_address": "sei1l4jgfuzxa6yu4sj6yxkc4fkt4a944t35zse8szw9394p44njdzlqvde5g5",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "Seinosaurz",
+    "symbol": "SAURZ",
+    "description": "Seinosaurz with 3889 collection represents the original saurz from saurz studio",
+    "pfp": "",
+    "banner": "",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/seinosaurz"
+      },
+      {
+        "discord": "https://discord.gg/seinosaurz"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 3889,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 3889,
+      "auctions": 1007,
+      "activities": 7965
+    },
+    "owners": 2491,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "2990000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "16340881867"
+    }
+  },
+  {
+    "contract_address": "sei1lar5nkq0yektynmnx3x32yeqnqav0ms2rlv3v0xlypac9ntr78wq5drd5j",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "SEI9:Terradragons (テラドラゴンズ)",
+    "symbol": "SEI9",
+    "description": "3333 Terradragons (テラドラゴンズ) PFP Collection by SEI9",
+    "pfp": "",
+    "banner": "",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/Sei69Nove"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 3333,
+    "version": "2024-01-17T20:35:48.913Z",
+    "_count": {
+      "tokens": 3333,
+      "auctions": 152,
+      "activities": 1363
+    },
+    "owners": 559,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "5000000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "7908802221"
+    }
+  },
+  {
+    "contract_address": "sei1mfjy3lzavtpq040fspacanyh56skju09xg8k0fa5vjnz3pac6wfsh7nala",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "SeiPirates",
+    "symbol": "PRT",
+    "description": "Sail the blockchain seas",
+    "pfp": "https://static-assets.pallet.exchange/pfp/seipirates.jpg",
+    "banner": "https://static-assets.pallet.exchange/banner/seipirates.jpg",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/SeiPiratesNFT"
+      },
+      {
+        "discord": "https://discord.gg/seipiratesnft"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 3333,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 3333,
+      "auctions": 467,
+      "activities": 4205
+    },
+    "owners": 1465,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "3500000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "8720129000"
+    }
+  },
+  {
+    "contract_address": "sei1msmdzdn92aele5878x905h780l2ura0scppt74mkupmeyxk2zdds7e6swx",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "SeiSpirits",
+    "symbol": "SPRT",
+    "description": "Just 3333 Spirits Roaming the SEI Ecosystem.",
+    "pfp": "https://static-assets.pallet.exchange/pfp/seispirits.png",
+    "banner": "https://static-assets.pallet.exchange/banner/seispirits.png",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/SeiSpirits"
+      },
+      {
+        "discord": "https://discord.gg/seispirits"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 3333,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 3333,
+      "auctions": 341,
+      "activities": 11613
+    },
+    "owners": 1623,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "27000000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "241383240879"
+    }
+  },
+  {
+    "contract_address": "sei1np5ls7wmptvy2dd5tjldywlt0wwtfhptw76xlyjhqwsv7sj6rq0s90jhqf",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "Sei Portals",
+    "symbol": "PORTAL",
+    "description": "Enter the Portal",
+    "pfp": "https://static-assets.pallet.exchange/pfp/seiportals.png",
+    "banner": "https://static-assets.pallet.exchange/banner/seiportals.png",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/seiportals"
+      },
+      {
+        "discord": "https://discord.gg/seiportals"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 4444,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 4444,
+      "auctions": 619,
+      "activities": 10275
+    },
+    "owners": 1744,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "4900000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "74587262330"
+    }
+  },
+  {
+    "contract_address": "sei1nqux82dgsyx0uv6qfhgmxvrfv2rrg3c34c3t3n4w5zqttfq7j6fq2a7zhc",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "Nuit",
+    "symbol": "NUIT",
+    "description": "Are u Ready? Nuit is Ready..",
+    "pfp": "",
+    "banner": "",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/NuitNFT"
+      },
+      {
+        "discord": "https://discord.gg/nuit"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 5555,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 5555,
+      "auctions": 556,
+      "activities": 7491
+    },
+    "owners": 2397,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "3700000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "7184124679"
+    }
+  },
+  {
+    "contract_address": "sei1p5l7yc3ur779uqagp9wnfqpp0wpz3d4ju94hqx63sngqk3xfsstsr7scyr",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "SeiDoges",
+    "symbol": "SEIDOGES",
+    "description": "SeiDoges is the first gaming-NFT project on the Sei network, our goal is bring many people from outside of the SEI ecosystem.",
+    "pfp": "https://static-assets.pallet.exchange/pfp/seidoges.png",
+    "banner": "https://static-assets.pallet.exchange/banner/seidoges.png",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/SeiDogesNFT"
+      },
+      {
+        "discord": "https://discord.gg/seidoges"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 6666,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 6666,
+      "auctions": 686,
+      "activities": 14958
+    },
+    "owners": 3403,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "7400000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "34317894089"
+    }
+  },
+  {
+    "contract_address": "sei1pcwel0zepeervrhtgecs3kln2me2k3qd64spm2vy5wg8z865e4uq6v5x75",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "Seipal",
+    "symbol": "SEIPAL",
+    "description": "Only 100 Sei Opals can ever be available.",
+    "pfp": "https://static-assets.pallet.exchange/pfp/seiopal.jpg",
+    "banner": "https://static-assets.pallet.exchange/banner/seiopal.jpg",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/Seipalnft"
+      },
+      {
+        "discord": "https://discord.gg/seiopal"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 100,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 100,
+      "auctions": 8,
+      "activities": 140
+    },
+    "owners": 75,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "7077000000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "24573000000"
+    }
+  },
+  {
+    "contract_address": "sei1pe3x3dpvq7gl9xl332t0pws0yej9xvp5f280r3sg0mlfqcrhrkfsavf072",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "SEI Ducks",
+    "symbol": "SEI-DUs",
+    "description": "SEI Ducks (Ranks for this collection are currently being revised by the project – do not read into the current rankings)",
+    "pfp": "https://static-assets.pallet.exchange/pfp/seiducks.png",
+    "banner": "https://static-assets.pallet.exchange/banner/seiducks.png",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/SEIDucks"
+      },
+      {
+        "discord": "https://discord.gg/s2UxqVRb"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 6969,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 6969,
+      "auctions": 953,
+      "activities": 17122
+    },
+    "owners": 2456,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "5000000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "130848769460"
+    }
+  },
+  {
+    "contract_address": "sei1pkteljh83a83gmazcvam474f7dwt9wzcyqcf5puxvqqs6jcx8nnq2y74lu",
+    "chain_id": "pacific-1",
+    "creator": "sei1n98feagm4rz5lfvehq25689ukt47ee3e534xlwh0x0z5agvarm6s6m3l42",
+    "name": "The Colony",
+    "symbol": "COLONY",
+    "description": "A collection of 5,555 Mafia Antz swarming into SeiNetwork, forming The Colony... 🐜",
+    "pfp": "https://static-assets.pallet.exchange/pfp/colony-test.jpeg",
+    "banner": "https://static-assets.pallet.exchange/banner/colony3.jpg",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/thecolonynft__"
+      },
+      {
+        "discord": "https://discord.gg/TyDDa2j5dp"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 5555,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 5555,
+      "auctions": 216,
+      "activities": 31551
+    },
+    "owners": 2974,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "869000000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "4550550374573"
+    }
+  },
+  {
+    "contract_address": "sei1pxldvejk2q57yhxh2hck450gvddwhv5fcdchu7ys8xv33ywkcvpsftur73",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "Seiguins",
+    "symbol": "SGS",
+    "description": "",
+    "pfp": "https://static-assets.pallet.exchange/pfp/seiguins.jpg",
+    "banner": "https://static-assets.pallet.exchange/banner/seiguins.png",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/theseiguins"
+      },
+      {
+        "discord": "https://discord.gg/seiguins"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 999,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 999,
+      "auctions": 129,
+      "activities": 3051
+    },
+    "owners": 537,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "25000000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "48135930000"
+    }
+  },
+  {
+    "contract_address": "sei1s99j23ctng8jwm7uhrdtyr8vhn9mglcm0mgnxf84hxt32mkzwmgsdctsc8",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "NodeSpei",
+    "symbol": "NS",
+    "description": "6969 NodeSpei have been permanently recorded on #SEI",
+    "pfp": "https://static-assets.pallet.exchange/pfp/nodespei.jpg",
+    "banner": "https://static-assets.pallet.exchange/banner/nodespei.jpg",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/NodeSpei"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 6969,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 6969,
+      "auctions": 495,
+      "activities": 4105
+    },
+    "owners": 822,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "2790000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "14892252000"
+    }
+  },
+  {
+    "contract_address": "sei1skh49xnyqc3gz2gq8jq2ycqjg9dc4klvzq9sxs4dkgdynndfsc4q46pavk",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "Cool Cows",
+    "symbol": "COW",
+    "description": "Cool Cows the first pixel cows collection on sei blockchain aim to build the greatest community on sei blockchain.",
+    "pfp": "https://static-assets.pallet.exchange/pfp/coolcows.jpg",
+    "banner": "https://static-assets.pallet.exchange/banner/coolcows.jpg",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/coolcow_sei"
+      },
+      {
+        "discord": "https://discord.gg/coolcows"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 6666,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 6666,
+      "auctions": 746,
+      "activities": 17491
+    },
+    "owners": 2909,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "3500000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "50012520490"
+    }
+  },
+  {
+    "contract_address": "sei1sr6u2403g2vw5c8442wzhz00td80q5peedghay7nxcgcccckempq80pxz7",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "Sei Bears Club",
+    "symbol": "SBC",
+    "description": "",
+    "pfp": "",
+    "banner": "",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/seiBearNFTs"
+      },
+      {
+        "discord": "https://discord.gg/w7R6pcSd"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 7777,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 7777,
+      "auctions": 655,
+      "activities": 3127
+    },
+    "owners": 3151,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "990000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "1492609900"
+    }
+  },
+  {
+    "contract_address": "sei1swh8dxdpntgdj3z0mv6z030fjy80t484pkf9ce8veascfljynkjs3na2xs",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "SuperTusks",
+    "symbol": "ORC",
+    "description": "A collection of 10,000 distinct orc PFPs on Sei blockchain, each embodying unique traits and character. A blend of art and digital identity, ready for the era of NFTs.",
+    "pfp": "https://static-assets.pallet.exchange/pfp/supertusks.jpg",
+    "banner": "https://static-assets.pallet.exchange/banner/supertusks.jpg",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/supertusks"
+      },
+      {
+        "discord": "https://discord.gg/ZaXKVpu8"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 10000,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 10000,
+      "auctions": 718,
+      "activities": 14820
+    },
+    "owners": 4486,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "1500000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "40948872771"
+    }
+  },
+  {
+    "contract_address": "sei1t37a3zz329n58mw58jjh4qm3n8w38cu2s2wcre9dshy0h39hh3ysrv39ys",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "Seiguls",
+    "symbol": "Seigul",
+    "description": "A Horde of Seigulls flying over the $SEI blockchain",
+    "pfp": "https://static-assets.pallet.exchange/pfp/seigulls.png",
+    "banner": "https://static-assets.pallet.exchange/banner/seigulls.jpg",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/seigullsnfts"
+      },
+      {
+        "discord": "https://discord.gg/DwfVduct"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 4444,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 4444,
+      "auctions": 352,
+      "activities": 5513
+    },
+    "owners": 813,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "4000000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "17195578799"
+    }
+  },
+  {
+    "contract_address": "sei1u64thag5ltz7sjte7ggdd0k8wzr59p32vlswh89wswmz46relcqq6my5h6",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "Bulls on SEI",
+    "symbol": "SEIBULLS",
+    "description": "Building on SEI. Bullish AF.",
+    "pfp": "",
+    "banner": "",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/BullsonSEI"
+      },
+      {
+        "discord": "https://discord.gg/RuyUgVMt9m"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 1500,
+    "version": "2024-01-18T17:24:04.116Z",
+    "_count": {
+      "tokens": 1500,
+      "auctions": 163,
+      "activities": 1219
+    },
+    "owners": 864,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "14500000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "4263110000"
+    }
+  },
+  {
+    "contract_address": "sei1uv4s3r7akmtgemt3306kuu440l7a008xdvenu8n4my4ywckt2mrsvtqan8",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "Sei Ape Society",
+    "symbol": "APES",
+    "description": "Sei Apes Society is a collection of 4444 unique Apes. Each Ape is Make with Love and Care.",
+    "pfp": "",
+    "banner": "",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/SeiApesNFT"
+      },
+      {
+        "discord": "https://discord.gg/seiapesnft"
+      },
+      {
+        "website": "https://seiapes.xyz/"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 4444,
+    "version": "2024-01-18T18:20:40.170Z",
+    "_count": {
+      "tokens": 4444,
+      "auctions": 369,
+      "activities": 3681
+    },
+    "owners": 1526,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "4200000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "9236463700"
+    }
+  },
+  {
+    "contract_address": "sei1v90ly54qeu7497lzk2mnmp2h29sgtep8hs5ryvfqf8dwq5gc0t9srp6aey",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "WeBump",
+    "symbol": "BUMP",
+    "description": "Whats poppin? we bumpin",
+    "pfp": "https://static-assets.pallet.exchange/pfp/webump.jpg",
+    "banner": "https://static-assets.pallet.exchange/banner/webump.png",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/webump_"
+      },
+      {
+        "discord": "https://discord.gg/m2WEtFRY8q"
+      },
+      {
+        "website": "https://webump.xyz"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 4444,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 4444,
+      "auctions": 102,
+      "activities": 15518
+    },
+    "owners": 3023,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "1150000000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "2638478249899"
+    }
+  },
+  {
+    "contract_address": "sei1va06zjmjyjrhmqnepznt6z94hnd2dssj489rh4pggv5uaxphzc0qyhec5c",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "SeiPunks",
+    "symbol": "SP",
+    "description": "The first 10000 Punks on SEI",
+    "pfp": "https://static-assets.pallet.exchange/pfp/seipunks.png",
+    "banner": "https://static-assets.pallet.exchange/banner/seipunks.png",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/punkssei"
+      },
+      {
+        "discord": "https://discord.gg/seipunks"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 10000,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 10000,
+      "auctions": 1130,
+      "activities": 20749
+    },
+    "owners": 3654,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "7700000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "96033045024"
+    }
+  },
+  {
+    "contract_address": "sei1vjgrptlrm0alx330lv6260kzewv7p8elpputvedd45sxrtel2v5qzkrcd7",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "Seiber Punks",
+    "symbol": "SPK",
+    "description": "The First Punks on SEI. Seiber Punks made to explore the Seiber space, created for those daring enough to Seize the day, burn the Seity down, and break free from the Seistem.",
+    "pfp": "https://static-assets.pallet.exchange/pfp/seiberpunks.jpg",
+    "banner": "https://static-assets.pallet.exchange/banner/seiberpunks.jpg",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/seiber_punks"
+      },
+      {
+        "discord": "https://discord.gg/dGuVxW6wSd"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 10000,
+    "version": "2024-01-17T18:00:00.000Z",
+    "_count": {
+      "tokens": 10000,
+      "auctions": 496,
+      "activities": 3882
+    },
+    "owners": 2363,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "1690000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "4223494900"
+    }
+  },
+  {
+    "contract_address": "sei1wfl480fuwa68yhdzapunsvqmmyuz8ckzz06jgy7h6t7las742qjstw7gs6",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "Seitopia",
+    "symbol": "SEITOPIA",
+    "description": "art. utility. exclusivity. gamblefi. 555.",
+    "pfp": "",
+    "banner": "",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/seitopia_nft"
+      },
+      {
+        "discord": "https://discord.gg/yX6FvEz98v"
+      },
+      {
+        "website": "https://seitopia.com/"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 555,
+    "version": "2024-01-18T14:31:15.074Z",
+    "_count": {
+      "tokens": 555,
+      "auctions": 51,
+      "activities": 1545
+    },
+    "owners": 383,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "670000000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "111455440000"
+    }
+  },
+  {
+    "contract_address": "sei1xtacm5jrw3kg49x4mq5g0netlparkyqjwp28dzng3whhjqjnd3gqht8zn0",
+    "chain_id": "pacific-1",
+    "creator": "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
+    "name": "Sei Chicks",
+    "symbol": "CHICK",
+    "description": "A collection of 4444 unique Pixel Chicks, hatched on $SEI",
+    "pfp": "",
+    "banner": "",
+    "socials": [
+      {
+        "twitter": "https://twitter.com/sei_chiks"
+      },
+      {
+        "discord": "https://discord.gg/seichiks"
+      }
+    ],
+    "send_listing_notification": false,
+    "calculate_rarities": false,
+    "start_after": "",
+    "supply": 4444,
+    "version": "2024-01-17T20:23:26.541Z",
+    "_count": {
+      "tokens": 4444,
+      "auctions": 322,
+      "activities": 1808
+    },
+    "owners": 2536,
+    "floor": [
+      {
+        "denom": "usei",
+        "amount": "990000"
+      }
+    ],
+    "volume": {
+      "denom": "usei",
+      "amount": "830288000"
+    }
+  }
+]

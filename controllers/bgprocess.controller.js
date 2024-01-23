@@ -1,6 +1,8 @@
 const fs = require("fs");
 const axios = require("axios");
 const { SigningCosmWasmClient } = require("@cosmjs/cosmwasm-stargate");
+const mongoose = require("mongoose");
+const Collection = require("../models/collection.model");
 
 const MAX_RETRIES = 5;
 const RETRY_DELAY = 1000; // in milliseconds
@@ -18,15 +20,16 @@ exports.fetchCollections = async (req, res) => {
         const page2 = result.data.nfts.pages["2"];
         let collections = page1.concat(page2);
 
-        const directoryPath = __basedir + "/assets/";
-        if (!fs.existsSync(directoryPath)) {
-          fs.mkdirSync(directoryPath);
-        }
+        // const directoryPath = __basedir + "/assets/";
+        // if (!fs.existsSync(directoryPath)) {
+        //   fs.mkdirSync(directoryPath);
+        // }
 
-        fs.writeFileSync(
-          directoryPath + "collections",
-          JSON.stringify(collections)
-        );
+        // fs.writeFileSync(
+        //   directoryPath + "collections",
+        //   JSON.stringify(collections)
+        // );
+        await saveCollections(collections);
 
         res.send({
           message: "Collection stored Successfully!",
@@ -57,6 +60,29 @@ exports.fetchNfts = async (req, res) => {
     console.log(collection.contract_address, countOfNfts);
 
     await saveNfts(collection.contract_address, countOfNfts);
+  }
+};
+
+const saveCollections = async (collections) => {
+  try {
+    const bulkOperations = collections.map((collection) => {
+      const { contract_address } = collection;
+
+      return {
+        updateOne: {
+          filter: { contract_address },
+          update: collection,
+          upsert: true,
+        },
+      };
+    });
+
+    const CollectionModel = mongoose.model("collections", Collection.schema);
+
+    // Perform the bulk write operation
+    await CollectionModel.bulkWrite(bulkOperations);
+  } catch (error) {
+    console.error("Error saving collections: ", error);
   }
 };
 

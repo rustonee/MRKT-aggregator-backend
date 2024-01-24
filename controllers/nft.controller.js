@@ -4,7 +4,7 @@ exports.getNfts = async (req, res) => {
   try {
     const contractAddress = req.params.address.toString();
     const page = parseInt(req.query.page) || 1;
-    const limit = parseInt(req.query.limit) || 25;
+    const limit = parseInt(req.query.page_size) || 25;
 
     const api_url = process.env.API_URL;
     const result = await axios.get(

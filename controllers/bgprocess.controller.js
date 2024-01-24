@@ -3,11 +3,12 @@ const axios = require("axios");
 const { SigningCosmWasmClient } = require("@cosmjs/cosmwasm-stargate");
 const mongoose = require("mongoose");
 const Collection = require("../models/collection.model");
+const Nft = require("../models/nft.model");
 
-const MAX_RETRIES = 5;
+const MAX_RETRIES = 3;
 const RETRY_DELAY = 1000; // in milliseconds
 
-exports.fetchCollections = async (req, res) => {
+exports.fetchCollections = async () => {
   try {
     const api_url = process.env.API_URL;
     const result = await axios.get(`${api_url}/nfts?get_tokens=false`);
@@ -16,42 +17,29 @@ exports.fetchCollections = async (req, res) => {
       next(JSON.stringify({ success: false, message: "Can not fetch." }));
     } else {
       if (result.data.nfts) {
-        const page1 = result.data.nfts.pages["1"];
-        const page2 = result.data.nfts.pages["2"];
-        let collections = page1.concat(page2);
+        let collections = [];
+        const total = result.data.nfts.total;
+        const pageSize = result.data.nfts.page_size;
+        const count = Math.ceil(total / pageSize);
+        for (let idx = 1; idx <= count; idx++) {
+          const page = result.data.nfts.pages[`${idx}`];
+          collections = collections.concat(page);
+        }
 
-        // const directoryPath = __basedir + "/assets/";
-        // if (!fs.existsSync(directoryPath)) {
-        //   fs.mkdirSync(directoryPath);
-        // }
-
-        // fs.writeFileSync(
-        //   directoryPath + "collections",
-        //   JSON.stringify(collections)
-        // );
         await saveCollections(collections);
 
-        res.send({
-          message: "Collection stored Successfully!",
-        });
+        console.log("Collection stored Successfully.");
       } else {
-        res.send({
-          message: "No found collections!",
-        });
+        console.log("No found collections.");
       }
     }
   } catch (err) {
-    console.log(err);
-    res.status(500).send({
-      message:
-        err.message || "Some error occurred while creating the Collection.",
-    });
-    return;
+    console.log("Some error occurred while saving the Collections.", err);
   }
 };
 
-exports.fetchNfts = async (req, res) => {
-  const collections = readJSONFromFile("collections");
+exports.fetchNfts = async () => {
+  const collections = await Collection.find();
   for (const collection of collections) {
     const countOfNfts = await getCountOfNftsFromContract(
       collection.contract_address
@@ -66,12 +54,14 @@ exports.fetchNfts = async (req, res) => {
 const saveCollections = async (collections) => {
   try {
     const bulkOperations = collections.map((collection) => {
+      // collection.volume.amount = "1111";
       const { contract_address } = collection;
 
       return {
         updateOne: {
           filter: { contract_address },
-          update: collection,
+          // update: collection,
+          update: { $set: collection },
           upsert: true,
         },
       };
@@ -90,21 +80,31 @@ const saveNfts = async (collectionAddress, count) => {
   let nfts = [];
   for (let tokenId = 0; tokenId < count; tokenId++) {
     const nft = await getNftFromContract(collectionAddress, tokenId);
-    // console.log(`tokenId: ${tokenId} => `, nft);
-    if (nft && nft.status === "active_auction") {
+    if (nft) {
       nfts.push(nft);
     }
   }
 
-  const directoryPath = __basedir + "/assets/nfts";
-  if (!fs.existsSync(directoryPath)) {
-    fs.mkdirSync(directoryPath);
-  }
+  try {
+    const bulkOperations = nfts.map((nft) => {
+      const { key } = nft;
 
-  fs.writeFileSync(
-    directoryPath + "/" + collectionAddress,
-    JSON.stringify(nfts)
-  );
+      return {
+        updateOne: {
+          filter: { key },
+          update: { $set: nft },
+          upsert: true,
+        },
+      };
+    });
+
+    const NftModel = mongoose.model("nfts", Nft.schema);
+
+    // Perform the bulk write operation
+    await NftModel.bulkWrite(bulkOperations);
+  } catch (error) {
+    console.error("Error saving nfts: ", error);
+  }
 };
 
 const getCountOfNftsFromContract = async (contractAddress) => {
@@ -131,16 +131,40 @@ const getNftFromContract = async (collectionAddress, tokenId) => {
       }
     }`;
 
-    let nft = await queryContract(process.env.SEI_CONTROLLER_ADDRESS, queryMsg);
+    const nftInfo = await queryContract(
+      process.env.SEI_CONTROLLER_ADDRESS,
+      queryMsg
+    );
+
+    if (!nftInfo) {
+      return null;
+    }
 
     const metadata = await getMetadataOfNftFromContract(
       collectionAddress,
       tokenId
     );
 
-    nft.metadata = metadata;
+    const nft = {
+      key: `${nftInfo.nft_address}-${nftInfo.nft_token_id}`,
+      id: nftInfo.nft_token_id,
+      id_int: parseInt(nftInfo.nft_token_id),
+      name: metadata?.name || nftInfo.nft_info.name,
+      description: metadata?.description || nftInfo.nft_info.description,
+      owner: nftInfo.owner,
+      status: nftInfo.status,
+      verified: nftInfo.verified,
+      image: metadata?.image || "",
+      last_sale: {},
+      collection_key: nftInfo.nft_address,
+      symbol: nftInfo.nft_info.symbol,
+      rarity: {},
+      traits: metadata?.attributes || [],
+      auction: nftInfo.auction || [],
+      bid: nftInfo.bid || [],
+    };
 
-    console.log("nft: ", nft);
+    // console.log("nft: ", nft);
 
     return nft;
   } catch (err) {
@@ -159,10 +183,7 @@ const getMetadataOfNftFromContract = async (collectionAddress, tokenId) => {
 
     const nftInfo = await queryContract(collectionAddress, queryMsg);
     if (nftInfo && nftInfo.token_uri) {
-      // console.log("metadata uri: ", nftInfo);
-
       const result = await axios.get(nftInfo.token_uri, { maxRedirects: 5 });
-
       return result.data;
     }
   } catch (err) {
@@ -182,8 +203,6 @@ const queryContract = async (contractAddress, queryMsg, retryCount = 0) => {
       JSON.parse(queryMsg)
     );
 
-    // console.log(queryResult);
-
     return queryResult;
   } catch (err) {
     if (retryCount < MAX_RETRIES) {
@@ -192,7 +211,9 @@ const queryContract = async (contractAddress, queryMsg, retryCount = 0) => {
       await delay(delayTime);
       return queryContract(contractAddress, queryMsg, retryCount + 1);
     } else {
-      throw new Error("Max retry attempts reached");
+      // throw new Error("Max retry attempts reached");
+      console.log("error contract fetching", queryMsg);
+      return null;
     }
   }
 };

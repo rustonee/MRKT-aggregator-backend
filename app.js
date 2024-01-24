@@ -10,14 +10,17 @@ const nftRouter = require("./routes/nft");
 const mongoose = require("mongoose");
 const { dbConfig } = require("./config/db.config");
 
+const cron = require("node-cron");
+const bgController = require("./controllers/bgprocess.controller");
+
 global.__basedir = __dirname;
 
 const app = express();
 
-// const cron = require('node-cron');
-// cron.schedule('* * * * *', function() {
-//   console.log('running a task every 5 seconds');
-// });
+cron.schedule("*/10 * * * *", async function () {
+  console.log("running a task every 10 minutes");
+  await bgController.fetchCollections();
+});
 
 global.__basedir = __dirname;
 
@@ -46,7 +49,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/api", indexRouter);
-app.use("/api/bgprocess", bgRouter);
 app.use("/api/collections", collectionRouter);
 app.use("/api/nfts", nftRouter);
 

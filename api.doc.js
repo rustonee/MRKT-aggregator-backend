@@ -285,7 +285,7 @@ const apiDocumentation = {
     "/api/nfts/:address/:token_id": {
       get: {
         tags: ["Nfts operations"],
-        description: "Get collection",
+        description: "Get nft",
         parameters: [
           {
             name: "address",
@@ -311,7 +311,7 @@ const apiDocumentation = {
         ],
         responses: {
           200: {
-            description: "Collection were obtained",
+            description: "Nft were obtained",
             content: {
               "application/json": {
                 schema: {

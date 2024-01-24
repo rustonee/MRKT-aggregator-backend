@@ -188,6 +188,16 @@ const apiDocumentation = {
             },
           },
           {
+            name: "buy_now_only",
+            in: "header",
+            required: true,
+            description: "If true, get purchasable nfts, else get all nfts",
+            schema: {
+              type: "boolean",
+              example: "true",
+            },
+          },
+          {
             name: "page",
             in: "header",
             required: true,

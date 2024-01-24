@@ -13,6 +13,9 @@ const { dbConfig } = require("./config/db.config");
 const cron = require("node-cron");
 const bgController = require("./controllers/bgprocess.controller");
 
+const swaggerUi = require("swagger-ui-express");
+const apiDocumentation = require("./api.doc");
+
 global.__basedir = __dirname;
 
 const app = express();
@@ -47,6 +50,8 @@ app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: false, limit: "50mb" }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(apiDocumentation));
 
 app.use("/api", indexRouter);
 app.use("/api/collections", collectionRouter);

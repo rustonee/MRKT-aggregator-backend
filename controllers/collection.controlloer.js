@@ -1,39 +1,13 @@
 const fs = require("fs");
 const { default: axios } = require("axios");
+const Collection = require("../models/collection.model");
 
 exports.getCollections = async (req, res) => {
   try {
-    let collections = readJSONFromFile("collections");
-    if (!collections) {
-      const api_url = process.env.API_URL;
-      const result = await axios.get(`${api_url}/nfts?get_tokens=false`);
-
-      if (!result.data) {
-        next(JSON.stringify({ success: false, message: "Can not fetch." }));
-      } else {
-        if (result.data.nfts) {
-          const page1 = result.data.nfts.pages["1"];
-          const page2 = result.data.nfts.pages["2"];
-          collections = page1.concat(page2);
-
-          const directoryPath = __basedir + "/assets/";
-          if (!fs.existsSync(directoryPath)) {
-            fs.mkdirSync(directoryPath);
-          }
-
-          fs.writeFileSync(
-            directoryPath + "collections",
-            JSON.stringify(collections)
-          );
-        } else {
-          res.send({
-            message: "No found collections!",
-          });
-        }
-      }
-    }
+    const collections = await Collection.find({}, { _id: 0, __v: 0 });
 
     res.json({
+      total: collections.length,
       collections,
     });
   } catch (err) {

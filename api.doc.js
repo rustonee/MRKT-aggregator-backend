@@ -92,7 +92,7 @@ const apiDocumentation = {
         },
       },
     },
-    "/api/collections/:address": {
+    "/api/collections/{address}": {
       get: {
         tags: ["Collections operations"],
         description: "Get collection",
@@ -171,7 +171,7 @@ const apiDocumentation = {
         },
       },
     },
-    "/api/nfts/:address": {
+    "/api/nfts/{address}": {
       get: {
         tags: ["Nfts operations"],
         description: "Get nfts of collection",
@@ -292,7 +292,7 @@ const apiDocumentation = {
         },
       },
     },
-    "/api/nfts/:address/:token_id": {
+    "/api/nfts/{address}/{token_id}": {
       get: {
         tags: ["Nfts operations"],
         description: "Get nft",

@@ -4,7 +4,6 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const cors = require("cors");
 const indexRouter = require("./routes/index");
-const bgRouter = require("./routes/bgprocess");
 const collectionRouter = require("./routes/collection");
 const nftRouter = require("./routes/nft");
 const mongoose = require("mongoose");

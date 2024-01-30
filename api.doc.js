@@ -11,19 +11,51 @@ const apiDocumentation = {
       description: "Local server",
     },
     {
-      url: "http://18.222.26.84",
+      url: "https://api.test.mrkt.exchange",
       description: "Testing server",
     },
-    {
-      url: "http://18.222.26.84",
-      description: "Production server",
-    },
+    // {
+    //   url: "https://api.test.mrkt.exchange",
+    //   description: "Production server",
+    // },
   ],
   paths: {
     "/api/collections": {
       get: {
         tags: ["Collections operations"],
         description: "Get collections",
+        parameters: [
+          {
+            name: "name",
+            in: "header",
+            required: false,
+            description: "Key for searching collections",
+            schema: {
+              type: "string",
+              example: "dob",
+            },
+          },
+          {
+            name: "page",
+            in: "header",
+            required: false,
+            description: "Page index",
+            schema: {
+              type: "integer",
+              example: "1",
+            },
+          },
+          {
+            name: "page_size",
+            in: "header",
+            required: false,
+            description: "Counts per page",
+            schema: {
+              type: "integer",
+              example: "25",
+            },
+          },
+        ],
         responses: {
           200: {
             description: "Collections were obtained",
@@ -42,45 +74,45 @@ const apiDocumentation = {
                       example: [
                         {
                           contract_address:
-                            "sei15w6sty6cjjraxanrxxx0y09adwjtywhkcmydh7np25zezg9m5mwsfduktd",
+                            "sei1v90ly54qeu7497lzk2mnmp2h29sgtep8hs5ryvfqf8dwq5gc0t9srp6aey",
+                          auction_count: 66,
+                          banner:
+                            "https://static-assets.pallet.exchange/banner/webump.png",
+                          calculate_rarities: false,
                           chain_id: "pacific-1",
                           creator:
                             "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
-                          name: "SEI Subjects",
-                          symbol: "SEISUBJ",
-                          description:
-                            "The subjects of our experiments have come alive.",
-                          pfp: "",
-                          banner: "",
+                          creator_info: {
+                            domain: null,
+                            pfp: "https://static-assets.pallet.exchange/pfp/user3.jpg",
+                          },
+                          description: "Whats poppin? we bumpin",
+                          floor: 2349,
+                          floor_24hr: 2349,
+                          name: "WeBump",
+                          onboard_tx_id: null,
+                          owners: 3062,
+                          pfp: "https://static-assets.pallet.exchange/pfp/webump.jpg",
+                          public: true,
+                          send_listing_notification: false,
+                          slug: "webump",
                           socials: [
                             {
-                              twitter: "https://twitter.com/SeiSubjects",
+                              twitter: "https://twitter.com/webump_",
                             },
                             {
-                              discord: "https://discord.gg/mhBv7ZMvGE",
+                              discord: "https://discord.gg/m2WEtFRY8q",
+                            },
+                            {
+                              website: "https://webump.xyz",
                             },
                           ],
-                          send_listing_notification: false,
-                          calculate_rarities: false,
                           start_after: "",
-                          supply: 3333,
-                          version: "2024-01-17T21:25:45.083Z",
-                          _count: {
-                            tokens: 3333,
-                            auctions: 402,
-                            activities: 4928,
-                          },
-                          owners: 987,
-                          floor: [
-                            {
-                              denom: "usei",
-                              amount: "7000000",
-                            },
-                          ],
-                          volume: {
-                            denom: "usei",
-                            amount: "18660655889",
-                          },
+                          supply: 4444,
+                          symbol: "BUMP",
+                          version: "2024-01-17T18:00:00.000Z",
+                          volume: 3533158.989899,
+                          volume_24hr: 72726.88,
                         },
                       ],
                     },

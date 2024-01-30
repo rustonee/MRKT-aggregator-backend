@@ -19,7 +19,7 @@ global.__basedir = __dirname;
 
 const app = express();
 
-cron.schedule("*/10 * * * *", async function () {
+cron.schedule("*/15 * * * *", async function () {
   console.log("running a task every 10 minutes");
   await bgController.fetchCollections();
 });

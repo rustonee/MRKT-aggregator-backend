@@ -8,6 +8,7 @@ const Nft = require("../models/nft.model");
 const MAX_RETRIES = 3;
 const RETRY_DELAY = 1000; // in milliseconds
 
+/*
 exports.fetchCollections = async () => {
   try {
     const api_url = process.env.API_URL;
@@ -37,6 +38,43 @@ exports.fetchCollections = async () => {
     console.log("Some error occurred while saving the Collections.", err);
   }
 };
+*/
+
+exports.fetchCollections = async () => {
+  try {
+    let collections = await Collection.find();
+    if (collections.length === 0) {
+      collections = readCollectionsFromFile("collections");
+    }
+
+    let newCollections = [];
+    for (let idx = 0; idx < collections.length; idx++) {
+      const collection = collections[idx];
+
+      const address = collection.contract_address;
+      const collectionDetails = await fetchCollection(address);
+      collectionDetails.floor_24hr = collectionDetails.floor;
+
+      if (collection.pfp === "") {
+        const pfp = await getPfp(collectionDetails.slug, address);
+        collectionDetails.pfp = pfp;
+      } else {
+        collectionDetails.pfp = collection.pfp;
+      }
+
+      newCollections.push(collectionDetails);
+
+      await delay(300);
+      console.log(idx + " : " + collectionDetails);
+    }
+
+    await saveCollections(newCollections);
+
+    console.log("Collection stored Successfully.");
+  } catch (err) {
+    console.log("Some error occurred while saving the Collections.", err);
+  }
+};
 
 exports.fetchNfts = async () => {
   const collections = await Collection.find();
@@ -54,7 +92,6 @@ exports.fetchNfts = async () => {
 const saveCollections = async (collections) => {
   try {
     const bulkOperations = collections.map((collection) => {
-      // collection.volume.amount = "1111";
       const { contract_address } = collection;
 
       return {
@@ -220,29 +257,66 @@ const queryContract = async (contractAddress, queryMsg, retryCount = 0) => {
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-// Read JSON object from a file
-const readJSONFromFile = (filename) => {
+const fetchCollection = async (address) => {
   try {
-    const directoryPath = __basedir + "/assets/";
-    const collectionsData = fs.readFileSync(directoryPath + filename, "utf8");
-    return JSON.parse(collectionsData);
-  } catch (err) {
-    console.log(`Error readJSONFromFile => ${filename} : " ${err.message}`);
-    return null;
-  }
-};
-
-exports.fetchMetadata = async (req, res) => {
-  try {
-    const url =
-      "https://arweave.net/DKOBH7mOBBmqT7clT7lck-egEWSleybJHtTj6NOnhvM/0";
-    const result = await axios.get(url);
-    console.log(result.data);
+    const api_url = process.env.API_URL;
+    const result = await axios.get(
+      `${api_url}/nfts/${address}?get_tokens=false`
+    );
+    return result.data;
   } catch (err) {
     console.log("error", err);
   }
 
-  res.send({
-    message: "NFTs stored Successfully!",
-  });
+  return null;
+};
+
+const getPfp = async (name, address) => {
+  const asset_url = process.env.ASSET_URL;
+  let pfpName = name.replaceAll("-", "").toLowerCase();
+
+  let ret = await checkUrl(`${asset_url}/pfp/${pfpName}.png`);
+  if (ret) {
+    return `${asset_url}/pfp/${pfpName}.png`;
+  }
+
+  ret = await checkUrl(`${asset_url}/pfp/${pfpName}.jpg`);
+  if (ret) {
+    return `${asset_url}/pfp/${pfpName}.jpg`;
+  }
+
+  //url("https://static-assets.pallet.exchange/collections/pfp/sei1ezqkre4j3gkxlfhc23zv7w4nz8guwyczu70w650008dv3yscj2pqky7x7g_pfp.png")
+  ret = await checkUrl(`${asset_url}/collections/pfp/${address}_pfp.png`);
+  if (ret) {
+    return `${asset_url}/collections/pfp/${address}_pfp.png`;
+  }
+
+  return "";
+};
+
+const checkUrl = async (url) => {
+  try {
+    const response = await axios.head(url);
+    if (response.status === 200) {
+      return true;
+    }
+  } catch (error) {
+    console.log(`Error occurred while checking ${url} : `, error.message);
+  }
+
+  return false;
+};
+
+// Read collections from a file
+const readCollectionsFromFile = (filename) => {
+  try {
+    const directoryPath = __basedir + "/public/assets/";
+    const collectionsData = fs.readFileSync(directoryPath + filename, "utf8");
+    return JSON.parse(collectionsData);
+  } catch (err) {
+    console.log(
+      `Error readCollectionsFromFile => ${filename} : " ${err.message}`
+    );
+    return [];
+  }
 };

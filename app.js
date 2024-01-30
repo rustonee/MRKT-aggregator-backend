@@ -52,8 +52,8 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(apiDocumentation));
 
-app.use("/api", indexRouter);
-app.use("/api/collections", collectionRouter);
-app.use("/api/nfts", nftRouter);
+app.use("/api/v1", indexRouter);
+app.use("/api/v1/collections", collectionRouter);
+app.use("/api/v1/nfts", nftRouter);
 
 module.exports = app;

@@ -20,14 +20,14 @@ const apiDocumentation = {
     // },
   ],
   paths: {
-    "/api/collections": {
+    "/api/v1/collections": {
       get: {
         tags: ["Collections operations"],
         description: "Get collections",
         parameters: [
           {
             name: "name",
-            in: "header",
+            in: "query",
             required: false,
             description: "Key for searching collections",
             schema: {
@@ -37,7 +37,7 @@ const apiDocumentation = {
           },
           {
             name: "page",
-            in: "header",
+            in: "query",
             required: false,
             description: "Page index",
             schema: {
@@ -47,7 +47,7 @@ const apiDocumentation = {
           },
           {
             name: "page_size",
-            in: "header",
+            in: "query",
             required: false,
             description: "Counts per page",
             schema: {
@@ -124,7 +124,7 @@ const apiDocumentation = {
         },
       },
     },
-    "/api/collections/{address}": {
+    "/api/v1/collections/{address}": {
       get: {
         tags: ["Collections operations"],
         description: "Get collection",
@@ -203,7 +203,7 @@ const apiDocumentation = {
         },
       },
     },
-    "/api/nfts/{address}": {
+    "/api/v1/nfts/{address}": {
       get: {
         tags: ["Nfts operations"],
         description: "Get nfts of collection",
@@ -221,7 +221,7 @@ const apiDocumentation = {
           },
           {
             name: "buy_now_only",
-            in: "header",
+            in: "query",
             required: true,
             description: "If true, get purchasable nfts, else get all nfts",
             schema: {
@@ -231,7 +231,7 @@ const apiDocumentation = {
           },
           {
             name: "page",
-            in: "header",
+            in: "query",
             required: true,
             description: "Page index",
             schema: {
@@ -241,7 +241,7 @@ const apiDocumentation = {
           },
           {
             name: "page_size",
-            in: "header",
+            in: "query",
             required: true,
             description: "Counts per page",
             schema: {
@@ -324,7 +324,7 @@ const apiDocumentation = {
         },
       },
     },
-    "/api/nfts/{address}/{token_id}": {
+    "/api/v1/nfts/{address}/{token_id}": {
       get: {
         tags: ["Nfts operations"],
         description: "Get nft",

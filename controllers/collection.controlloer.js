@@ -106,11 +106,15 @@ const calculatePriceChange = async address => {
 };
 
 const fetchCollectionSaleCount = async address => {
-  const { data } = await axios.get(
-    `https://api.prod.pallet.exchange/api/v2/nfts/${address}/details`
-  );
+  try {
+    const { data } = await axios.get(
+      `https://api.prod.pallet.exchange/api/v2/nfts/${address}/details`
+    );
 
-  return data?.num_sales_24hr;
+    return data?.num_sales_24hr;
+  } catch {
+    return undefined;
+  }
 };
 
 const fetchCollection = async address => {

@@ -25,7 +25,7 @@ exports.getNfts = async (req, res) => {
   } catch (err) {
     console.log(err);
     res.status(500).send({
-      message: err.message || "Some error occurred while fetching the NFTs.",
+      message: err.message || "Some error occurred while fetching the NFTs."
     });
     return;
   }
@@ -53,8 +53,49 @@ exports.getNft = async (req, res) => {
   } catch (err) {
     console.log(err);
     res.status(500).send({
-      message: err.message || "Some error occurred while fetching the NFTs.",
+      message: err.message || "Some error occurred while fetching the NFTs."
     });
+    return;
+  }
+};
+
+exports.getNftActivities = async (req, res) => {
+  try {
+    const tokenId = req.params.tokenId;
+    const address = req.params.address;
+
+    const eventMapping = {
+      sold: "sale",
+      listed: `list%5C_`
+    };
+    const event = eventMapping[req.query.event] || "sale";
+
+    const page = req.query.page;
+    const pageSize = req.query.page_size;
+
+    const api_url = process.env.API_URL;
+
+    const result = await axios.get(
+      `${api_url}/marketplace/activities?event_type=${event}`,
+      {
+        params: {
+          chain_id: "pacific-1",
+          nft_address: address,
+          nft_token_id: tokenId,
+          page,
+          page_size: pageSize
+        }
+      }
+    );
+
+    res.json(result.data);
+  } catch (error) {
+    res.status(500).send({
+      message:
+        error.message ||
+        "Some error occurred while fetching the nft activities."
+    });
+
     return;
   }
 };

@@ -53,7 +53,6 @@ exports.getCollections = async (req, res) => {
 exports.getCollection = async (req, res) => {
   try {
     const address = req.params.address;
-    const api_url = process.env.API_URL;
 
     const { data: collection } = await axios.get(`${api_url}/nfts/${address}`, {
       params: {
@@ -94,6 +93,8 @@ const calculateAllCollectionsVolume = async () => {
 };
 
 const calculate24hVolumeChange = async address => {
+  const api_url = process.env.API_URL;
+
   const { data: allTimeVolume } = await axios.get(`${api_url}/volume`, {
     params: {
       period: "all",

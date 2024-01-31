@@ -17,33 +17,37 @@ exports.getCollections = async (req, res) => {
     const totalCounts = await Collection.countDocuments(query);
     const totalPages = Math.ceil(totalCounts / limit);
 
-    let collections = await Collection.find(query, { _id: 0, __v: 0 })
+    const collections = await Collection.find(query, { _id: 0, __v: 0 })
       .sort(sort)
       .skip((page - 1) * limit)
       .limit(limit);
 
-    const allCollectionsVolume = await calculateAllCollectionsVolume();
+    const colltionsWithPrice = [];
 
-    collections = await Promise.all(
-      collections.map(async collection => {
-        const saleCount = await fetchCollectionSaleCount(
-          collection.contract_address
-        );
-        const _24hPriceChange = await calculatePriceChange(
-          collection.contract_address
-        );
-        return {
-          ...collection._doc,
-          saleCount,
-          allCollectionsVolume,
-          _24hPriceChange
-        };
-      })
-    );
+    for (let idx = 0; idx < collections.length; idx += 30) {
+      const data = await Promise.all(
+        collections.map(async collection => {
+          const saleCount = await fetchCollectionSaleCount(
+            collection.contract_address
+          );
+          const _24hPriceChange = await calculatePriceChange(
+            collection.contract_address
+          );
+          return {
+            ...collection._doc,
+            saleCount,
+            allCollectionsVolume,
+            _24hPriceChange
+          };
+        })
+      );
+
+      colltionsWithPrice.push(...data);
+    }
 
     res.json({
       total: totalCounts,
-      collections
+      collections: colltionsWithPrice
     });
   } catch (err) {
     console.log(err);
@@ -58,7 +62,10 @@ exports.getCollection = async (req, res) => {
   try {
     const address = req.params.address;
 
-    const collection = await fetchCollection(address);
+    const collection = await Collection.findOne({
+      contract_address: address
+    });
+
     const allCollectionsVolume = await calculateAllCollectionsVolume();
     const saleCount = await fetchCollectionSaleCount(address);
     const _24hPriceChange = await calculatePriceChange(address);

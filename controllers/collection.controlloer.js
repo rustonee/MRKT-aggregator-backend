@@ -22,6 +22,8 @@ exports.getCollections = async (req, res) => {
       .skip((page - 1) * limit)
       .limit(limit);
 
+    const allCollectionsVolume = await calculateAllCollectionsVolume();
+
     const colltionsWithPrice = [];
 
     for (let idx = 0; idx < collections.length; idx += 20) {
@@ -71,7 +73,7 @@ exports.getCollection = async (req, res) => {
     const _24hPriceChange = await calculatePriceChange(address);
 
     res.json({
-      ...collection,
+      ...collection._doc,
       saleCount,
       allCollectionsVolume,
       _24hPriceChange

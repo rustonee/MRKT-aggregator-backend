@@ -53,6 +53,7 @@ exports.getCollections = async (req, res) => {
 exports.getCollection = async (req, res) => {
   try {
     const address = req.params.address;
+    const api_url = process.env.API_URL;
 
     const { data: collection } = await axios.get(`${api_url}/nfts/${address}`, {
       params: {
@@ -61,6 +62,9 @@ exports.getCollection = async (req, res) => {
     });
 
     const allCollectionsVolume = await calculateAllCollectionsVolume();
+
+    console.log("allCollectionsVolume: ", allCollectionsVolume);
+
     const _24hPriceChange = await calculate24hVolumeChange(address);
 
     res.json({

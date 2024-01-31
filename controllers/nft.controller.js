@@ -75,8 +75,6 @@ exports.getNftActivities = async (req, res) => {
 
     const api_url = process.env.API_URL;
 
-    console.log("event: ", event);
-
     const result = await axios.get(
       `${api_url}/marketplace/activities?chain_id=pacific-1&event_type=${event}&nft_address=${address}&nft_token_id=${tokenId}&page=${page}&page_size=${pageSize}`
     );

@@ -22,15 +22,19 @@ exports.getCollections = async (req, res) => {
       .skip((page - 1) * limit)
       .limit(limit);
 
+    const allCollectionsVolume = await calculateAllCollectionsVolume();
+
     collections = await Promise.all(
       collections.map(async collection => {
-        const allCollectionsVolume = await calculateAllCollectionsVolume();
-        const _24hPriceChange = await calculate24hVolumeChange(
+        const saleCount = await fetchCollectionSaleCount(
           collection.contract_address
         );
-
+        const _24hPriceChange = await calculatePriceChange(
+          collection.contract_address
+        );
         return {
-          ...collection,
+          ...collection._doc,
+          saleCount,
           allCollectionsVolume,
           _24hPriceChange
         };
@@ -62,15 +66,14 @@ exports.getCollection = async (req, res) => {
     });
 
     const allCollectionsVolume = await calculateAllCollectionsVolume();
-
-    console.log("allCollectionsVolume: ", allCollectionsVolume);
-
-    const _24hPriceChange = await calculate24hVolumeChange(address);
+    const saleCount = await fetchCollectionSaleCount(address);
+    const _24hPriceChange = await calculatePriceChange(address);
 
     res.json({
       ...collection,
-      _24hPriceChange,
-      allCollectionsVolume
+      saleCount,
+      allCollectionsVolume,
+      _24hPriceChange
     });
   } catch (err) {
     console.log(err);
@@ -96,21 +99,34 @@ const calculateAllCollectionsVolume = async () => {
   return allCollectionsVolume;
 };
 
-const calculate24hVolumeChange = async address => {
+const calculatePriceChange = async address => {
+  const collection = await fetchCollection(address);
+  const collectionFromdb = await Collection.findOne({
+    contract_address: address
+  });
+
+  const currentPrice = collection.floor || 0;
+  const previousPrice = collectionFromdb.floor || 0;
+
+  return (currentPrice - previousPrice) / currentPrice;
+};
+
+const fetchCollectionSaleCount = async address => {
+  const { data } = await axios.get(
+    `https://api.prod.pallet.exchange/api/v2/nfts/${address}/details`
+  );
+
+  return data?.num_sales_24hr;
+};
+
+const fetchCollection = async address => {
   const api_url = process.env.API_URL;
 
-  const { data: allTimeVolume } = await axios.get(`${api_url}/volume`, {
+  const { data: collection } = await axios.get(`${api_url}/nfts/${address}`, {
     params: {
-      period: "all",
-      nft_address: address
+      get_tokens: "false"
     }
   });
 
-  const currentVolume = allTimeVolume?.pop()?.volume || 0;
-  const priviousVolume = allTimeVolume?.pop()?.volume || 0;
-
-  const _24hPriceChange =
-    ((currentVolume - priviousVolume) / currentVolume) * 100;
-
-  return _24hPriceChange;
+  return collection;
 };

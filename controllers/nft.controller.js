@@ -70,13 +70,22 @@ exports.getNftActivities = async (req, res) => {
     };
     const event = eventMapping[req.query.event] || "sale";
 
-    const page = req.query.page || 1;
-    const pageSize = req.query.page_size || 25;
+    const page = req.query.page;
+    const pageSize = req.query.page_size;
 
     const api_url = process.env.API_URL;
 
     const result = await axios.get(
-      `${api_url}/marketplace/activities?chain_id=pacific-1&event_type=${event}&nft_address=${address}&nft_token_id=${tokenId}&page=${page}&page_size=${pageSize}`
+      `${api_url}/marketplace/activities?event_type=${event}`,
+      {
+        params: {
+          chain_id: "pacific-1",
+          nft_address: address,
+          nft_token_id: tokenId,
+          page,
+          page_size: pageSize
+        }
+      }
     );
 
     res.json(result.data);

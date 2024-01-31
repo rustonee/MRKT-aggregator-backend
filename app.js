@@ -25,14 +25,14 @@ cron.schedule("*/15 * * * *", async function () {
 });
 
 // Connect to MongoDB
-// mongoose
-//   .connect(dbConfig.connectionUrl, dbConfig.connectionOptions)
-//   .then(() => {
-//     console.log("Connected to MongoDB");
-//   })
-//   .catch((error) => {
-//     console.error("Error connecting to MongoDB:", error);
-//   });
+mongoose
+  .connect(dbConfig.connectionUrl, dbConfig.connectionOptions)
+  .then(() => {
+    console.log("Connected to MongoDB");
+  })
+  .catch(error => {
+    console.error("Error connecting to MongoDB:", error);
+  });
 
 app.use(cors());
 app.use(logger("dev"));

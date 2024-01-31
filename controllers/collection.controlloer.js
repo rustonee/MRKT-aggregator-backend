@@ -1,3 +1,4 @@
+const { default: axios } = require("axios");
 const Collection = require("../models/collection.model");
 
 exports.getCollections = async (req, res) => {
@@ -21,35 +22,116 @@ exports.getCollections = async (req, res) => {
       .skip((page - 1) * limit)
       .limit(limit);
 
+    const allCollectionsVolume = await calculateAllCollectionsVolume();
+
+    const colltionsWithPrice = [];
+
+    for (let idx = 0; idx < collections.length; idx += 20) {
+      const data = await Promise.all(
+        collections.slice(idx, idx + 20).map(async collection => {
+          const saleCount = await fetchCollectionSaleCount(
+            collection.contract_address
+          );
+          const _24hPriceChange = await calculatePriceChange(
+            collection.contract_address
+          );
+          return {
+            ...collection._doc,
+            saleCount,
+            allCollectionsVolume,
+            _24hPriceChange
+          };
+        })
+      );
+
+      colltionsWithPrice.push(...data);
+    }
+
     res.json({
       total: totalCounts,
-      collections,
+      collections: colltionsWithPrice
     });
   } catch (err) {
     console.log(err);
     res.status(500).send({
-      message: err.message || "Error occurred while fetching the Collections.",
+      message: err.message || "Error occurred while fetching the Collections."
     });
     return;
   }
 };
 
 exports.getCollection = async (req, res) => {
-  const address = req.params.address.toString();
-
   try {
+    const address = req.params.address;
+
     const collection = await Collection.findOne({
-      contract_address: address,
+      contract_address: address
     });
 
+    const allCollectionsVolume = await calculateAllCollectionsVolume();
+    const saleCount = await fetchCollectionSaleCount(address);
+    const _24hPriceChange = await calculatePriceChange(address);
+
     res.json({
-      collection,
+      ...collection._doc,
+      saleCount,
+      allCollectionsVolume,
+      _24hPriceChange
     });
   } catch (err) {
     console.log(err);
     res.status(500).send({
-      message: err.message || "Error occurred while fetching the Collection.",
+      message: err.message || "Error occurred while fetching the Collection."
     });
     return;
   }
+};
+
+const calculateAllCollectionsVolume = async () => {
+  const [{ allCollectionsVolume }] = await Collection.aggregate([
+    {
+      $group: {
+        _id: null,
+        allCollectionsVolume: {
+          $sum: "$volume"
+        }
+      }
+    }
+  ]);
+
+  return allCollectionsVolume;
+};
+
+const calculatePriceChange = async address => {
+  const collection = await fetchCollection(address);
+  const collectionFromdb = await Collection.findOne({
+    contract_address: address
+  });
+
+  const currentPrice = collection.floor || 0;
+  const previousPrice = collectionFromdb.floor || 0;
+
+  return (currentPrice - previousPrice) / currentPrice;
+};
+
+const fetchCollectionSaleCount = async address => {
+  const api_url = process.env.BASE_API_URL;
+  try {
+    const { data } = await axios.get(`${api_url}/v2/nfts/${address}/details`);
+
+    return data?.num_sales_24hr;
+  } catch {
+    return undefined;
+  }
+};
+
+const fetchCollection = async address => {
+  const api_url = process.env.API_URL;
+  const { data: collection } = await axios.get(`${api_url}/nfts/${address}`, {
+    params: {
+      get_tokens: "false"
+    }
+  });
+
+  return collection;
 };

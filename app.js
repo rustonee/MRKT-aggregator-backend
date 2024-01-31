@@ -9,9 +9,6 @@ const nftRouter = require("./routes/nft");
 const mongoose = require("mongoose");
 const { dbConfig } = require("./config/db.config");
 
-const cron = require("node-cron");
-const bgController = require("./controllers/bgprocess.controller");
-
 const swaggerUi = require("swagger-ui-express");
 const apiDocumentation = require("./api.doc");
 
@@ -19,18 +16,13 @@ global.__basedir = __dirname;
 
 const app = express();
 
-cron.schedule("*/15 * * * *", async function () {
-  console.log("running a task every 10 minutes");
-  await bgController.fetchCollections();
-});
-
 // Connect to MongoDB
 mongoose
   .connect(dbConfig.connectionUrl, dbConfig.connectionOptions)
   .then(() => {
     console.log("Connected to MongoDB");
   })
-  .catch(error => {
+  .catch((error) => {
     console.error("Error connecting to MongoDB:", error);
   });
 

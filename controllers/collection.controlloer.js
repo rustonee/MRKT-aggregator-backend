@@ -24,9 +24,9 @@ exports.getCollections = async (req, res) => {
 
     const colltionsWithPrice = [];
 
-    for (let idx = 0; idx < collections.length; idx += 30) {
+    for (let idx = 0; idx < collections.length; idx += 20) {
       const data = await Promise.all(
-        collections.map(async collection => {
+        collections.slice(idx, idx + 20).map(async collection => {
           const saleCount = await fetchCollectionSaleCount(
             collection.contract_address
           );

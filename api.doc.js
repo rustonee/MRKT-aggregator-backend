@@ -3,17 +3,17 @@ const apiDocumentation = {
   info: {
     version: "1.0.0",
     title: "MRKT API",
-    description: "API for MRKT marketplace"
+    description: "API for MRKT marketplace",
   },
   servers: [
     {
       url: "http://localhost:8000/",
-      description: "Local server"
+      description: "Local server",
     },
     {
       url: "https://api.test.mrkt.exchange",
-      description: "Testing server"
-    }
+      description: "Testing server",
+    },
     // {
     //   url: "https://api.test.mrkt.exchange",
     //   description: "Production server",
@@ -32,8 +32,8 @@ const apiDocumentation = {
             description: "Key for searching collections",
             schema: {
               type: "string",
-              example: "dob"
-            }
+              example: "dob",
+            },
           },
           {
             name: "page",
@@ -42,8 +42,8 @@ const apiDocumentation = {
             description: "Page index",
             schema: {
               type: "integer",
-              example: "1"
-            }
+              example: "1",
+            },
           },
           {
             name: "page_size",
@@ -52,9 +52,9 @@ const apiDocumentation = {
             description: "Counts per page",
             schema: {
               type: "integer",
-              example: "25"
-            }
-          }
+              example: "25",
+            },
+          },
         ],
         responses: {
           200: {
@@ -67,7 +67,7 @@ const apiDocumentation = {
                   properties: {
                     total: {
                       type: "integer",
-                      example: 1
+                      example: 1,
                     },
                     collections: {
                       type: "array",
@@ -84,7 +84,7 @@ const apiDocumentation = {
                             "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
                           creator_info: {
                             domain: null,
-                            pfp: "https://static-assets.pallet.exchange/pfp/user3.jpg"
+                            pfp: "https://static-assets.pallet.exchange/pfp/user3.jpg",
                           },
                           description: "Whats poppin? we bumpin",
                           floor: 2349,
@@ -98,31 +98,31 @@ const apiDocumentation = {
                           slug: "webump",
                           socials: [
                             {
-                              twitter: "https://twitter.com/webump_"
+                              twitter: "https://twitter.com/webump_",
                             },
                             {
-                              discord: "https://discord.gg/m2WEtFRY8q"
+                              discord: "https://discord.gg/m2WEtFRY8q",
                             },
                             {
-                              website: "https://webump.xyz"
-                            }
+                              website: "https://webump.xyz",
+                            },
                           ],
                           start_after: "",
                           supply: 4444,
                           symbol: "BUMP",
                           version: "2024-01-17T18:00:00.000Z",
                           volume: 3533158.989899,
-                          volume_24hr: 72726.88
-                        }
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
+                          volume_24hr: 72726.88,
+                        },
+                      ],
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
     },
     "/api/v1/collections/{address}": {
       get: {
@@ -137,9 +137,9 @@ const apiDocumentation = {
             schema: {
               type: "string",
               example:
-                "sei15w6sty6cjjraxanrxxx0y09adwjtywhkcmydh7np25zezg9m5mwsfduktd"
-            }
-          }
+                "sei15w6sty6cjjraxanrxxx0y09adwjtywhkcmydh7np25zezg9m5mwsfduktd",
+            },
+          },
         ],
         responses: {
           200: {
@@ -166,11 +166,11 @@ const apiDocumentation = {
                         banner: "",
                         socials: [
                           {
-                            twitter: "https://twitter.com/SeiSubjects"
+                            twitter: "https://twitter.com/SeiSubjects",
                           },
                           {
-                            discord: "https://discord.gg/mhBv7ZMvGE"
-                          }
+                            discord: "https://discord.gg/mhBv7ZMvGE",
+                          },
                         ],
                         send_listing_notification: false,
                         calculate_rarities: false,
@@ -180,28 +180,28 @@ const apiDocumentation = {
                         _count: {
                           tokens: 3333,
                           auctions: 402,
-                          activities: 4928
+                          activities: 4928,
                         },
                         owners: 987,
                         floor: [
                           {
                             denom: "usei",
-                            amount: "7000000"
-                          }
+                            amount: "7000000",
+                          },
                         ],
                         volume: {
                           denom: "usei",
-                          amount: "18660655889"
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
+                          amount: "18660655889",
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
     },
     "/api/v1/nfts/{address}": {
       get: {
@@ -216,8 +216,8 @@ const apiDocumentation = {
             schema: {
               type: "string",
               example:
-                "sei15w6sty6cjjraxanrxxx0y09adwjtywhkcmydh7np25zezg9m5mwsfduktd"
-            }
+                "sei15w6sty6cjjraxanrxxx0y09adwjtywhkcmydh7np25zezg9m5mwsfduktd",
+            },
           },
           {
             name: "buy_now_only",
@@ -226,8 +226,28 @@ const apiDocumentation = {
             description: "If true, get purchasable nfts, else get all nfts",
             schema: {
               type: "boolean",
-              example: "true"
-            }
+              example: "true",
+            },
+          },
+          {
+            name: "token_id",
+            in: "query",
+            required: false,
+            description: "token Id for searching nfts",
+            schema: {
+              type: "integer",
+              example: "10",
+            },
+          },
+          {
+            name: "sort_by_price",
+            in: "query",
+            required: false,
+            description: "If 'asc' show Low to High, else High to Low",
+            schema: {
+              type: "string",
+              example: "asc",
+            },
           },
           {
             name: "page",
@@ -236,8 +256,8 @@ const apiDocumentation = {
             description: "Page index",
             schema: {
               type: "integer",
-              example: "1"
-            }
+              example: "1",
+            },
           },
           {
             name: "page_size",
@@ -246,9 +266,9 @@ const apiDocumentation = {
             description: "Counts per page",
             schema: {
               type: "integer",
-              example: "25"
-            }
-          }
+              example: "25",
+            },
+          },
         ],
         responses: {
           200: {
@@ -261,7 +281,7 @@ const apiDocumentation = {
                   properties: {
                     count: {
                       type: "integer",
-                      example: 1
+                      example: 1,
                     },
                     nfts: {
                       type: "array",
@@ -276,17 +296,17 @@ const apiDocumentation = {
                             "https://arweave.net/ysJapp8WOOG4trLdSuIWAIHWSZ9iPVpDX26yVO9HovY/1331.png",
                           last_sale: {
                             denom: "usei",
-                            amount: "415000000"
+                            amount: "415000000",
                           },
                           version: "2024-01-17T18:00:00.000Z",
                           collection_key:
                             "sei1g2a0q3tddzs7vf7lk45c2tgufsaqerxmsdr2cprth3mjtuqxm60qdmravc",
                           collection: {
-                            symbol: "SYAN"
+                            symbol: "SYAN",
                           },
                           rarity: {
                             rank: 7007,
-                            score: 72.03905032964447
+                            score: 72.03905032964447,
                           },
                           traits: [
                             {
@@ -296,33 +316,33 @@ const apiDocumentation = {
                               rarity: {
                                 rank: 85,
                                 score: 7.861135371179039,
-                                num_tokens: 1145
+                                num_tokens: 1145,
                               },
-                              version: "2024-01-17T18:00:00.000Z"
-                            }
+                              version: "2024-01-17T18:00:00.000Z",
+                            },
                           ],
                           auction: {
                             type: "fixed_price",
                             price: [
                               {
                                 denom: "usei",
-                                amount: "710000000"
-                              }
+                                amount: "710000000",
+                              },
                             ],
                             price_float: 710,
-                            expiration: "2024-02-23T08:23:36.000Z"
+                            expiration: "2024-02-23T08:23:36.000Z",
                           },
-                          bids: []
-                        }
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
+                          bids: [],
+                        },
+                      ],
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
     },
     "/api/v1/nfts/{address}/{token_id}": {
       get: {
@@ -337,8 +357,8 @@ const apiDocumentation = {
             schema: {
               type: "string",
               example:
-                "sei15w6sty6cjjraxanrxxx0y09adwjtywhkcmydh7np25zezg9m5mwsfduktd"
-            }
+                "sei15w6sty6cjjraxanrxxx0y09adwjtywhkcmydh7np25zezg9m5mwsfduktd",
+            },
           },
           {
             name: "token_id",
@@ -347,9 +367,9 @@ const apiDocumentation = {
             description: "Nft token id",
             schema: {
               type: "integer",
-              example: "1331"
-            }
-          }
+              example: "1331",
+            },
+          },
         ],
         responses: {
           200: {
@@ -372,17 +392,17 @@ const apiDocumentation = {
                           "https://arweave.net/ysJapp8WOOG4trLdSuIWAIHWSZ9iPVpDX26yVO9HovY/1331.png",
                         last_sale: {
                           denom: "usei",
-                          amount: "415000000"
+                          amount: "415000000",
                         },
                         version: "2024-01-17T18:00:00.000Z",
                         collection_key:
                           "sei1g2a0q3tddzs7vf7lk45c2tgufsaqerxmsdr2cprth3mjtuqxm60qdmravc",
                         collection: {
-                          symbol: "SYAN"
+                          symbol: "SYAN",
                         },
                         rarity: {
                           rank: 7007,
-                          score: 72.03905032964447
+                          score: 72.03905032964447,
                         },
                         traits: [
                           {
@@ -392,32 +412,32 @@ const apiDocumentation = {
                             rarity: {
                               rank: 85,
                               score: 7.861135371179039,
-                              num_tokens: 1145
+                              num_tokens: 1145,
                             },
-                            version: "2024-01-17T18:00:00.000Z"
-                          }
+                            version: "2024-01-17T18:00:00.000Z",
+                          },
                         ],
                         auction: {
                           type: "fixed_price",
                           price: [
                             {
                               denom: "usei",
-                              amount: "710000000"
-                            }
+                              amount: "710000000",
+                            },
                           ],
                           price_float: 710,
-                          expiration: "2024-02-23T08:23:36.000Z"
+                          expiration: "2024-02-23T08:23:36.000Z",
                         },
-                        bids: []
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
+                        bids: [],
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
     },
     "/api/v1/nfts/activities/{address}/{token_id}": {
       get: {
@@ -432,8 +452,8 @@ const apiDocumentation = {
             schema: {
               type: "string",
               example:
-                "sei1atcfjjz779ynmlek4tqh47ssrwge0mhlauyr637wdjkrhtfqdjqqtlcwhl"
-            }
+                "sei1atcfjjz779ynmlek4tqh47ssrwge0mhlauyr637wdjkrhtfqdjqqtlcwhl",
+            },
           },
           {
             name: "token_id",
@@ -442,8 +462,8 @@ const apiDocumentation = {
             description: "Nft token id",
             schema: {
               type: "integer",
-              example: "2700"
-            }
+              example: "2700",
+            },
           },
           {
             name: "page",
@@ -452,8 +472,8 @@ const apiDocumentation = {
             description: "Page index",
             schema: {
               type: "integer",
-              example: "1"
-            }
+              example: "1",
+            },
           },
           {
             name: "page_size",
@@ -462,8 +482,8 @@ const apiDocumentation = {
             description: "Counts per page",
             schema: {
               type: "integer",
-              example: "25"
-            }
+              example: "25",
+            },
           },
           {
             name: "event",
@@ -473,9 +493,9 @@ const apiDocumentation = {
             schema: {
               type: "string",
               enum: ["sold", "listed"],
-              example: "sale"
-            }
-          }
+              example: "sale",
+            },
+          },
         ],
         responses: {
           200: {
@@ -487,7 +507,7 @@ const apiDocumentation = {
                   properties: {
                     total: {
                       type: "integer",
-                      example: 1
+                      example: 1,
                     },
                     activities: {
                       type: "array",
@@ -503,8 +523,8 @@ const apiDocumentation = {
                         price: [
                           {
                             denom: "usei",
-                            amount: "50000000"
-                          }
+                            amount: "50000000",
+                          },
                         ],
                         price_value: 50,
                         block: 52935013,
@@ -514,7 +534,7 @@ const apiDocumentation = {
                         token_key:
                           "sei1atcfjjz779ynmlek4tqh47ssrwge0mhlauyr637wdjkrhtfqdjqqtlcwhl-2700",
                         collection: {
-                          symbol: "SEIMU"
+                          symbol: "SEIMU",
                         },
                         token: {
                           name: "Seimurai #2700",
@@ -527,8 +547,8 @@ const apiDocumentation = {
                               rarity: {
                                 num_tokens: 380,
                                 score: 8.771052631578947,
-                                rank: 95
-                              }
+                                rank: 95,
+                              },
                             },
                             {
                               type: "Power",
@@ -536,8 +556,8 @@ const apiDocumentation = {
                               rarity: {
                                 num_tokens: 140,
                                 score: 23.80714285714286,
-                                rank: 44
-                              }
+                                rank: 44,
+                              },
                             },
                             {
                               type: "Weapon",
@@ -545,8 +565,8 @@ const apiDocumentation = {
                               rarity: {
                                 num_tokens: 124,
                                 score: 26.87903225806452,
-                                rank: 40
-                              }
+                                rank: 40,
+                              },
                             },
                             {
                               type: "Body",
@@ -554,8 +574,8 @@ const apiDocumentation = {
                               rarity: {
                                 num_tokens: 455,
                                 score: 7.325274725274725,
-                                rank: 100
-                              }
+                                rank: 100,
+                              },
                             },
                             {
                               type: "Clothes",
@@ -563,8 +583,8 @@ const apiDocumentation = {
                               rarity: {
                                 num_tokens: 102,
                                 score: 32.6764705882353,
-                                rank: 30
-                              }
+                                rank: 30,
+                              },
                             },
                             {
                               type: "Face",
@@ -572,8 +592,8 @@ const apiDocumentation = {
                               rarity: {
                                 num_tokens: 110,
                                 score: 30.3,
-                                rank: 34
-                              }
+                                rank: 34,
+                              },
                             },
                             {
                               type: "Hair",
@@ -581,8 +601,8 @@ const apiDocumentation = {
                               rarity: {
                                 num_tokens: 151,
                                 score: 22.0728476821192,
-                                rank: 50
-                              }
+                                rank: 50,
+                              },
                             },
                             {
                               type: "Background",
@@ -590,8 +610,8 @@ const apiDocumentation = {
                               rarity: {
                                 num_tokens: 380,
                                 score: 8.771052631578947,
-                                rank: 95
-                              }
+                                rank: 95,
+                              },
                             },
                             {
                               type: "Power",
@@ -599,8 +619,8 @@ const apiDocumentation = {
                               rarity: {
                                 num_tokens: 140,
                                 score: 23.80714285714286,
-                                rank: 44
-                              }
+                                rank: 44,
+                              },
                             },
                             {
                               type: "Weapon",
@@ -608,8 +628,8 @@ const apiDocumentation = {
                               rarity: {
                                 num_tokens: 124,
                                 score: 26.87903225806452,
-                                rank: 40
-                              }
+                                rank: 40,
+                              },
                             },
                             {
                               type: "Body",
@@ -617,8 +637,8 @@ const apiDocumentation = {
                               rarity: {
                                 num_tokens: 455,
                                 score: 7.325274725274725,
-                                rank: 100
-                              }
+                                rank: 100,
+                              },
                             },
                             {
                               type: "Clothes",
@@ -626,8 +646,8 @@ const apiDocumentation = {
                               rarity: {
                                 num_tokens: 102,
                                 score: 32.6764705882353,
-                                rank: 30
-                              }
+                                rank: 30,
+                              },
                             },
                             {
                               type: "Face",
@@ -635,8 +655,8 @@ const apiDocumentation = {
                               rarity: {
                                 num_tokens: 110,
                                 score: 30.3,
-                                rank: 34
-                              }
+                                rank: 34,
+                              },
                             },
                             {
                               type: "Hair",
@@ -644,8 +664,8 @@ const apiDocumentation = {
                               rarity: {
                                 num_tokens: 151,
                                 score: 22.0728476821192,
-                                rank: 50
-                              }
+                                rank: 50,
+                              },
                             },
                             {
                               type: "Background",
@@ -653,8 +673,8 @@ const apiDocumentation = {
                               rarity: {
                                 num_tokens: 380,
                                 score: 8.771052631578947,
-                                rank: 95
-                              }
+                                rank: 95,
+                              },
                             },
                             {
                               type: "Power",
@@ -662,8 +682,8 @@ const apiDocumentation = {
                               rarity: {
                                 num_tokens: 140,
                                 score: 23.80714285714286,
-                                rank: 44
-                              }
+                                rank: 44,
+                              },
                             },
                             {
                               type: "Weapon",
@@ -671,8 +691,8 @@ const apiDocumentation = {
                               rarity: {
                                 num_tokens: 124,
                                 score: 26.87903225806452,
-                                rank: 40
-                              }
+                                rank: 40,
+                              },
                             },
                             {
                               type: "Body",
@@ -680,8 +700,8 @@ const apiDocumentation = {
                               rarity: {
                                 num_tokens: 455,
                                 score: 7.325274725274725,
-                                rank: 100
-                              }
+                                rank: 100,
+                              },
                             },
                             {
                               type: "Clothes",
@@ -689,8 +709,8 @@ const apiDocumentation = {
                               rarity: {
                                 num_tokens: 102,
                                 score: 32.6764705882353,
-                                rank: 30
-                              }
+                                rank: 30,
+                              },
                             },
                             {
                               type: "Face",
@@ -698,8 +718,8 @@ const apiDocumentation = {
                               rarity: {
                                 num_tokens: 110,
                                 score: 30.3,
-                                rank: 34
-                              }
+                                rank: 34,
+                              },
                             },
                             {
                               type: "Hair",
@@ -707,34 +727,34 @@ const apiDocumentation = {
                               rarity: {
                                 num_tokens: 151,
                                 score: 22.0728476821192,
-                                rank: 50
-                              }
-                            }
+                                rank: 50,
+                              },
+                            },
                           ],
                           rarity: {
                             score: 151.8318207424156,
-                            rank: 535
-                          }
+                            rank: 535,
+                          },
                         },
                         buyer_info: {
                           domain: null,
-                          pfp: "https://arweave.net/ysJapp8WOOG4trLdSuIWAIHWSZ9iPVpDX26yVO9HovY/5312.png"
+                          pfp: "https://arweave.net/ysJapp8WOOG4trLdSuIWAIHWSZ9iPVpDX26yVO9HovY/5312.png",
                         },
                         seller_info: {
                           domain: "yondu.sei",
-                          pfp: "https://arweave.net/BLeWHs72ccmVxIPoJSRsW5EUG58KIzPMGRin8H0sLms/4442.png"
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+                          pfp: "https://arweave.net/BLeWHs72ccmVxIPoJSRsW5EUG58KIzPMGRin8H0sLms/4442.png",
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  },
 };
 
 module.exports = apiDocumentation;

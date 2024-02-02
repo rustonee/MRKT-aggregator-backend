@@ -1,5 +1,7 @@
 const { default: axios } = require("axios");
 const Collection = require("../models/collection.model");
+const CollectionMonitor = require("../models/collection-monitor.model");
+
 
 exports.getCollections = async (req, res) => {
   const page = parseInt(req.query.page) || 1;
@@ -103,15 +105,24 @@ const calculateAllCollectionsVolume = async () => {
 };
 
 const calculatePriceChange = async address => {
-  const collection = await fetchCollection(address);
-  const collectionFromdb = await Collection.findOne({
-    contract_address: address
-  });
+    try {
+      const collection = await fetchCollection(address);
 
-  const currentPrice = collection.floor || 0;
-  const previousPrice = collectionFromdb.floor || 0;
+      const oneDayAgo = new Date();
+      oneDayAgo.setDate(oneDayAgo.getDate() - 1);
+      const monitor = await CollectionMonitor.findOne({date: {$lte: oneDayAgo} , contract_address: address }).sort({ date: -1 });
+      
+      const currentPrice = collection.floor;
+      const previousPrice = monitor.floor;
 
-  return (currentPrice - previousPrice) / currentPrice;
+      if(currentPrice && previousPrice) {
+        return (currentPrice- previousPrice )  / currentPrice
+      }
+
+      return undefined;
+    } catch (error) {
+      return undefined;
+    }
 };
 
 const fetchCollectionSaleCount = async address => {

@@ -23,7 +23,10 @@ exports.createCollection = async (req, res) => {
     // console.log(error);
     res
       .status(500)
-      .send({ message: "Some error occurred while saving the collection." });
+      .send({
+        message:
+          error.message || "Some error occurred while saving the collection.",
+      });
     return;
   }
 };

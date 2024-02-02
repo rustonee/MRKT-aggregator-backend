@@ -20,11 +20,81 @@ const apiDocumentation = {
     // },
   ],
   paths: {
+    "/api/v1/auth/login": {
+      post: {
+        tags: ["Auth operations"],
+        description: "User authentication",
+        parameters: [],
+        requestBody: {
+          content: {
+            "application/json": {
+              schema: {
+                type: "object",
+                properties: {
+                  username: {
+                    type: "string",
+                    example: "admin",
+                  },
+                  password: {
+                    type: "string",
+                    example: "admin",
+                  },
+                },
+              },
+            },
+          },
+          required: true,
+          description: "User authentication",
+        },
+        responses: {
+          200: {
+            description: "User logged in",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    token: {
+                      type: "string",
+                      example: "",
+                    },
+                  },
+                },
+              },
+            },
+          },
+          400: {
+            description: "Invalid user",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    error: {
+                      type: "string",
+                      example: "Invalid user",
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
     "/api/v1/collections": {
       post: {
         tags: ["Collections operations"],
         description: "Add new collection",
-        parameters: [],
+        parameters: [
+          {
+            name: "Authorization",
+            in: "header",
+            type: "string",
+            required: true,
+            description: "auth token",
+          },
+        ],
         requestBody: {
           content: {
             "application/json": {
@@ -41,6 +111,7 @@ const apiDocumentation = {
             },
           },
           required: true,
+          description: "collection address want to add",
         },
         responses: {
           200: {
@@ -77,7 +148,6 @@ const apiDocumentation = {
           },
         },
       },
-
       get: {
         tags: ["Collections operations"],
         description: "Get collections",

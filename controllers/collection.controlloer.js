@@ -2,6 +2,31 @@ const { default: axios } = require("axios");
 const Collection = require("../models/collection.model");
 const CollectionMonitor = require("../models/collection-monitor.model");
 
+exports.createCollection = async (req, res) => {
+  const address = req.body.address;
+
+  try {
+    if (!address) {
+      res.status(400).send({ message: "Collection address is required" });
+      return;
+    }
+    const collection = await fetchCollection(address);
+    collection.floor_24hr = collection.floor;
+    collection.num_sales_24hr = await fetchCollectionSaleCount(address);
+    collection.royalty = null;
+
+    const newCollection = new Collection(collection);
+    await newCollection.save();
+
+    res.json({ status: true });
+  } catch (error) {
+    // console.log(error);
+    res
+      .status(500)
+      .send({ message: "Some error occurred while saving the collection." });
+    return;
+  }
+};
 
 exports.getCollections = async (req, res) => {
   const page = parseInt(req.query.page) || 1;
@@ -30,7 +55,7 @@ exports.getCollections = async (req, res) => {
 
     for (let idx = 0; idx < collections.length; idx += 20) {
       const data = await Promise.all(
-        collections.slice(idx, idx + 20).map(async collection => {
+        collections.slice(idx, idx + 20).map(async (collection) => {
           const saleCount = await fetchCollectionSaleCount(
             collection.contract_address
           );
@@ -41,7 +66,7 @@ exports.getCollections = async (req, res) => {
             ...collection._doc,
             saleCount,
             allCollectionsVolume,
-            _24hPriceChange
+            _24hPriceChange,
           };
         })
       );
@@ -51,12 +76,12 @@ exports.getCollections = async (req, res) => {
 
     res.json({
       total: totalCounts,
-      collections: colltionsWithPrice
+      collections: colltionsWithPrice,
     });
   } catch (err) {
     console.log(err);
     res.status(500).send({
-      message: err.message || "Error occurred while fetching the Collections."
+      message: err.message || "Error occurred while fetching the Collections.",
     });
     return;
   }
@@ -67,7 +92,7 @@ exports.getCollection = async (req, res) => {
     const address = req.params.address;
 
     const collection = await Collection.findOne({
-      contract_address: address
+      contract_address: address,
     });
 
     const allCollectionsVolume = await calculateAllCollectionsVolume();
@@ -78,12 +103,12 @@ exports.getCollection = async (req, res) => {
       ...collection._doc,
       saleCount,
       allCollectionsVolume,
-      _24hPriceChange
+      _24hPriceChange,
     });
   } catch (err) {
     console.log(err);
     res.status(500).send({
-      message: err.message || "Error occurred while fetching the Collection."
+      message: err.message || "Error occurred while fetching the Collection.",
     });
     return;
   }
@@ -95,37 +120,40 @@ const calculateAllCollectionsVolume = async () => {
       $group: {
         _id: null,
         allCollectionsVolume: {
-          $sum: "$volume"
-        }
-      }
-    }
+          $sum: "$volume",
+        },
+      },
+    },
   ]);
 
   return allCollectionsVolume;
 };
 
-const calculatePriceChange = async address => {
-    try {
-      const collection = await fetchCollection(address);
+const calculatePriceChange = async (address) => {
+  try {
+    const collection = await fetchCollection(address);
 
-      const oneDayAgo = new Date();
-      oneDayAgo.setDate(oneDayAgo.getDate() - 1);
-      const monitor = await CollectionMonitor.findOne({date: {$lte: oneDayAgo} , contract_address: address }).sort({ date: -1 });
-      
-      const currentPrice = collection.floor;
-      const previousPrice = monitor.floor;
+    const oneDayAgo = new Date();
+    oneDayAgo.setDate(oneDayAgo.getDate() - 1);
+    const monitor = await CollectionMonitor.findOne({
+      date: { $lte: oneDayAgo },
+      contract_address: address,
+    }).sort({ date: -1 });
 
-      if(currentPrice && previousPrice) {
-        return (currentPrice- previousPrice )  / currentPrice
-      }
+    const currentPrice = collection.floor;
+    const previousPrice = monitor.floor;
 
-      return undefined;
-    } catch (error) {
-      return undefined;
+    if (currentPrice && previousPrice) {
+      return (currentPrice - previousPrice) / currentPrice;
     }
+
+    return undefined;
+  } catch (error) {
+    return undefined;
+  }
 };
 
-const fetchCollectionSaleCount = async address => {
+const fetchCollectionSaleCount = async (address) => {
   const api_url = process.env.BASE_API_URL;
   try {
     const { data } = await axios.get(`${api_url}/v2/nfts/${address}/details`);
@@ -136,12 +164,12 @@ const fetchCollectionSaleCount = async address => {
   }
 };
 
-const fetchCollection = async address => {
+const fetchCollection = async (address) => {
   const api_url = process.env.API_URL;
   const { data: collection } = await axios.get(`${api_url}/nfts/${address}`, {
     params: {
-      get_tokens: "false"
-    }
+      get_tokens: "false",
+    },
   });
 
   return collection;

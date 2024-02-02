@@ -21,6 +21,63 @@ const apiDocumentation = {
   ],
   paths: {
     "/api/v1/collections": {
+      post: {
+        tags: ["Collections operations"],
+        description: "Add new collection",
+        parameters: [],
+        requestBody: {
+          content: {
+            "application/json": {
+              schema: {
+                type: "object",
+                properties: {
+                  address: {
+                    type: "string",
+                    example:
+                      "sei19kfsr9zft0k9awelwwv9k87mrgwf358tfqw9tv30rlvwn8rn5kzq00hnup",
+                  },
+                },
+              },
+            },
+          },
+          required: true,
+        },
+        responses: {
+          200: {
+            description: "Collection were added",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    status: {
+                      type: "boolean",
+                      example: "true",
+                    },
+                  },
+                },
+              },
+            },
+          },
+          400: {
+            description: "Collection address is required",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    error: {
+                      type: "string",
+                      example: "Collection address is required",
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+
       get: {
         tags: ["Collections operations"],
         description: "Get collections",

@@ -91,6 +91,23 @@ exports.getCollection = async (req, res) => {
   }
 };
 
+exports.getCollectionTraits = async (req, res) => {
+  try {
+    const address = req.params.address;
+    const api_url = process.env.BASE_API_URL;
+    const { data } = await axios.get(`${api_url}/v2/nfts/${address}/traits`);
+
+    res.json(data);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send({
+      message:
+        err.message || "Error occurred while fetching the Collection traits."
+    });
+    return;
+  }
+};
+
 const calculateAllCollectionsVolume = async () => {
   const [{ allCollectionsVolume }] = await Collection.aggregate([
     {

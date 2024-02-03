@@ -6,5 +6,6 @@ require("dotenv").config();
 
 router.get("/", controller.getCollections);
 router.get("/:address", controller.getCollection);
+router.get("/:address/traits", controller.getCollectionTraits);
 
 module.exports = router;

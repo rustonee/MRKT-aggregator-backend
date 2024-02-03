@@ -2,7 +2,6 @@ const { default: axios } = require("axios");
 const Collection = require("../models/collection.model");
 const CollectionMonitor = require("../models/collection-monitor.model");
 
-
 exports.getCollections = async (req, res) => {
   const page = parseInt(req.query.page) || 1;
   const limit = parseInt(req.query.page_size) || 25;
@@ -30,18 +29,17 @@ exports.getCollections = async (req, res) => {
 
     for (let idx = 0; idx < collections.length; idx += 20) {
       const data = await Promise.all(
-        collections.slice(idx, idx + 20).map(async collection => {
-          const saleCount = await fetchCollectionSaleCount(
-            collection.contract_address
-          );
-          const _24hPriceChange = await calculatePriceChange(
-            collection.contract_address
-          );
+        collections.slice(idx, idx + 20).map(async (collection) => {
+          const listed = (collection.auction_count / collection.supply) * 100;
+          const { _24hFloorChange, _24hVolumeChange, saleCount } =
+            await calculatePriceChangeAndSaleCount(collection.contract_address);
+
           return {
             ...collection._doc,
             saleCount,
-            allCollectionsVolume,
-            _24hPriceChange
+            _24hFloorChange,
+            _24hVolumeChange,
+            listed
           };
         })
       );
@@ -51,7 +49,8 @@ exports.getCollections = async (req, res) => {
 
     res.json({
       total: totalCounts,
-      collections: colltionsWithPrice
+      collections: colltionsWithPrice,
+      allCollectionsVolume
     });
   } catch (err) {
     console.log(err);
@@ -71,14 +70,17 @@ exports.getCollection = async (req, res) => {
     });
 
     const allCollectionsVolume = await calculateAllCollectionsVolume();
-    const saleCount = await fetchCollectionSaleCount(address);
-    const _24hPriceChange = await calculatePriceChange(address);
+    const listed = (collection.auction_count / collection.supply) * 100;
+    const { _24hFloorChange, _24hVolumeChange, saleCount } =
+      await calculatePriceChangeAndSaleCount(collection.contract_address);
 
     res.json({
       ...collection._doc,
-      saleCount,
       allCollectionsVolume,
-      _24hPriceChange
+      saleCount,
+      _24hFloorChange,
+      _24hVolumeChange,
+      listed
     });
   } catch (err) {
     console.log(err);
@@ -104,45 +106,33 @@ const calculateAllCollectionsVolume = async () => {
   return allCollectionsVolume;
 };
 
-const calculatePriceChange = async address => {
-    try {
-      const collection = await fetchCollection(address);
-
-      const oneDayAgo = new Date();
-      oneDayAgo.setDate(oneDayAgo.getDate() - 1);
-      const monitor = await CollectionMonitor.findOne({date: {$lte: oneDayAgo} , contract_address: address }).sort({ date: -1 });
-      
-      const currentPrice = collection.floor;
-      const previousPrice = monitor.floor;
-
-      if(currentPrice && previousPrice) {
-        return (currentPrice- previousPrice )  / currentPrice
-      }
-
-      return undefined;
-    } catch (error) {
-      return undefined;
-    }
-};
-
-const fetchCollectionSaleCount = async address => {
-  const api_url = process.env.BASE_API_URL;
+const calculatePriceChangeAndSaleCount = async (address) => {
   try {
-    const { data } = await axios.get(`${api_url}/v2/nfts/${address}/details`);
+    const currentCollection = await CollectionMonitor.findOne({
+      contract_address: address
+    }).sort({ date: -1 });
 
-    return data?.num_sales_24hr;
-  } catch {
-    return undefined;
+    const oneDayAgo = new Date();
+    oneDayAgo.setDate(oneDayAgo.getDate() - 1);
+
+    const previousCollection = await CollectionMonitor.findOne({
+      date: { $lte: oneDayAgo },
+      contract_address: address
+    }).sort({ date: -1 });
+
+    const currentFloor = currentCollection.floor;
+    const previousFloor = previousCollection.floor;
+
+    const current24hVolume = currentCollection.volume_24hr;
+    const previous24hVolume = previousCollection.volume_24hr;
+
+    return {
+      _24hFloorChange: (currentFloor - previousFloor) / currentFloor,
+      _24hVolumeChange:
+        (current24hVolume - previous24hVolume) / current24hVolume,
+      saleCount: currentCollection.sale_count
+    };
+  } catch (error) {
+    return {};
   }
-};
-
-const fetchCollection = async address => {
-  const api_url = process.env.API_URL;
-  const { data: collection } = await axios.get(`${api_url}/nfts/${address}`, {
-    params: {
-      get_tokens: "false"
-    }
-  });
-
-  return collection;
 };

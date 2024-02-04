@@ -8,10 +8,11 @@ exports.getNfts = async (req, res) => {
     const sort_by_price = req.query.sort_by_price || "";
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.page_size) || 25;
+    const traits = req.query.traits || "";
 
     const api_url = process.env.BASE_API_URL;
     const result = await axios.get(
-      `${api_url}/v2/nfts/${contractAddress}/tokens?page=${page}&page_size=${limit}&token_id=${token_id}&token_id_exact=false&buy_now_only=${buy_now_only}&min_price_only=false&not_for_sale=false&sort_by_price=${sort_by_price}&sort_by_id=asc`
+      `${api_url}/v2/nfts/${contractAddress}/tokens?page=${page}&page_size=${limit}&token_id=${token_id}&token_id_exact=false&buy_now_only=${buy_now_only}&min_price_only=false&not_for_sale=false&traits=${traits}&sort_by_price=${sort_by_price}&sort_by_id=asc`,
     );
 
     if (!result.data) {
@@ -38,7 +39,7 @@ exports.getNft = async (req, res) => {
 
     const api_url = process.env.API_URL;
     const result = await axios.get(
-      `${api_url}/nfts/${contractAddress}?get_tokens=true&token_id=${tokenId}&token_id_exact=true`
+      `${api_url}/nfts/${contractAddress}?get_tokens=true&token_id=${tokenId}&token_id_exact=true`,
     );
 
     if (!result.data) {
@@ -85,7 +86,7 @@ exports.getNftActivities = async (req, res) => {
           page,
           page_size: pageSize,
         },
-      }
+      },
     );
 
     res.json(result.data);

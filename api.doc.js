@@ -330,6 +330,83 @@ const apiDocumentation = {
         },
       },
     },
+    "/api/v1/collections/{address}/traits": {
+      get: {
+        tags: ["Collections operations"],
+        description: "Get collection",
+        parameters: [
+          {
+            name: "address",
+            in: "path",
+            required: true,
+            description: "Collection address",
+            schema: {
+              type: "string",
+              example:
+                "sei14mer99s65q95hams86z6rc4yjlsdgl2axul8k9g72qs0jfxf58hq0s7u4y",
+            },
+          },
+        ],
+        responses: {
+          200: {
+            description: "Collection were obtained",
+            content: {
+              "application/json": {
+                schema: {
+                  //   $ref: "#/components/schemas/Collections",
+                  type: "object",
+                  properties: {
+                    example: {
+                      Background: [
+                        {
+                          display_type: null,
+                          value: "Cosmic Blue",
+                          num_tokens: 1,
+                          rarity: {
+                            rank: 1,
+                            score: 3333,
+                          },
+                        },
+                        {
+                          display_type: null,
+                          value: "Emptiness",
+                          num_tokens: 1,
+                          rarity: {
+                            rank: 1,
+                            score: 3333,
+                          },
+                        },
+                      ],
+                      Body: [
+                        {
+                          display_type: null,
+                          value: "Astral",
+                          num_tokens: 1,
+                          rarity: {
+                            rank: 1,
+                            score: 3333,
+                          },
+                        },
+                        {
+                          display_type: null,
+                          value: "Black",
+                          num_tokens: 458,
+                          rarity: {
+                            rank: 107,
+                            score: 7.277292576419214,
+                          },
+                        },
+                      ],
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+
     "/api/v1/nfts/{address}": {
       get: {
         tags: ["Nfts operations"],
@@ -343,7 +420,7 @@ const apiDocumentation = {
             schema: {
               type: "string",
               example:
-                "sei15w6sty6cjjraxanrxxx0y09adwjtywhkcmydh7np25zezg9m5mwsfduktd",
+                "sei14mer99s65q95hams86z6rc4yjlsdgl2axul8k9g72qs0jfxf58hq0s7u4y",
             },
           },
           {
@@ -394,6 +471,16 @@ const apiDocumentation = {
             schema: {
               type: "integer",
               example: "25",
+            },
+          },
+          {
+            name: "traits",
+            in: "query",
+            required: false,
+            description: "traits",
+            schema: {
+              type: "string",
+              example: `{"Background":["Cosmic Blue"],"Body":["Astral"]} `,
             },
           },
         ],

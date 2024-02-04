@@ -1,6 +1,7 @@
 const { default: axios } = require("axios");
 const Collection = require("../models/collection.model");
 const CollectionMonitor = require("../models/collection-monitor.model");
+const { SigningCosmWasmClient } = require("@cosmjs/cosmwasm-stargate");
 
 exports.createCollection = async (req, res) => {
   const address = req.body.address;
@@ -21,12 +22,10 @@ exports.createCollection = async (req, res) => {
     res.json({ status: true });
   } catch (error) {
     // console.log(error);
-    res
-      .status(500)
-      .send({
-        message:
-          error.message || "Some error occurred while saving the collection.",
-      });
+    res.status(500).send({
+      message:
+        error.message || "Some error occurred while saving the collection.",
+    });
     return;
   }
 };
@@ -59,17 +58,16 @@ exports.getCollections = async (req, res) => {
     for (let idx = 0; idx < collections.length; idx += 20) {
       const data = await Promise.all(
         collections.slice(idx, idx + 20).map(async (collection) => {
-          const saleCount = await fetchCollectionSaleCount(
-            collection.contract_address
-          );
-          const _24hPriceChange = await calculatePriceChange(
-            collection.contract_address
-          );
+          const listed = (collection.auction_count / collection.supply) * 100;
+          const { _24hFloorChange, _24hVolumeChange, saleCount } =
+            await calculatePriceChangeAndSaleCount(collection.contract_address);
+
           return {
             ...collection._doc,
             saleCount,
-            allCollectionsVolume,
-            _24hPriceChange,
+            _24hFloorChange,
+            _24hVolumeChange,
+            listed,
           };
         })
       );
@@ -80,6 +78,7 @@ exports.getCollections = async (req, res) => {
     res.json({
       total: totalCounts,
       collections: colltionsWithPrice,
+      allCollectionsVolume,
     });
   } catch (err) {
     console.log(err);
@@ -99,19 +98,42 @@ exports.getCollection = async (req, res) => {
     });
 
     const allCollectionsVolume = await calculateAllCollectionsVolume();
-    const saleCount = await fetchCollectionSaleCount(address);
-    const _24hPriceChange = await calculatePriceChange(address);
+    const listed = (collection.auction_count / collection.supply) * 100;
+    const { _24hFloorChange, _24hVolumeChange, saleCount } =
+      await calculatePriceChangeAndSaleCount(collection.contract_address);
+
+    const royalty = await getCollectionRoyalty(address);
 
     res.json({
       ...collection._doc,
-      saleCount,
+      royalty,
       allCollectionsVolume,
-      _24hPriceChange,
+      saleCount,
+      _24hFloorChange,
+      _24hVolumeChange,
+      listed,
     });
   } catch (err) {
     console.log(err);
     res.status(500).send({
       message: err.message || "Error occurred while fetching the Collection.",
+    });
+    return;
+  }
+};
+
+exports.getCollectionTraits = async (req, res) => {
+  try {
+    const address = req.params.address;
+    const api_url = process.env.BASE_API_URL;
+    const { data } = await axios.get(`${api_url}/v2/nfts/${address}/traits`);
+
+    res.json(data);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send({
+      message:
+        err.message || "Error occurred while fetching the Collection traits.",
     });
     return;
   }
@@ -132,48 +154,47 @@ const calculateAllCollectionsVolume = async () => {
   return allCollectionsVolume;
 };
 
-const calculatePriceChange = async (address) => {
+const calculatePriceChangeAndSaleCount = async (address) => {
   try {
-    const collection = await fetchCollection(address);
+    const currentCollection = await CollectionMonitor.findOne({
+      contract_address: address,
+    }).sort({ date: -1 });
 
     const oneDayAgo = new Date();
     oneDayAgo.setDate(oneDayAgo.getDate() - 1);
-    const monitor = await CollectionMonitor.findOne({
+
+    const previousCollection = await CollectionMonitor.findOne({
       date: { $lte: oneDayAgo },
       contract_address: address,
     }).sort({ date: -1 });
 
-    const currentPrice = collection.floor;
-    const previousPrice = monitor.floor;
+    const currentFloor = currentCollection.floor;
+    const previousFloor = previousCollection.floor;
 
-    if (currentPrice && previousPrice) {
-      return (currentPrice - previousPrice) / currentPrice;
-    }
+    const current24hVolume = currentCollection.volume_24hr;
+    const previous24hVolume = previousCollection.volume_24hr;
 
-    return undefined;
+    return {
+      _24hFloorChange: (currentFloor - previousFloor) / currentFloor,
+      _24hVolumeChange:
+        (current24hVolume - previous24hVolume) / current24hVolume,
+      saleCount: currentCollection.sale_count,
+    };
+  } catch (error) {
+    return {};
+  }
+};
+
+const getCollectionRoyalty = async (address) => {
+  try {
+    const client = await SigningCosmWasmClient.connect(process.env.RPC_URL);
+    const queryResult = await client.queryContractSmart(address, {
+      nft_info: {
+        token_id: "1",
+      },
+    });
+    return queryResult.extension.royalty_percentage;
   } catch (error) {
     return undefined;
   }
-};
-
-const fetchCollectionSaleCount = async (address) => {
-  const api_url = process.env.BASE_API_URL;
-  try {
-    const { data } = await axios.get(`${api_url}/v2/nfts/${address}/details`);
-
-    return data?.num_sales_24hr;
-  } catch {
-    return undefined;
-  }
-};
-
-const fetchCollection = async (address) => {
-  const api_url = process.env.API_URL;
-  const { data: collection } = await axios.get(`${api_url}/nfts/${address}`, {
-    params: {
-      get_tokens: "false",
-    },
-  });
-
-  return collection;
 };

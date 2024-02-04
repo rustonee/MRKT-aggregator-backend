@@ -1,6 +1,7 @@
 const { default: axios } = require("axios");
 const Collection = require("../models/collection.model");
 const CollectionMonitor = require("../models/collection-monitor.model");
+const { SigningCosmWasmClient } = require("@cosmjs/cosmwasm-stargate");
 
 exports.getCollections = async (req, res) => {
   const page = parseInt(req.query.page) || 1;
@@ -74,8 +75,11 @@ exports.getCollection = async (req, res) => {
     const { _24hFloorChange, _24hVolumeChange, saleCount } =
       await calculatePriceChangeAndSaleCount(collection.contract_address);
 
+    const royalty = await getCollectionRoyalty(address);
+
     res.json({
       ...collection._doc,
+      royalty,
       allCollectionsVolume,
       saleCount,
       _24hFloorChange,
@@ -151,5 +155,19 @@ const calculatePriceChangeAndSaleCount = async (address) => {
     };
   } catch (error) {
     return {};
+  }
+};
+
+const getCollectionRoyalty = async (address) => {
+  try {
+    const client = await SigningCosmWasmClient.connect(process.env.RPC_URL);
+    const queryResult = await client.queryContractSmart(address, {
+      nft_info: {
+        token_id: "1"
+      }
+    });
+    return queryResult.extension.royalty_percentage;
+  } catch (error) {
+    return undefined;
   }
 };

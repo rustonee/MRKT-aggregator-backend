@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-const controller = require("../controllers/collection.controlloer");
+const controller = require("../controllers/collection.controller");
 
 require("dotenv").config();
 

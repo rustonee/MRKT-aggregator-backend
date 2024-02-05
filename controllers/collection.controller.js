@@ -1,7 +1,13 @@
 const { default: axios } = require("axios");
 const Collection = require("../models/collection.model");
-const CollectionMonitor = require("../models/collection-monitor.model");
-const { SigningCosmWasmClient } = require("@cosmjs/cosmwasm-stargate");
+const {
+  calculateAllCollectionsVolume
+} = require("./services/calculateAllCollectionsVolume");
+const {
+  calculatePriceChangeAndSaleCount
+} = require("./services/calculatePriceChangeAndSaleCount");
+const { getCollectionRoyalty } = require("./services/getCollectionRoyalty");
+const { fetchCollection } = require("./services/fetchCollection");
 
 exports.getCollections = async (req, res) => {
   const page = parseInt(req.query.page) || 1;
@@ -17,7 +23,6 @@ exports.getCollections = async (req, res) => {
     }
 
     const totalCounts = await Collection.countDocuments(query);
-    const totalPages = Math.ceil(totalCounts / limit);
 
     const collections = await Collection.find(query, { _id: 0, __v: 0 })
       .sort(sort)
@@ -65,20 +70,28 @@ exports.getCollections = async (req, res) => {
 exports.getCollection = async (req, res) => {
   try {
     const address = req.params.address;
+    let collection;
 
-    const collection = await Collection.findOne({
-      contract_address: address
-    });
+    try {
+      collection = await fetchCollection(address);
+    } catch (error) {
+      const collectionFromDb = await Collection.findOne({
+        contract_address: address
+      });
+      collection = collectionFromDb._doc;
+    }
 
     const allCollectionsVolume = await calculateAllCollectionsVolume();
+
     const listed = (collection.auction_count / collection.supply) * 100;
+
     const { _24hFloorChange, _24hVolumeChange, saleCount } =
       await calculatePriceChangeAndSaleCount(collection.contract_address);
 
     const royalty = await getCollectionRoyalty(address);
 
     res.json({
-      ...collection._doc,
+      ...collection,
       royalty,
       allCollectionsVolume,
       saleCount,
@@ -109,65 +122,5 @@ exports.getCollectionTraits = async (req, res) => {
         err.message || "Error occurred while fetching the Collection traits."
     });
     return;
-  }
-};
-
-const calculateAllCollectionsVolume = async () => {
-  const [{ allCollectionsVolume }] = await Collection.aggregate([
-    {
-      $group: {
-        _id: null,
-        allCollectionsVolume: {
-          $sum: "$volume"
-        }
-      }
-    }
-  ]);
-
-  return allCollectionsVolume;
-};
-
-const calculatePriceChangeAndSaleCount = async (address) => {
-  try {
-    const currentCollection = await CollectionMonitor.findOne({
-      contract_address: address
-    }).sort({ date: -1 });
-
-    const oneDayAgo = new Date();
-    oneDayAgo.setDate(oneDayAgo.getDate() - 1);
-
-    const previousCollection = await CollectionMonitor.findOne({
-      date: { $lte: oneDayAgo },
-      contract_address: address
-    }).sort({ date: -1 });
-
-    const currentFloor = currentCollection.floor;
-    const previousFloor = previousCollection.floor;
-
-    const current24hVolume = currentCollection.volume_24hr;
-    const previous24hVolume = previousCollection.volume_24hr;
-
-    return {
-      _24hFloorChange: (currentFloor - previousFloor) / currentFloor,
-      _24hVolumeChange:
-        (current24hVolume - previous24hVolume) / current24hVolume,
-      saleCount: currentCollection.sale_count
-    };
-  } catch (error) {
-    return {};
-  }
-};
-
-const getCollectionRoyalty = async (address) => {
-  try {
-    const client = await SigningCosmWasmClient.connect(process.env.RPC_URL);
-    const queryResult = await client.queryContractSmart(address, {
-      nft_info: {
-        token_id: "1"
-      }
-    });
-    return queryResult.extension.royalty_percentage;
-  } catch (error) {
-    return undefined;
   }
 };

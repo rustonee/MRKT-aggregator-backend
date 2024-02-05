@@ -86,15 +86,13 @@ const apiDocumentation = {
       post: {
         tags: ["Collections operations"],
         description: "Add new collection",
-        parameters: [
-          {
-            name: "Authorization",
-            in: "header",
-            type: "string",
-            required: true,
-            description: "auth token",
+        securitySchemes: {
+          bearerAuth: {
+            type: "http",
+            scheme: "bearer",
+            bearerFormat: "JWT",
           },
-        ],
+        },
         requestBody: {
           content: {
             "application/json": {
@@ -140,6 +138,22 @@ const apiDocumentation = {
                     error: {
                       type: "string",
                       example: "Collection address is required",
+                    },
+                  },
+                },
+              },
+            },
+          },
+          401: {
+            description: "Unauthorized",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    error: {
+                      type: "string",
+                      example: "Unauthorized",
                     },
                   },
                 },

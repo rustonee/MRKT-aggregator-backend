@@ -1,37 +1,40 @@
 const jwt = require("jsonwebtoken");
-const bcrypt = require("bcryptjs");
-const User = require("../models/user.model");
+const Admin = require("../models/Admin.model");
 
 // Admin login
 exports.login = async (req, res) => {
   const secretKey = process.env.TOKEN_SECRET;
+  const { username, password } = req.body;
 
-  const username = req.body.username;
-  const password = req.body.password;
+  if (!username || !password) {
+    return res.status(400).json({
+      message:
+        "Bad request. Please add username and password in the request body",
+    });
+  }
 
   try {
-    // const user = await User.findOne({ username: username });
+    const foundUser = await Admin.findOne({ username: username });
 
-    // for test
-    const user = {
-      username: "admin",
-      password: await bcrypt.hash("admin", 10),
-    };
-    console.log(await bcrypt.compare(password, user.password));
-    if (user && (await bcrypt.compare(password, user.password))) {
-      const payload = { username: user.username, role: user.role };
-      const expiresIn = "1h"; // Token expiration time
+    if (foundUser) {
+      const isMatch = await foundUser.comparePassword(password);
+      if (isMatch) {
+        const token = jwt.sign(
+          {
+            id: foundUser._id,
+            name: foundUser.username,
+          },
+          secretKey,
+          { expiresIn: "30d" }
+        );
 
-      const accessToken = jwt.sign(payload, secretKey, { expiresIn });
-
-      res.json({ accessToken });
-
-      return;
+        return res.status(200).json({ message: "user logged in", token });
+      } else {
+        return res.status(401).json({ message: "Bad password" });
+      }
+    } else {
+      return res.status(401).json({ message: "Bad credentails" });
     }
-
-    res.status(400).json({
-      message: "Invalid user.",
-    });
   } catch (error) {
     res.status(500).send({
       message: error.message || "Error occurred while authenticating.",

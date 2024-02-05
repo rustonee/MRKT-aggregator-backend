@@ -1,11 +1,11 @@
 var express = require("express");
-const verifyJWTToken = require("../middleware/authJWT");
+const authenticationMiddleware = require("../middleware/auth");
 var router = express.Router();
 const controller = require("../controllers/collection.controlloer");
 
 require("dotenv").config();
 
-router.post("/", verifyJWTToken, controller.createCollection);
+router.post("/", authenticationMiddleware, controller.createCollection);
 
 router.get("/", controller.getCollections);
 router.get("/:address", controller.getCollection);

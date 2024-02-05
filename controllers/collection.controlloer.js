@@ -14,17 +14,17 @@ exports.createCollection = async (req, res) => {
     const collection = await fetchCollection(address);
     collection.floor_24hr = collection.floor;
     collection.num_sales_24hr = await fetchCollectionSaleCount(address);
-    collection.royalty = null;
+    collection.royalty = await getCollectionRoyalty(address);
 
     const newCollection = new Collection(collection);
     await newCollection.save();
 
     res.json({ status: true });
-  } catch (error) {
-    // console.log(error);
+  } catch (err) {
+    console.log(err);
     res.status(500).send({
       message:
-        error.message || "Some error occurred while saving the collection.",
+        err.message || "Some error occurred while saving the collection.",
     });
     return;
   }
@@ -195,6 +195,28 @@ const getCollectionRoyalty = async (address) => {
     });
     return queryResult.extension.royalty_percentage;
   } catch (error) {
+    return undefined;
+  }
+};
+
+const fetchCollection = async (address) => {
+  const api_url = process.env.API_URL;
+  const { data: collection } = await axios.get(`${api_url}/nfts/${address}`, {
+    params: {
+      get_tokens: "false",
+    },
+  });
+
+  return collection;
+};
+
+const fetchCollectionSaleCount = async (address) => {
+  const api_url = process.env.BASE_API_URL;
+  try {
+    const { data } = await axios.get(`${api_url}/v2/nfts/${address}/details`);
+
+    return data?.num_sales_24hr;
+  } catch {
     return undefined;
   }
 };

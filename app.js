@@ -4,6 +4,7 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const cors = require("cors");
 const indexRouter = require("./routes/index");
+const authRouter = require("./routes/auth");
 const collectionRouter = require("./routes/collection");
 const nftRouter = require("./routes/nft");
 const mongoose = require("mongoose");
@@ -36,6 +37,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(apiDocumentation));
 
 app.use("/api/v1", indexRouter);
+app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/collections", collectionRouter);
 app.use("/api/v1/nfts", nftRouter);
 

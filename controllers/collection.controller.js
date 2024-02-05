@@ -1,13 +1,39 @@
 const { default: axios } = require("axios");
 const Collection = require("../models/collection.model");
 const {
-  calculateAllCollectionsVolume
+  calculateAllCollectionsVolume,
 } = require("./services/calculateAllCollectionsVolume");
 const {
-  calculatePriceChangeAndSaleCount
+  calculatePriceChangeAndSaleCount,
 } = require("./services/calculatePriceChangeAndSaleCount");
 const { getCollectionRoyalty } = require("./services/getCollectionRoyalty");
 const { fetchCollection } = require("./services/fetchCollection");
+
+exports.createCollection = async (req, res) => {
+  const address = req.body.address;
+
+  try {
+    if (!address) {
+      res.status(400).send({ message: "Collection address is required" });
+      return;
+    }
+    const collection = await fetchCollection(address);
+    collection.floor_24hr = collection.floor;
+    collection.royalty = await getCollectionRoyalty(address);
+
+    const newCollection = new Collection(collection);
+    await newCollection.save();
+
+    res.json({ status: true });
+  } catch (err) {
+    console.log(err);
+    res.status(500).send({
+      message:
+        err.message || "Some error occurred while saving the collection.",
+    });
+    return;
+  }
+};
 
 exports.getCollections = async (req, res) => {
   const page = parseInt(req.query.page) || 1;
@@ -45,7 +71,7 @@ exports.getCollections = async (req, res) => {
             saleCount,
             _24hFloorChange,
             _24hVolumeChange,
-            listed
+            listed,
           };
         })
       );
@@ -56,12 +82,12 @@ exports.getCollections = async (req, res) => {
     res.json({
       total: totalCounts,
       collections: colltionsWithPrice,
-      allCollectionsVolume
+      allCollectionsVolume,
     });
   } catch (err) {
     console.log(err);
     res.status(500).send({
-      message: err.message || "Error occurred while fetching the Collections."
+      message: err.message || "Error occurred while fetching the Collections.",
     });
     return;
   }
@@ -76,7 +102,7 @@ exports.getCollection = async (req, res) => {
       collection = await fetchCollection(address);
     } catch (error) {
       const collectionFromDb = await Collection.findOne({
-        contract_address: address
+        contract_address: address,
       });
       collection = collectionFromDb._doc;
     }
@@ -97,12 +123,12 @@ exports.getCollection = async (req, res) => {
       saleCount,
       _24hFloorChange,
       _24hVolumeChange,
-      listed
+      listed,
     });
   } catch (err) {
     console.log(err);
     res.status(500).send({
-      message: err.message || "Error occurred while fetching the Collection."
+      message: err.message || "Error occurred while fetching the Collection.",
     });
     return;
   }
@@ -119,7 +145,7 @@ exports.getCollectionTraits = async (req, res) => {
     console.error(err);
     res.status(500).send({
       message:
-        err.message || "Error occurred while fetching the Collection traits."
+        err.message || "Error occurred while fetching the Collection traits.",
     });
     return;
   }

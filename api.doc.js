@@ -20,7 +20,148 @@ const apiDocumentation = {
     // },
   ],
   paths: {
+    "/api/v1/auth/login": {
+      post: {
+        tags: ["Auth operations"],
+        description: "User authentication",
+        parameters: [],
+        requestBody: {
+          content: {
+            "application/json": {
+              schema: {
+                type: "object",
+                properties: {
+                  username: {
+                    type: "string",
+                    example: "admin",
+                  },
+                  password: {
+                    type: "string",
+                    example: "admin",
+                  },
+                },
+              },
+            },
+          },
+          required: true,
+          description: "User authentication",
+        },
+        responses: {
+          200: {
+            description: "User logged in",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    token: {
+                      type: "string",
+                      example: "",
+                    },
+                  },
+                },
+              },
+            },
+          },
+          400: {
+            description: "Invalid user",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    error: {
+                      type: "string",
+                      example: "Invalid user",
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
     "/api/v1/collections": {
+      post: {
+        tags: ["Collections operations"],
+        description: "Add new collection",
+        securitySchemes: {
+          bearerAuth: {
+            type: "http",
+            scheme: "bearer",
+            bearerFormat: "JWT",
+          },
+        },
+        requestBody: {
+          content: {
+            "application/json": {
+              schema: {
+                type: "object",
+                properties: {
+                  address: {
+                    type: "string",
+                    example:
+                      "sei19kfsr9zft0k9awelwwv9k87mrgwf358tfqw9tv30rlvwn8rn5kzq00hnup",
+                  },
+                },
+              },
+            },
+          },
+          required: true,
+          description: "collection address want to add",
+        },
+        responses: {
+          200: {
+            description: "Collection were added",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    status: {
+                      type: "boolean",
+                      example: "true",
+                    },
+                  },
+                },
+              },
+            },
+          },
+          400: {
+            description: "Collection address is required",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    error: {
+                      type: "string",
+                      example: "Collection address is required",
+                    },
+                  },
+                },
+              },
+            },
+          },
+          401: {
+            description: "Unauthorized",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    error: {
+                      type: "string",
+                      example: "Unauthorized",
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
       get: {
         tags: ["Collections operations"],
         description: "Get collections",

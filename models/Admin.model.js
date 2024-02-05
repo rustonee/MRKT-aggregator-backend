@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const bcrypt = require("bcryptjs");
 
 // Define the schema for the admin
 const AdminSchema = new mongoose.Schema({
@@ -23,11 +22,6 @@ const AdminSchema = new mongoose.Schema({
     default: Date.now,
   },
 });
-
-AdminSchema.methods.comparePassword = async function (candidatePassword) {
-  const isMatch = await bcrypt.compare(candidatePassword, this.password);
-  return isMatch;
-};
 
 // Create the admin model
 const Admin = mongoose.model("Admin", AdminSchema);

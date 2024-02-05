@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken");
+const bcrypt = require("bcryptjs");
 const Admin = require("../models/Admin.model");
 
 // Admin login
@@ -17,7 +18,7 @@ exports.login = async (req, res) => {
     const foundUser = await Admin.findOne({ username: username });
 
     if (foundUser) {
-      const isMatch = await foundUser.comparePassword(password);
+      const isMatch = await comparePassword(password, foundUser.password);
       if (isMatch) {
         const token = jwt.sign(
           {
@@ -40,4 +41,9 @@ exports.login = async (req, res) => {
       message: error.message || "Error occurred while authenticating.",
     });
   }
+};
+
+const comparePassword = async (candidatePassword, password) => {
+  const isMatch = await bcrypt.compare(candidatePassword, password);
+  return isMatch;
 };

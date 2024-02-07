@@ -421,6 +421,62 @@ const apiDocumentation = {
       },
     },
 
+    "/api/v1/collections/{address}/activities": {
+      get: {
+        tags: ["Collections operations"],
+        description: "Get collection",
+        parameters: [
+          {
+            name: "address",
+            in: "path",
+            required: true,
+            description: "Collection address",
+            schema: {
+              type: "string",
+              example:
+                "sei1zjqml63xh7cfjxfe229v9c7krx05ytlz22y3cpf09wz83xck5q9qu73y03",
+            },
+          },
+          {
+            name: "page",
+            in: "query",
+            required: false,
+            description: "Page index",
+            schema: {
+              type: "integer",
+              example: "1",
+            },
+          },
+          {
+            name: "page_size",
+            in: "query",
+            required: false,
+            description: "Counts per page",
+            schema: {
+              type: "integer",
+              example: "25",
+            },
+          },
+          {
+            name: "type",
+            in: "query",
+            required: false,
+            description: "undefined for all activities",
+            schema: {
+              type: "string",
+              enum: ["sale", "list", "withdraw_listing"],
+              example: "sale",
+            },
+          },
+        ],
+        responses: {
+          200: {
+            description: "List of collection activities",
+          },
+        },
+      },
+    },
+
     "/api/v1/nfts/{address}": {
       get: {
         tags: ["Nfts operations"],

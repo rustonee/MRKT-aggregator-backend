@@ -73,7 +73,7 @@ exports.getCollections = async (req, res) => {
             _24hVolumeChange,
             listed,
           };
-        })
+        }),
       );
 
       colltionsWithPrice.push(...data);
@@ -146,6 +146,47 @@ exports.getCollectionTraits = async (req, res) => {
     res.status(500).send({
       message:
         err.message || "Error occurred while fetching the Collection traits.",
+    });
+    return;
+  }
+};
+
+exports.getCollectionActivities = async (req, res) => {
+  try {
+    const api_url = process.env.BASE_API_URL;
+
+    const address = req.params.address;
+
+    const page = req.query.page || 1;
+    const pageSize = req.query.page_size || 25;
+
+    const typeMapping = {
+      sale: "sale",
+      list: `list%5C_`,
+      withdraw_listing: "withdraw_listing",
+    };
+
+    const type = typeMapping[req.query.type] || "";
+
+    const { data } = await axios.get(
+      `${api_url}/v1/marketplace/activities?event_type=${type}`,
+      {
+        params: {
+          chain_id: "pacific-1",
+          nft_address: address,
+          page,
+          pageSize,
+        },
+      },
+    );
+
+    res.json(data);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send({
+      message:
+        err.message ||
+        "Error occurred while fetching the Collection activities.",
     });
     return;
   }

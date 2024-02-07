@@ -10,5 +10,6 @@ router.post("/", authenticationMiddleware, controller.createCollection);
 router.get("/", controller.getCollections);
 router.get("/:address", controller.getCollection);
 router.get("/:address/traits", controller.getCollectionTraits);
+router.get("/:address/activities", controller.getCollectionActivities);
 
 module.exports = router;

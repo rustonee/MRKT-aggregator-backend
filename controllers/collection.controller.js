@@ -8,6 +8,7 @@ const {
 } = require("./services/calculatePriceChangeAndSaleCount");
 const { getCollectionRoyalty } = require("./services/getCollectionRoyalty");
 const { fetchCollection } = require("./services/fetchCollection");
+const { fetchCollectionDetails } = require("./services/fetchCollectionDetails");
 
 exports.createCollection = async (req, res) => {
   const address = req.body.address;
@@ -115,7 +116,7 @@ exports.getCollection = async (req, res) => {
     let collection;
 
     try {
-      collection = await fetchCollection(address);
+      collection = await fetchCollectionDetails(address);
     } catch (error) {
       const collectionFromDb = await Collection.findOne({
         contract_address: address,

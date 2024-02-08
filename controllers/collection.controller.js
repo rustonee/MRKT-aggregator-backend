@@ -39,10 +39,11 @@ exports.getCollections = async (req, res) => {
   const page = parseInt(req.query.page) || 1;
   const limit = parseInt(req.query.page_size) || 25;
   const name = req.query.name || undefined;
+  const lookback = req.query.sort_by_lookback || "24hr";
 
   try {
-    let query = { chain_id: "pacific-1" };
-    const sort = { volume_24hr: -1 };
+    let query = { chain_id: "pacific-1", [`volume_${lookback}`]: { $gt: 0 } };
+    const sort = { [`volume_${lookback}`]: -1 };
 
     if (name) {
       query.name = { $regex: new RegExp(name, "i") };
@@ -50,7 +51,22 @@ exports.getCollections = async (req, res) => {
 
     const totalCounts = await Collection.countDocuments(query);
 
-    const collections = await Collection.find(query, { _id: 0, __v: 0 })
+    const collections = await Collection.find(query, {
+      _id: 0,
+      contract_address: 1,
+      name: 1,
+      slug: 1,
+      pfp: 1,
+      supply: 1,
+      owners: 1,
+      auction_count: 1,
+      floor: 1,
+      floor_24hr: 1,
+      num_sales: 1,
+      [`num_sales_${lookback}`]: 1,
+      volume: 1,
+      [`volume_${lookback}`]: 1,
+    })
       .sort(sort)
       .skip((page - 1) * limit)
       .limit(limit);
@@ -73,7 +89,7 @@ exports.getCollections = async (req, res) => {
             _24hVolumeChange,
             listed,
           };
-        }),
+        })
       );
 
       colltionsWithPrice.push(...data);
@@ -177,7 +193,7 @@ exports.getCollectionActivities = async (req, res) => {
           page,
           pageSize,
         },
-      },
+      }
     );
 
     res.json(data);

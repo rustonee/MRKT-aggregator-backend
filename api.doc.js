@@ -177,6 +177,17 @@ const apiDocumentation = {
             },
           },
           {
+            name: "sort_by_lookback",
+            in: "query",
+            required: false,
+            description:
+              'Key for sorting collections. It can be "1hr", "24hr", "7day", "30day" or "latest"(all time)',
+            schema: {
+              type: "string",
+              example: "24hr",
+            },
+          },
+          {
             name: "page",
             in: "query",
             required: false,
@@ -215,47 +226,29 @@ const apiDocumentation = {
                       example: [
                         {
                           contract_address:
-                            "sei1v90ly54qeu7497lzk2mnmp2h29sgtep8hs5ryvfqf8dwq5gc0t9srp6aey",
-                          auction_count: 66,
-                          banner:
-                            "https://static-assets.pallet.exchange/banner/webump.png",
-                          calculate_rarities: false,
-                          chain_id: "pacific-1",
-                          creator:
-                            "sei1hjsqrfdg2hvwl3gacg4fkznurf36usrv7rkzkyh29wz3guuzeh0snslz7d",
-                          creator_info: {
-                            domain: null,
-                            pfp: "https://static-assets.pallet.exchange/pfp/user3.jpg",
-                          },
-                          description: "Whats poppin? we bumpin",
-                          floor: 2349,
-                          floor_24hr: 2349,
-                          name: "WeBump",
-                          onboard_tx_id: null,
-                          owners: 3062,
-                          pfp: "https://static-assets.pallet.exchange/pfp/webump.jpg",
-                          public: true,
-                          send_listing_notification: false,
-                          slug: "webump",
-                          socials: [
-                            {
-                              twitter: "https://twitter.com/webump_",
-                            },
-                            {
-                              discord: "https://discord.gg/m2WEtFRY8q",
-                            },
-                            {
-                              website: "https://webump.xyz",
-                            },
-                          ],
-                          start_after: "",
-                          supply: 4444,
-                          symbol: "BUMP",
-                          version: "2024-01-17T18:00:00.000Z",
-                          volume: 3533158.989899,
-                          volume_24hr: 72726.88,
+                            "sei13zrt6ts27fd7rl3hfha7t63udghm0d904ds68h5wsvkkx5md9jqqkd7z5j",
+                          name: "dob",
+                          slug: "dob",
+                          pfp: "https://static-assets.pallet.exchange/pfp/dob.png",
+                          owners: 3112,
+                          auction_count: 321,
+                          supply: 5555,
+                          floor: 450,
+                          floor_24hr: 465,
+                          num_sales: 6768,
+                          num_sales_24hr: 34,
+                          volume: 2364730.023189998,
+                          volume_24hr: 16885,
+                          saleCount: 6768,
+                          _24hFloorChange: -0.03333333333333333,
+                          _24hVolumeChange: 0.012573528355634245,
+                          listed: 5.778577857785779,
                         },
                       ],
+                    },
+                    allCollectionsVolume: {
+                      type: "integer",
+                      example: 25453946.691740002,
                     },
                   },
                 },

@@ -1031,6 +1031,68 @@ const apiDocumentation = {
         },
       },
     },
+    "/api/v1/nfts/owned/{walletAddress}": {
+      get: {
+        tags: ["Nfts operations"],
+        description: "Get owned nfts",
+        parameters: [
+          {
+            name: "walletAddress",
+            in: "path",
+            required: true,
+            description: "owner wallet address",
+            schema: {
+              type: "string",
+              example: "sei1s6dsxre9cfz8474w4lxvml6xaapt7fht68n90c",
+            },
+          },
+        ],
+        responses: {
+          200: {
+            description: "Owned Nfts list",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    walletAddress: {
+                      type: "string",
+                      example: "sei1s6dsxre9cfz8474w4lxvml6xaapt7fht68n90c",
+                    },
+                    nfts: {
+                      type: "array",
+                      example: [
+                        {
+                          collection: {
+                            contract_address:
+                              "sei15w6sty6cjjraxanrxxx0y09adwjtywhkcmydh7np25zezg9m5mwsfduktd",
+                            symbol: "SEISUBJ",
+                          },
+                          id: "3262",
+                          name: "Test Tube #3262  ",
+                          image:
+                            "https://arweave.net/_nM-ZSMc2lhU0ogWZ-ldOjjJANKNzEiPoxAcViexSSc/BlueCrush.gif",
+                          bids: [],
+                          last_sale: {
+                            denom: "usei",
+                            amount: "690000",
+                          },
+                          auction: null,
+                          rarity: {
+                            score: 3.921176470588235,
+                            rank: 4,
+                          },
+                        },
+                      ],
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
   },
 };
 

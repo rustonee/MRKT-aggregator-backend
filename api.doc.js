@@ -470,6 +470,51 @@ const apiDocumentation = {
       },
     },
 
+    "/api/v1/collections/mrkt/{address}/nfts": {
+      get: {
+        tags: ["Mrkt collections operations"],
+        description: "Get listed nfts on mrkt collection",
+        parameters: [
+          {
+            name: "address",
+            in: "path",
+            required: true,
+            description: "Collection address",
+            schema: {
+              type: "string",
+              example:
+                "sei1faqw953tzda4qvr37wnjpr99t0hx6nqeknrf9c03gzrjvm764huqgvspst",
+            },
+          },
+          {
+            name: "page",
+            in: "query",
+            required: false,
+            description: "Page index",
+            schema: {
+              type: "integer",
+              example: "1",
+            },
+          },
+          {
+            name: "page_size",
+            in: "query",
+            required: false,
+            description: "Counts per page",
+            schema: {
+              type: "integer",
+              example: "25",
+            },
+          },
+        ],
+        responses: {
+          200: {
+            description: "List listed nfts of mrkt collection",
+          },
+        },
+      },
+    },
+
     "/api/v1/nfts/{address}": {
       get: {
         tags: ["Nfts operations"],

@@ -70,6 +70,7 @@ exports.getCollections = async (req, res) => {
       [`num_sales_${lookback}`]: 1,
       volume: 1,
       [`volume_${lookback}`]: 1,
+      royalty,
     })
       .sort(sort)
       .skip((page - 1) * limit)
@@ -93,7 +94,7 @@ exports.getCollections = async (req, res) => {
             _24hVolumeChange,
             listed,
           };
-        }),
+        })
       );
 
       colltionsWithPrice.push(...data);
@@ -197,7 +198,7 @@ exports.getCollectionActivities = async (req, res) => {
           page,
           pageSize,
         },
-      },
+      }
     );
 
     res.json(data);
@@ -222,7 +223,7 @@ exports.getListedNftOnMrktCollection = async (req, res) => {
     const client = await SigningCosmWasmClient.connect(process.env.RPC_URL);
 
     const allListedNftsOnCollection = await getListedNftsFromMrktContract(
-      client,
+      client
     ).then((list) => list.filter((nft) => nft.cw721_address === address));
 
     const total = allListedNftsOnCollection.length;
@@ -234,14 +235,14 @@ exports.getListedNftOnMrktCollection = async (req, res) => {
           const metadata = await getNftMetadata(
             client,
             nft.cw721_address,
-            nft.token_id,
+            nft.token_id
           );
 
           return {
             ...metadata,
             listed: nft,
           };
-        }),
+        })
     );
 
     res.json({

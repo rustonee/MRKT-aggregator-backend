@@ -82,9 +82,275 @@ const apiDocumentation = {
         },
       },
     },
+
+    "/api/v1/user/{address}/collections": {
+      get: {
+        tags: ["User operations"],
+        description: "Get user's collections from pallet api",
+        parameters: [
+          {
+            name: "address",
+            in: "path",
+            required: true,
+            description: "user wallet address",
+            schema: {
+              type: "string",
+              example: "sei14dmlustzjl6n07jgs86em296htggd49mcgy0pg",
+            },
+          },
+        ],
+        responses: {
+          200: {
+            description: "User collections were obtained",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    total: {
+                      type: "number",
+                      example: "3",
+                    },
+                    collections: {
+                      type: "array",
+                      example: [
+                        {
+                          contract_address:
+                            "sei15w6sty6cjjraxanrxxx0y09adwjtywhkcmydh7np25zezg9m5mwsfduktd",
+                          auction_count: 378,
+                          floor: 0.33,
+                          floor_24hr: 1.19,
+                          name: "SEI Subjects",
+                          owners: 874,
+                          pfp: "https://static-assets.pallet.exchange/pfp/seisubjects.png",
+                          slug: "sei-subjects",
+                          supply: 3333,
+                          volume: 25238.60368899993,
+                          royalty: 10,
+                          num_sales: 2767,
+                          saleCount: 2767,
+                          _24hFloorChange: 0,
+                          _24hVolumeChange: 0,
+                          listed: 11.341134113411341,
+                        },
+                      ],
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+    "/api/v1/user/{address}/nfts": {
+      get: {
+        tags: ["User operations"],
+        description: "Get user's nfts from pallet api",
+        parameters: [
+          {
+            name: "address",
+            in: "path",
+            required: true,
+            description: "user wallet address",
+            schema: {
+              type: "string",
+              example: "sei14dmlustzjl6n07jgs86em296htggd49mcgy0pg",
+            },
+          },
+          {
+            name: "contract_address",
+            in: "query",
+            required: false,
+            description: "collection address",
+            schema: {
+              type: "string",
+              example:
+                "sei1gn3lg0wfaxvwg2tmktkurs2h2uw6f5z06spwtdeg0eh0qde5uksslhfgcp",
+            },
+          },
+        ],
+        responses: {
+          200: {
+            description: "User nfts were obtained",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    address: {
+                      type: "string",
+                      example: "sei14dmlustzjl6n07jgs86em296htggd49mcgy0pg",
+                    },
+                    nfts: {
+                      type: "array",
+                      example: [
+                        {
+                          collection: {
+                            contract_address:
+                              "sei15w6sty6cjjraxanrxxx0y09adwjtywhkcmydh7np25zezg9m5mwsfduktd",
+                            symbol: "SEISUBJ",
+                          },
+                          id: "73",
+                          name: "Test Tube #73  ",
+                          image:
+                            "https://arweave.net/_nM-ZSMc2lhU0ogWZ-ldOjjJANKNzEiPoxAcViexSSc/BlueCrush.gif",
+                          bids: [],
+                          last_sale: {
+                            denom: "usei",
+                            amount: "550000",
+                          },
+                          auction: null,
+                          rarity: {
+                            score: 3.921176470588235,
+                            rank: 4,
+                          },
+                        },
+                      ],
+                    },
+                    bids: {
+                      type: "array",
+                      example: [],
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+    "/api/v1/user/{address}/activities": {
+      get: {
+        tags: ["User operations"],
+        description: "Get user's activities from pallet api",
+        parameters: [
+          {
+            name: "address",
+            in: "path",
+            required: true,
+            description: "User wallet address",
+            schema: {
+              type: "string",
+              example: "sei14dmlustzjl6n07jgs86em296htggd49mcgy0pg",
+            },
+          },
+          {
+            name: "page",
+            in: "query",
+            required: false,
+            description: "Page index",
+            schema: {
+              type: "integer",
+              example: "1",
+            },
+          },
+          {
+            name: "page_size",
+            in: "query",
+            required: false,
+            description: "Counts per page",
+            schema: {
+              type: "integer",
+              example: "25",
+            },
+          },
+          {
+            name: "event",
+            in: "query",
+            required: false,
+            description: "undefined for all activities",
+            schema: {
+              type: "string",
+              enum: ["sale", "list", "withdraw_listing"],
+              example: "sale",
+            },
+          },
+        ],
+        responses: {
+          200: {
+            description: "User activities were obtained",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    total: {
+                      type: "number",
+                      example: "13",
+                    },
+                    activities: {
+                      type: "array",
+                      example: [
+                        {
+                          id: 1132498,
+                          chain_id: "pacific-1",
+                          nft_address:
+                            "sei1nqux82dgsyx0uv6qfhgmxvrfv2rrg3c34c3t3n4w5zqttfq7j6fq2a7zhc",
+                          nft_token_id: "777",
+                          event_type: "sale",
+                          buyer: "sei1rd66euqzfyw2y2hg2pc5kcrvlru0cyyy6r7854",
+                          seller: "sei14dmlustzjl6n07jgs86em296htggd49mcgy0pg",
+                          price: [
+                            {
+                              denom: "usei",
+                              amount: "500000",
+                            },
+                          ],
+                          price_value: 0.5,
+                          block: 58212422,
+                          ts: "2024-02-16T10:07:56.000Z",
+                          collection_address:
+                            "sei1nqux82dgsyx0uv6qfhgmxvrfv2rrg3c34c3t3n4w5zqttfq7j6fq2a7zhc",
+                          token_key:
+                            "sei1nqux82dgsyx0uv6qfhgmxvrfv2rrg3c34c3t3n4w5zqttfq7j6fq2a7zhc-777",
+                          collection: {
+                            symbol: "NUIT",
+                          },
+                          token: {
+                            name: "Nuit #777",
+                            image:
+                              "https://arweave.net/6PRRgc3IfAaeKjVQjPCqshd8h3j0oaaz8uz5auAYCog/777.png",
+                            traits: [
+                              {
+                                type: "Background",
+                                value: "Temple",
+                                rarity: {
+                                  num_tokens: 168,
+                                  score: 33.06547619047619,
+                                  rank: 2,
+                                },
+                              },
+                            ],
+                            rarity: {
+                              score: 56.54817961553895,
+                              rank: 317,
+                            },
+                          },
+                          buyer_info: {
+                            domain: null,
+                            pfp: "https://arweave.net/jl2HLjIxJjWniiu5s-e9K-t18Keu-A-6Yuv5tqFsz8s/8947.png",
+                          },
+                          seller_info: {
+                            domain: null,
+                            pfp: "https://static-assets.pallet.exchange/pfp/user2.jpg",
+                          },
+                        },
+                        ,
+                      ],
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+
     "/api/v1/collections": {
       post: {
-        tags: ["Collections operations"],
+        tags: ["Pallet Collections operations"],
         description: "Add new collection",
         securitySchemes: {
           bearerAuth: {
@@ -163,7 +429,7 @@ const apiDocumentation = {
         },
       },
       get: {
-        tags: ["Collections operations"],
+        tags: ["Pallet Collections operations"],
         description: "Get collections",
         parameters: [
           {
@@ -260,7 +526,7 @@ const apiDocumentation = {
     },
     "/api/v1/collections/{address}": {
       get: {
-        tags: ["Collections operations"],
+        tags: ["Pallet Collections operations"],
         description: "Get collection",
         parameters: [
           {
@@ -339,7 +605,7 @@ const apiDocumentation = {
     },
     "/api/v1/collections/{address}/traits": {
       get: {
-        tags: ["Collections operations"],
+        tags: ["Pallet Collections operations"],
         description: "Get collection",
         parameters: [
           {
@@ -413,10 +679,9 @@ const apiDocumentation = {
         },
       },
     },
-
     "/api/v1/collections/{address}/activities": {
       get: {
-        tags: ["Collections operations"],
+        tags: ["Pallet Collections operations"],
         description: "Get collection",
         parameters: [
           {
@@ -517,7 +782,7 @@ const apiDocumentation = {
 
     "/api/v1/nfts/{address}": {
       get: {
-        tags: ["Nfts operations"],
+        tags: ["Pallet Nfts operations"],
         description: "Get nfts of collection",
         parameters: [
           {
@@ -668,7 +933,7 @@ const apiDocumentation = {
     },
     "/api/v1/nfts/{address}/{token_id}": {
       get: {
-        tags: ["Nfts operations"],
+        tags: ["Pallet Nfts operations"],
         description: "Get nft",
         parameters: [
           {
@@ -761,9 +1026,9 @@ const apiDocumentation = {
         },
       },
     },
-    "/api/v1/nfts/activities/{address}/{token_id}": {
+    "/api/v1/nfts/{address}/{token_id}/activities": {
       get: {
-        tags: ["Nfts operations"],
+        tags: ["Pallet Nfts operations"],
         description: "Get nft activities",
         parameters: [
           {
@@ -1067,68 +1332,6 @@ const apiDocumentation = {
                           pfp: "https://arweave.net/BLeWHs72ccmVxIPoJSRsW5EUG58KIzPMGRin8H0sLms/4442.png",
                         },
                       },
-                    },
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-    "/api/v1/nfts/owned/{walletAddress}": {
-      get: {
-        tags: ["Nfts operations"],
-        description: "Get owned nfts",
-        parameters: [
-          {
-            name: "walletAddress",
-            in: "path",
-            required: true,
-            description: "owner wallet address",
-            schema: {
-              type: "string",
-              example: "sei1s6dsxre9cfz8474w4lxvml6xaapt7fht68n90c",
-            },
-          },
-        ],
-        responses: {
-          200: {
-            description: "Owned Nfts list",
-            content: {
-              "application/json": {
-                schema: {
-                  type: "object",
-                  properties: {
-                    walletAddress: {
-                      type: "string",
-                      example: "sei1s6dsxre9cfz8474w4lxvml6xaapt7fht68n90c",
-                    },
-                    nfts: {
-                      type: "array",
-                      example: [
-                        {
-                          collection: {
-                            contract_address:
-                              "sei15w6sty6cjjraxanrxxx0y09adwjtywhkcmydh7np25zezg9m5mwsfduktd",
-                            symbol: "SEISUBJ",
-                          },
-                          id: "3262",
-                          name: "Test Tube #3262  ",
-                          image:
-                            "https://arweave.net/_nM-ZSMc2lhU0ogWZ-ldOjjJANKNzEiPoxAcViexSSc/BlueCrush.gif",
-                          bids: [],
-                          last_sale: {
-                            denom: "usei",
-                            amount: "690000",
-                          },
-                          auction: null,
-                          rarity: {
-                            score: 3.921176470588235,
-                            rank: 4,
-                          },
-                        },
-                      ],
                     },
                   },
                 },

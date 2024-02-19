@@ -7,6 +7,7 @@ const indexRouter = require("./routes/index");
 const authRouter = require("./routes/auth");
 const collectionRouter = require("./routes/collection");
 const nftRouter = require("./routes/nft");
+const userRouter = require("./routes/user");
 const mongoose = require("mongoose");
 const { dbConfig } = require("./config/db.config");
 
@@ -40,5 +41,6 @@ app.use("/api/v1", indexRouter);
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/collections", collectionRouter);
 app.use("/api/v1/nfts", nftRouter);
+app.use("/api/v1/user", userRouter);
 
 module.exports = app;

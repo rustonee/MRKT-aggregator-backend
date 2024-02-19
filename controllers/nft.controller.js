@@ -60,38 +60,6 @@ exports.getNft = async (req, res) => {
   }
 };
 
-exports.getOwnedNfts = async (req, res) => {
-  try {
-    const walletAddress = req.params.walletAddress;
-    const collectionAddress = req.query.collectionAddress;
-
-    if (!walletAddress) {
-      res.status(400).send({ message: "Wallet address is required" });
-      return;
-    }
-
-    const api_url = process.env.BASE_API_URL;
-    const result = await axios.get(
-      `${api_url}/v1/user/${walletAddress}?network=mainnet`,
-      {
-        params: {
-          include_tokens: true,
-          include_bids: true,
-          fetch_nfts: true,
-        },
-      }
-    );
-
-    res.json({ walletAddress, nfts: result.data.nfts });
-  } catch (error) {
-    res.status(500).send({
-      message:
-        error.message || "Some error occurred while fetching the owned NFTs.",
-    });
-    return;
-  }
-};
-
 exports.getNftActivities = async (req, res) => {
   try {
     const tokenId = req.params.tokenId;

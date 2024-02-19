@@ -70,7 +70,7 @@ exports.getCollections = async (req, res) => {
       [`num_sales_${lookback}`]: 1,
       volume: 1,
       [`volume_${lookback}`]: 1,
-      royalty,
+      royalty: 0,
     })
       .sort(sort)
       .skip((page - 1) * limit)

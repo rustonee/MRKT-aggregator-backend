@@ -6,10 +6,9 @@ const {
   calculatePriceChangeAndSaleCount,
 } = require("./services/calculatePriceChangeAndSaleCount");
 const Collection = require("../models/collection.model");
+const { getListedNftsFromMrktContract } = require("./mrkt/get-listed-nfts");
 const { SigningCosmWasmClient } = require("@cosmjs/cosmwasm-stargate");
-const {
-  getListSalesFromMrktContract,
-} = require("./services/getListSalesFromMrktContract");
+const { getNftMetadata } = require("./mrkt/get-nft-metadata");
 
 exports.getUserCollections = async (req, res) => {
   try {
@@ -97,8 +96,6 @@ exports.getUserCollections = async (req, res) => {
 exports.getUserNfts = async (req, res) => {
   try {
     const walletAddress = req.params.walletAddress;
-    const status = req.query.status || "all"; // "all" | "listed" || owned
-    const marketplace = req.query.marketplace; // "all" | "MRKT" | "Other" // avaiable only status = listed
 
     if (!walletAddress) {
       res.status(400).send({ message: "Wallet address is required" });
@@ -111,57 +108,9 @@ exports.getUserNfts = async (req, res) => {
       fetch_nfts: true,
     };
 
-    let ownedNfts =
-      (await fetchUserNftsFromPallet(walletAddress, params)).nfts || [];
+    const data = await fetchUserNftsFromPallet(walletAddress, params);
 
-    const client = await SigningCosmWasmClient.connect(process.env.RPC_URL);
-
-    const listSalesFromMrkt =
-      (await getListSalesFromMrktContract(client)).list || [];
-
-    const allNftsListedOnMrkt =
-      (await fetchUserNftsFromPallet(process.env.MRKT_CONTRACT, params)).nfts ||
-      [];
-
-    let allNfts = [...ownedNfts, ...allNftsListedOnMrkt];
-
-    allNfts = await Promise.all(
-      [...ownedNfts, ...allNftsListedOnMrkt].map((nft) => {
-        if (!!nft.auction) {
-          nft.marketplace = "Pallet";
-        }
-
-        const sale = listSalesFromMrkt.find(
-          (sale) =>
-            sale.token_id === nft.id &&
-            sale.cw721_address === nft.collection.contract_address,
-        );
-
-        if (sale) {
-          nft.marketplace = "MRKT";
-          nft.listing = sale;
-        }
-
-        return nft;
-      }),
-    );
-
-    if (status === "owned") {
-      allNfts = allNfts.filter((nft) => !nft.auction && !nft.listing);
-    } else if (status === "listed") {
-      if (marketplace === "MRKT") {
-        allNfts = allNfts.filter((nft) => nft.marketplace === "MRKT");
-      } else if (marketplace === "Other") {
-        allNfts = allNfts.filter((nft) => nft.marketplace === "Pallet");
-      } else {
-        allNfts = allNfts.filter((nft) => !!nft.auction || !!nft.listing);
-      }
-    }
-
-    res.json({
-      address: walletAddress,
-      nfts: allNfts,
-    });
+    res.json(data);
   } catch (error) {
     res.status(500).send({
       message:
@@ -203,6 +152,48 @@ exports.getUserActivities = async (req, res) => {
       message:
         error.message ||
         "Some error occurred while fetching the nft activities.",
+    });
+
+    return;
+  }
+};
+
+exports.getListedNftFromMrktMarketByUser = async (req, res) => {
+  try {
+    const walletAddress = req.params.walletAddress;
+
+    if (!walletAddress) {
+      res.status(400).send({ message: "Wallet address is required" });
+      return;
+    }
+
+    const client = await SigningCosmWasmClient.connect(process.env.RPC_URL);
+
+    const listedOnMrktMarketByUser = await getListedNftsFromMrktContract(
+      client,
+    ).then((list) => list.filter((sale) => sale.provider === walletAddress));
+
+    const nfts = await Promise.all(
+      listedOnMrktMarketByUser.map(async (nft) => {
+        const metadata = await getNftMetadata(
+          client,
+          nft.cw721_address,
+          nft.token_id,
+        );
+
+        return {
+          ...metadata,
+          listing: nft,
+        };
+      }),
+    );
+
+    res.json({ address: walletAddress, nfts });
+  } catch (error) {
+    res.status(500).send({
+      message:
+        error.message ||
+        "Some error occurred while fetching the listed nft on mrkt marketplace.",
     });
 
     return;

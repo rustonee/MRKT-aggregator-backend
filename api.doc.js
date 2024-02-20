@@ -155,18 +155,29 @@ const apiDocumentation = {
             description: "user wallet address",
             schema: {
               type: "string",
-              example: "sei14dmlustzjl6n07jgs86em296htggd49mcgy0pg",
+              example: "sei1g72905gcxyxtg5p2fhen9h0hcn59etagrl0fuy",
             },
           },
           {
-            name: "contract_address",
+            name: "status",
             in: "query",
             required: false,
-            description: "collection address",
+            description: "status",
             schema: {
               type: "string",
-              example:
-                "sei1gn3lg0wfaxvwg2tmktkurs2h2uw6f5z06spwtdeg0eh0qde5uksslhfgcp",
+              enum: ["owned", "listed", "all"],
+              example: "all",
+            },
+          },
+          {
+            name: "marketplace",
+            in: "query",
+            required: false,
+            description: "availble only status = listed",
+            schema: {
+              type: "string",
+              enum: ["MRKT", "all", "Other"],
+              example: "all",
             },
           },
         ],

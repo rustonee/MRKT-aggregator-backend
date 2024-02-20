@@ -193,7 +193,7 @@ exports.getListedNftFromMrktMarketByUser = async (req, res) => {
     res.status(500).send({
       message:
         error.message ||
-        "Some error occurred while fetching the nft activities.",
+        "Some error occurred while fetching the listed nft on mrkt marketplace.",
     });
 
     return;

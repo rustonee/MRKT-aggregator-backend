@@ -158,28 +158,6 @@ const apiDocumentation = {
               example: "sei1g72905gcxyxtg5p2fhen9h0hcn59etagrl0fuy",
             },
           },
-          {
-            name: "status",
-            in: "query",
-            required: false,
-            description: "status",
-            schema: {
-              type: "string",
-              enum: ["owned", "listed", "all"],
-              example: "all",
-            },
-          },
-          {
-            name: "marketplace",
-            in: "query",
-            required: false,
-            description: "availble only status = listed",
-            schema: {
-              type: "string",
-              enum: ["MRKT", "all", "Other"],
-              example: "all",
-            },
-          },
         ],
         responses: {
           200: {
@@ -222,6 +200,100 @@ const apiDocumentation = {
                     bids: {
                       type: "array",
                       example: [],
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+    "/api/v1/user/{address}/mrkt-listed-nfts": {
+      get: {
+        tags: ["User operations"],
+        description: "Get user's listed nfts of mrkt place",
+        parameters: [
+          {
+            name: "address",
+            in: "path",
+            required: true,
+            description: "user wallet address",
+            schema: {
+              type: "string",
+              example: "sei1g72905gcxyxtg5p2fhen9h0hcn59etagrl0fuy",
+            },
+          },
+        ],
+        responses: {
+          200: {
+            description: "User nfts were obtained",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    address: {
+                      type: "string",
+                      example: "sei14dmlustzjl6n07jgs86em296htggd49mcgy0pg",
+                    },
+                    nfts: {
+                      type: "array",
+                      example: [
+                        {
+                          description:
+                            "Survivors unite , overcoming every challenge .",
+                          image:
+                            "https://arweave.net/Omm2EuuHvVwbsgcaJZpLGPKXIliZtca19vwLZnl0MJM/607.png",
+                          name: "Survivor #607",
+                          attributes: [
+                            {
+                              value: "Red Sword",
+                              trait_type: "Back Weapons",
+                            },
+                            {
+                              value: "Red",
+                              trait_type: "Background",
+                            },
+                            {
+                              value: "Red",
+                              trait_type: "Body",
+                            },
+                            {
+                              value: "U Survivorsdefender",
+                              trait_type: "Clothe",
+                            },
+                            {
+                              value: "Mark",
+                              trait_type: "Eyes",
+                            },
+                            {
+                              value: "Brown Ponytailwithgreenkanzashi",
+                              trait_type: "Hair",
+                            },
+                            {
+                              value: "Leaf",
+                              trait_type: "Mouth",
+                            },
+                          ],
+                          listing: {
+                            cw721_address:
+                              "sei1682nfpvy8ud09q8tlt09k77w6lfttg8vvyrkm78r45v292y902hsg3qlmn",
+                            token_id: "607",
+                            provider:
+                              "sei1g72905gcxyxtg5p2fhen9h0hcn59etagrl0fuy",
+                            sale_type: "Fixed",
+                            min_bid_increment_percent: 10000,
+                            duration_type: "Fixed",
+                            initial_price: "0",
+                            requests: [],
+                            denom: {
+                              native: "usei",
+                            },
+                            can_accept: false,
+                          },
+                        },
+                      ],
                     },
                   },
                 },

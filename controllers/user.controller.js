@@ -6,6 +6,10 @@ const {
   calculatePriceChangeAndSaleCount,
 } = require("./services/calculatePriceChangeAndSaleCount");
 const Collection = require("../models/collection.model");
+const { SigningCosmWasmClient } = require("@cosmjs/cosmwasm-stargate");
+const {
+  getListSalesFromMrktContract,
+} = require("./services/getListSalesFromMrktContract");
 
 exports.getUserCollections = async (req, res) => {
   try {
@@ -26,7 +30,7 @@ exports.getUserCollections = async (req, res) => {
 
     // Extract unique contract_address values
     const uniqueContractAddresses = new Set(
-      data.nfts.map((nft) => nft.collection.contract_address)
+      data.nfts.map((nft) => nft.collection.contract_address),
     );
 
     // Convert Set to an array
@@ -52,7 +56,7 @@ exports.getUserCollections = async (req, res) => {
         volume: 1,
         // [`volume_${lookback}`]: 1,
         royalty: 1,
-      }
+      },
     );
 
     const colltionsWithPrice = [];
@@ -71,7 +75,7 @@ exports.getUserCollections = async (req, res) => {
             _24hVolumeChange,
             listed,
           };
-        })
+        }),
       );
 
       colltionsWithPrice.push(...data);
@@ -93,7 +97,8 @@ exports.getUserCollections = async (req, res) => {
 exports.getUserNfts = async (req, res) => {
   try {
     const walletAddress = req.params.walletAddress;
-    const contractAddress = req.query.contract_address || null;
+    const status = req.query.status || "all"; // "all" | "listed" || owned
+    const marketplace = req.query.marketplace; // "all" | "MRKT" | "Other" // avaiable only status = listed
 
     if (!walletAddress) {
       res.status(400).send({ message: "Wallet address is required" });
@@ -106,21 +111,57 @@ exports.getUserNfts = async (req, res) => {
       fetch_nfts: true,
     };
 
-    const data = await fetchUserNftsFromPallet(walletAddress, params);
-    if (contractAddress) {
-      const filteredNfts = data.nfts.filter(
-        (nft) => nft.collection.contract_address === contractAddress
-      );
+    let ownedNfts =
+      (await fetchUserNftsFromPallet(walletAddress, params)).nfts || [];
 
-      return res.json({
-        address: walletAddress,
-        domain: data.domain,
-        nfts: filteredNfts,
-        bids: data.bids,
-      });
+    const client = await SigningCosmWasmClient.connect(process.env.RPC_URL);
+
+    const listSalesFromMrkt =
+      (await getListSalesFromMrktContract(client)).list || [];
+
+    const allNftsListedOnMrkt =
+      (await fetchUserNftsFromPallet(process.env.MRKT_CONTRACT, params)).nfts ||
+      [];
+
+    let allNfts = [...ownedNfts, ...allNftsListedOnMrkt];
+
+    allNfts = await Promise.all(
+      [...ownedNfts, ...allNftsListedOnMrkt].map((nft) => {
+        if (!!nft.auction) {
+          nft.marketplace = "Pallet";
+        }
+
+        const sale = listSalesFromMrkt.find(
+          (sale) =>
+            sale.token_id === nft.id &&
+            sale.cw721_address === nft.collection.contract_address,
+        );
+
+        if (sale) {
+          nft.marketplace = "MRKT";
+          nft.listing = sale;
+        }
+
+        return nft;
+      }),
+    );
+
+    if (status === "owned") {
+      allNfts = allNfts.filter((nft) => !nft.auction && !nft.listing);
+    } else if (status === "listed") {
+      if (marketplace === "MRKT") {
+        allNfts = allNfts.filter((nft) => nft.marketplace === "MRKT");
+      } else if (marketplace === "Other") {
+        allNfts = allNfts.filter((nft) => nft.marketplace === "Pallet");
+      } else {
+        allNfts = allNfts.filter((nft) => !!nft.auction || !!nft.listing);
+      }
     }
 
-    res.json(data);
+    res.json({
+      address: walletAddress,
+      nfts: allNfts,
+    });
   } catch (error) {
     res.status(500).send({
       message:
@@ -153,7 +194,7 @@ exports.getUserActivities = async (req, res) => {
     const data = await fetchUserActivitiesFromPallet(
       walletAddress,
       event,
-      params
+      params,
     );
 
     res.json(data);

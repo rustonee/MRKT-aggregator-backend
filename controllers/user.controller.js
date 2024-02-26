@@ -175,16 +175,23 @@ exports.getListedNftFromMrktMarketByUser = async (req, res) => {
 
     const nfts = await Promise.all(
       listedOnMrktMarketByUser.map(async (nft) => {
-        const metadata = await getNftMetadata(
-          client,
-          nft.cw721_address,
-          nft.token_id,
-        );
-
-        return {
-          ...metadata,
-          listing: nft,
-        };
+        try {
+          const metadata = await getNftMetadata(
+            client,
+            nft.cw721_address,
+            nft.token_id,
+          );
+  
+          return {
+            ...metadata,
+            listing: nft,
+          };
+        } catch (err) {
+          // TODO - should handle collection info if metadata failed
+          return {
+            listing: nft,
+          };
+        }
       }),
     );
 

@@ -77,6 +77,7 @@ exports.getCollections = async (req, res) => {
       num_sales: 1,
       [`num_sales_${lookback}`]: 1,
       volume: 1,
+      volume_24hr: 1,
       [`volume_${lookback}`]: 1,
       royalty: 1,
     })

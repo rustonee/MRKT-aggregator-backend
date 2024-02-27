@@ -21,7 +21,15 @@ exports.createCollection = async (req, res) => {
       res.status(400).send({ message: "Collection address is required" });
       return;
     }
-    const collection = await fetchCollection(address);
+    let collection = await Collection.findOne({
+      contract_address: address,
+    });
+    if (collection) {
+      res.status(400).send({ message: "Collection already existing" });
+      return;
+    }
+
+    collection = await fetchCollection(address);
     collection.floor_24hr = collection.floor;
     collection.royalty = await getCollectionRoyalty(address);
 

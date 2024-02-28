@@ -9,7 +9,7 @@ const {
 const { getCollectionRoyalty } = require("./services/getCollectionRoyalty");
 const { fetchCollection } = require("./services/fetchCollection");
 const { fetchCollectionDetails } = require("./services/fetchCollectionDetails");
-const { getListedNftsFromMrktContract } = require("./mrkt/get-listed-nfts");
+// const { getListedNftsFromMrktContract } = require("./mrkt/get-listed-nfts");
 const { getNftMetadata } = require("./mrkt/get-nft-metadata");
 const { SigningCosmWasmClient } = require("@cosmjs/cosmwasm-stargate");
 
@@ -222,47 +222,47 @@ exports.getCollectionActivities = async (req, res) => {
   }
 };
 
-exports.getListedNftOnMrktCollection = async (req, res) => {
-  try {
-    const address = req.params.address;
+// exports.getListedNftOnMrktCollection = async (req, res) => {
+//   try {
+//     const address = req.params.address;
 
-    const page = Number(req.query.page || 1);
-    const pageSize = Number(req.query.page_size || 25);
+//     const page = Number(req.query.page || 1);
+//     const pageSize = Number(req.query.page_size || 25);
 
-    const client = await SigningCosmWasmClient.connect(process.env.RPC_URL);
+//     const client = await SigningCosmWasmClient.connect(process.env.RPC_URL);
 
-    const allListedNftsOnCollection = await getListedNftsFromMrktContract(
-      client
-    ).then((list) => list.filter((nft) => nft.cw721_address === address));
+//     const allListedNftsOnCollection = await getListedNftsFromMrktContract(
+//       client
+//     ).then((list) => list.filter((nft) => nft.cw721_address === address));
 
-    const total = allListedNftsOnCollection.length;
+//     const total = allListedNftsOnCollection.length;
 
-    const nfts = await Promise.all(
-      allListedNftsOnCollection
-        .slice((page - 1) * pageSize, page * pageSize)
-        .map(async (nft) => {
-          const metadata = await getNftMetadata(
-            client,
-            nft.cw721_address,
-            nft.token_id
-          );
+//     const nfts = await Promise.all(
+//       allListedNftsOnCollection
+//         .slice((page - 1) * pageSize, page * pageSize)
+//         .map(async (nft) => {
+//           const metadata = await getNftMetadata(
+//             client,
+//             nft.cw721_address,
+//             nft.token_id
+//           );
 
-          return {
-            ...metadata,
-            listed: nft,
-          };
-        })
-    );
+//           return {
+//             ...metadata,
+//             listed: nft,
+//           };
+//         })
+//     );
 
-    res.json({
-      nfts,
-      total,
-    });
-  } catch (error) {
-    console.error(error);
-    res.status(500).send({
-      message: error.message || "Error occurred while fetching the mrkt nfts",
-    });
-    return;
-  }
-};
+//     res.json({
+//       nfts,
+//       total,
+//     });
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).send({
+//       message: error.message || "Error occurred while fetching the mrkt nfts",
+//     });
+//     return;
+//   }
+// };

@@ -11,6 +11,6 @@ router.get("/", controller.getCollections);
 router.get("/:address", controller.getCollection);
 router.get("/:address/traits", controller.getCollectionTraits);
 router.get("/:address/activities", controller.getCollectionActivities);
-router.get("/mrkt/:address/nfts", controller.getListedNftOnMrktCollection);
+// router.get("/mrkt/:address/nfts", controller.getListedNftOnMrktCollection);
 
 module.exports = router;

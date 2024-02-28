@@ -6,7 +6,7 @@ const {
   calculatePriceChangeAndSaleCount,
 } = require("./services/calculatePriceChangeAndSaleCount");
 const Collection = require("../models/collection.model");
-const { getListedNftsFromMrktContract } = require("./mrkt/get-listed-nfts");
+// const { getListedNftsFromMrktContract } = require("./mrkt/get-listed-nfts");
 const { SigningCosmWasmClient } = require("@cosmjs/cosmwasm-stargate");
 const { getNftMetadata } = require("./mrkt/get-nft-metadata");
 
@@ -158,51 +158,51 @@ exports.getUserActivities = async (req, res) => {
   }
 };
 
-exports.getListedNftFromMrktMarketByUser = async (req, res) => {
-  try {
-    const walletAddress = req.params.walletAddress;
+// exports.getListedNftFromMrktMarketByUser = async (req, res) => {
+//   try {
+//     const walletAddress = req.params.walletAddress;
 
-    if (!walletAddress) {
-      res.status(400).send({ message: "Wallet address is required" });
-      return;
-    }
+//     if (!walletAddress) {
+//       res.status(400).send({ message: "Wallet address is required" });
+//       return;
+//     }
 
-    const client = await SigningCosmWasmClient.connect(process.env.RPC_URL);
+//     const client = await SigningCosmWasmClient.connect(process.env.RPC_URL);
 
-    const listedOnMrktMarketByUser = await getListedNftsFromMrktContract(
-      client,
-    ).then((list) => list.filter((sale) => sale.provider === walletAddress));
+//     const listedOnMrktMarketByUser = await getListedNftsFromMrktContract(
+//       client,
+//     ).then((list) => list.filter((sale) => sale.provider === walletAddress));
 
-    const nfts = await Promise.all(
-      listedOnMrktMarketByUser.map(async (nft) => {
-        try {
-          const metadata = await getNftMetadata(
-            client,
-            nft.cw721_address,
-            nft.token_id,
-          );
+//     const nfts = await Promise.all(
+//       listedOnMrktMarketByUser.map(async (nft) => {
+//         try {
+//           const metadata = await getNftMetadata(
+//             client,
+//             nft.cw721_address,
+//             nft.token_id,
+//           );
   
-          return {
-            ...metadata,
-            listing: nft,
-          };
-        } catch (err) {
-          // TODO - should handle collection info if metadata failed
-          return {
-            listing: nft,
-          };
-        }
-      }),
-    );
+//           return {
+//             ...metadata,
+//             listing: nft,
+//           };
+//         } catch (err) {
+//           // TODO - should handle collection info if metadata failed
+//           return {
+//             listing: nft,
+//           };
+//         }
+//       }),
+//     );
 
-    res.json({ address: walletAddress, nfts });
-  } catch (error) {
-    res.status(500).send({
-      message:
-        error.message ||
-        "Some error occurred while fetching the listed nft on mrkt marketplace.",
-    });
+//     res.json({ address: walletAddress, nfts });
+//   } catch (error) {
+//     res.status(500).send({
+//       message:
+//         error.message ||
+//         "Some error occurred while fetching the listed nft on mrkt marketplace.",
+//     });
 
-    return;
-  }
-};
+//     return;
+//   }
+// };
